@@ -5,6 +5,7 @@ import logging
 import math
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -61,7 +62,7 @@ browser = None
 cj = None
 use_continuous_lecture_numbers = False
 chapter_filter = None
-YTDLP_PATH = os.path.join(os.path.dirname(sys.executable), "yt-dlp.exe")
+YTDLP_PATH = None
 
 
 def deEmojify(inputStr: str):
@@ -1417,6 +1418,33 @@ def check_for_shaka():
         return True
 
 
+def find_yt_dlp_path():
+    python_dir = os.path.dirname(sys.executable)
+    candidate = os.path.join(python_dir, "yt-dlp.exe" if os.name == "nt" else "yt-dlp")
+    if os.path.isfile(candidate):
+        return os.path.abspath(candidate)
+    for executable in ("yt-dlp", "yt-dlp.exe"):
+        path = shutil.which(executable)
+        if path:
+            return path
+    return None
+
+
+def check_for_yt_dlp():
+    global YTDLP_PATH
+    try:
+        path = find_yt_dlp_path()
+        if path:
+            YTDLP_PATH = path
+            return True
+        return False
+    except Exception:
+        logger.exception(
+            "> Unexpected exception while checking for yt-dlp, please tell the program author about this! "
+        )
+        return True
+
+
 def download(url, path, filename):
     """
     @author Puyodead1
@@ -1884,6 +1912,11 @@ def main():
     aria_ret_val = check_for_aria()
     if not aria_ret_val:
         logger.fatal("> Aria2c is missing from your system or path!")
+        sys.exit(1)
+
+    yt_dlp_ret_val = check_for_yt_dlp()
+    if not yt_dlp_ret_val and not skip_lectures:
+        logger.fatal("> yt-dlp is missing from your system or path!")
         sys.exit(1)
 
     ffmpeg_ret_val = check_for_ffmpeg()

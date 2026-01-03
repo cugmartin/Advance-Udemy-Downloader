@@ -2,6 +2,7 @@ mpegdash
 tqdm
 requests
 python-dotenv
+openai
 protobuf
 webvtt-py
 pysrt

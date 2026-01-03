@@ -29,7 +29,7 @@ from constants import *
 from tls import SSLCiphers
 from utils import extract_kid
 from vtt_to_srt import convert
-from translator import SubtitleTranslator
+from translator import create_translator
 
 DOWNLOAD_DIR = os.path.join(os.getcwd(), "out_dir")
 TEMP_DIR = os.path.join(os.getcwd(), "temp")
@@ -357,19 +357,22 @@ def pre_run():
         caption_locale = "en"
         logger_temp = logging.getLogger("udemy-downloader")
         logger_temp.info("Auto-enabling English captions for video downloads")
-        
-        # Initialize translator if DEEPL_API_KEY is available
-        deepl_key = os.getenv("DEEPL_API_KEY")
-        if deepl_key:
+
+        provider = os.getenv("TRANSLATE_PROVIDER")
+        if provider or os.getenv("DEEPL_API_KEY"):
             try:
-                translator = SubtitleTranslator(api_key=deepl_key)
+                translator = create_translator(provider=provider)
                 auto_translate = True
-                logger_temp.info("Auto-translation enabled (EN -> ZH)")
+                logger_temp.info("Auto-translation enabled (EN -> ZH) using provider: %s", provider or "deepl")
             except Exception as e:
-                logger_temp.warning(f"Failed to initialize translator: {e}. Continuing without translation.")
+                logger_temp.warning(
+                    "Failed to initialize translator provider '%s': %s. Continuing without translation.",
+                    provider,
+                    e,
+                )
                 auto_translate = False
         else:
-            logger_temp.info("DEEPL_API_KEY not found, translation disabled")
+            logger_temp.info("No translator configured (set TRANSLATE_PROVIDER or DEEPL_API_KEY), translation disabled")
 
     # setup a logger
     logger = logging.getLogger(__name__)

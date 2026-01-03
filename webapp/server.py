@@ -1,8 +1,13 @@
 import asyncio
 import logging
+import subprocess
 import sys
+import threading
+from collections import deque
+from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional
+from dataclasses import dataclass, field
+from typing import Deque, Dict, List, Optional, Tuple
 
 from fastapi import Depends, FastAPI, HTTPException, Request, status
 from fastapi.responses import HTMLResponse, StreamingResponse
@@ -22,6 +27,7 @@ from .config import (
     HISTORY_LIMIT,
     KEYFILE_PATH,
     MAIN_SCRIPT,
+    PIPELINE_SCRIPT,
     TOKEN_TTL_SECONDS,
 )
 from .history import HistoryStore
@@ -42,6 +48,7 @@ token_manager = TokenManager(TOKEN_TTL_SECONDS)
 history_store = HistoryStore(HISTORY_FILE, HISTORY_LIMIT)
 task_manager = TaskManager(history_store, BASE_DIR)
 key_manager = KeyfileManager(KEYFILE_PATH)
+article_streams: Dict[str, "ArticleLogStream"] = {}
 
 security = HTTPBearer(auto_error=False)
 
@@ -85,6 +92,45 @@ class DownloadRequest(BaseModel):
     chapter_filter: Optional[str] = None
     key_entries: List[KeyEntryPayload] = Field(default_factory=list)
     auto_zip: bool = False
+
+
+class ArticleRequest(BaseModel):
+    status: str = Field(default="draft", description="WordPress 文章状态")
+
+
+@dataclass
+class ArticleLogStream:
+    loop: asyncio.AbstractEventLoop
+    lines: Deque[str] = field(default_factory=lambda: deque(maxlen=1000))
+    subscribers: List[asyncio.Queue] = field(default_factory=list)
+    lock: threading.Lock = field(default_factory=threading.Lock)
+    completed: bool = False
+
+    def broadcast(self, line: Optional[str]) -> None:
+        with self.lock:
+            if line is not None:
+                self.lines.append(line)
+            subscribers = list(self.subscribers)
+            loop = self.loop
+        for queue in subscribers:
+            asyncio.run_coroutine_threadsafe(queue.put(line), loop)
+
+    def subscribe(self) -> asyncio.Queue:
+        queue: asyncio.Queue = asyncio.Queue()
+        with self.lock:
+            loop = self.loop
+            buffered = list(self.lines)
+            self.subscribers.append(queue)
+        for line in buffered:
+            asyncio.run_coroutine_threadsafe(queue.put(line), loop)
+        if self.completed:
+            asyncio.run_coroutine_threadsafe(queue.put(None), loop)
+        return queue
+
+    def unsubscribe(self, queue: asyncio.Queue) -> None:
+        with self.lock:
+            if queue in self.subscribers:
+                self.subscribers.remove(queue)
 
 
 def _mask_token(token: str) -> str:
@@ -270,3 +316,121 @@ async def start_download(payload: DownloadRequest, _: str = Depends(get_token_fr
     task_manager.start_task(task)
 
     return {"task_id": task.id, "status": task.status}
+
+
+@app.post("/api/history/{task_id}/generate-article")
+async def generate_article(task_id: str, payload: ArticleRequest, _: str = Depends(get_token_from_request)):
+    item = history_store.get(task_id)
+    if not item:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Task not found")
+    if item.get("status") != "success":
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Only success tasks can generate article")
+
+    current_loop = asyncio.get_running_loop()
+    history_store.update(
+        task_id,
+        {
+            "status": "生成文章中",
+            "article_status": "running",
+            "article_started_at": datetime.utcnow().isoformat(),
+            "article_finished_at": None,
+            "article_message": None,
+        },
+    )
+
+    stream = ArticleLogStream(loop=current_loop)
+    article_streams[task_id] = stream
+
+    def _runner(course_url: str, wp_status: str) -> None:
+        try:
+            cmd = [sys.executable, str(PIPELINE_SCRIPT), course_url, "--status", wp_status]
+            process = subprocess.Popen(
+                cmd,
+                cwd=str(BASE_DIR),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                bufsize=1,
+            )
+
+            tail_lines: Deque[str] = deque(maxlen=200)
+            assert process.stdout is not None
+            for line in process.stdout:
+                line_clean = line.rstrip()
+                tail_lines.append(line_clean)
+                stream.broadcast(line_clean)
+
+            ret_code = process.wait()
+            if ret_code == 0:
+                history_store.update(
+                    task_id,
+                    {
+                        "status": "已生成",
+                        "article_status": "success",
+                        "article_finished_at": datetime.utcnow().isoformat(),
+                        "article_message": "Exit code 0",
+                    },
+                )
+            else:
+                output = "\n".join(tail_lines).strip()
+                history_store.update(
+                    task_id,
+                    {
+                        "status": "生成失败",
+                        "article_status": "failed",
+                        "article_finished_at": datetime.utcnow().isoformat(),
+                        "article_message": (output[-2000:] if output else f"Exit code {ret_code}"),
+                    },
+                )
+                stream.broadcast(f"[system] Process exited with code {ret_code}")
+        except Exception as exc:
+            history_store.update(
+                task_id,
+                {
+                    "status": "生成失败",
+                    "article_status": "failed",
+                    "article_finished_at": datetime.utcnow().isoformat(),
+                    "article_message": str(exc),
+                },
+            )
+            stream.broadcast(f"[system] Task failed: {exc}")
+        finally:
+            stream.completed = True
+            stream.broadcast(None)
+            stream.loop.call_later(300, lambda: article_streams.pop(task_id, None))
+
+    thread = threading.Thread(
+        target=_runner,
+        args=(item.get("course_url", ""), payload.status),
+        daemon=True,
+    )
+    thread.start()
+
+    return {"task_id": task_id, "status": "生成文章中"}
+
+
+@app.get("/api/history/{task_id}/article/logs")
+async def stream_article_logs(task_id: str, request: Request, _: str = Depends(get_token_from_request)):
+    stream = article_streams.get(task_id)
+    if not stream:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No article generation in progress")
+
+    queue = stream.subscribe()
+
+    async def event_generator():
+        try:
+            while True:
+                if await request.is_disconnected():
+                    break
+                line = await queue.get()
+                if line is None:
+                    yield "event: end\ndata: stream-closed\n\n"
+                    break
+                payload = line.replace("\r", "").replace("\n", " ")
+                yield f"data: {payload}\n\n"
+        finally:
+            stream.unsubscribe(queue)
+
+    return StreamingResponse(event_generator(), media_type="text/event-stream")

@@ -7,7 +7,13 @@ const state = {
   activeTask: null,
   eventSource: null,
   defaultBearer: document.body?.dataset?.defaultBearer || "",
+  historySignature: null,
+  activeTasksSignature: null,
+  logLines: [],
+  logFlushScheduled: false,
 };
+
+const LOG_BUFFER_LIMIT = 500;
 
 function ensureAuth() {
   if (!state.token) {
@@ -129,39 +135,168 @@ function formatStartTime(startedAt) {
   return `${monthDay} ${time}`;
 }
 
-async function refreshHistory() {
+async function refreshHistory(options = {}) {
+  const { showLoading = true } = options;
   const tbody = qs("#history-body");
-  tbody.innerHTML = "<tr><td colspan='4'>加载中...</td></tr>";
+  if (showLoading) {
+    tbody.innerHTML = "<tr><td colspan='5'>加载中...</td></tr>";
+  }
   try {
     const items = await request("/api/history");
     if (!items.length) {
-      tbody.innerHTML = "<tr><td colspan='4'>暂无历史记录</td></tr>";
+      tbody.innerHTML = "<tr><td colspan='5'>暂无历史记录</td></tr>";
       return;
     }
+    const signature = JSON.stringify(items);
+    if (signature === state.historySignature && !showLoading) {
+      return;
+    }
+    state.historySignature = signature;
     tbody.innerHTML = items
       .map((item) => {
         const isDrm =
           typeof item.is_drm === "boolean" ? (item.is_drm ? "是" : "否") : "-";
         const timeLabel = formatStartTime(item.started_at);
         const taskSuffix = formatTaskId(item.task_id);
+        const courseCell = `<span class="history-url" title="${item.course_url}">${item.course_url}</span>`;
+        const buttons = [];
+        if (item.status === "success") {
+          buttons.push(
+            `<button class="primary ghost small generate-article-btn" data-task-id="${item.task_id}">生成文章</button>`
+          );
+          buttons.push(
+            `<button class="secondary outline small view-article-log" data-task-id="${item.task_id}" data-course-url="${item.course_url}">查看日志</button>`
+          );
+        } else if (item.status === "生成文章中") {
+          buttons.push(`<button class="primary ghost small" disabled>生成中...</button>`);
+          buttons.push(
+            `<button class="secondary outline small view-article-log" data-task-id="${item.task_id}" data-course-url="${item.course_url}">查看日志</button>`
+          );
+        } else if (item.article_status === "success" || item.article_status === "failed") {
+          buttons.push(
+            `<button class="secondary outline small view-article-log" data-task-id="${item.task_id}" data-course-url="${item.course_url}">查看日志</button>`
+          );
+        }
+        const actionCell = buttons.length ? `<div class="history-actions">${buttons.join("")}</div>` : "-";
         return `
         <tr>
-          <td title="${item.course_url}">${item.course_url}</td>
+          <td>${courseCell}</td>
           <td>${item.status}</td>
           <td>${isDrm}</td>
           <td>${timeLabel}${taskSuffix !== "-" ? ` (*${taskSuffix})` : ""}</td>
+          <td>${actionCell}</td>
         </tr>`;
       })
       .join("");
   } catch (err) {
-    tbody.innerHTML = `<tr><td colspan="4">${err.message}</td></tr>`;
+    if (showLoading) {
+      tbody.innerHTML = `<tr><td colspan="5">${err.message}</td></tr>`;
+    }
   }
 }
 
-function appendLog(line) {
+async function refreshActiveTasks(options = {}) {
+  const { showLoading = true } = options;
+  const container = qs("#active-task-list");
+  if (!container) return;
+  if (showLoading) {
+    container.textContent = "加载中...";
+  }
+  try {
+    const tasks = await request("/api/tasks");
+    const activeTasks = tasks.filter(
+      (task) => !["success", "failed", "cancelled"].includes(task.status)
+    );
+    const signature = JSON.stringify(activeTasks);
+    if (signature === state.activeTasksSignature && !showLoading) {
+      return;
+    }
+    state.activeTasksSignature = signature;
+    if (!activeTasks.length) {
+      container.textContent = "暂无运行中的任务";
+      document.body.classList.remove("has-active-task");
+      stopLogStream();
+      clearLogPanel();
+      return;
+    }
+    document.body.classList.add("has-active-task");
+    container.innerHTML = activeTasks
+      .map((task) => {
+        const { id, course_url, status } = task;
+        const statusLabel = status || "-";
+        const actionBtn =
+          status === "running"
+            ? `<button class="secondary small attach-log-btn" data-task-id="${id}">查看日志</button>`
+            : status === "queued"
+            ? `<button class="secondary small attach-log-btn" data-task-id="${id}">等待中</button>`
+            : `<button class="secondary small attach-log-btn" data-task-id="${id}">查看日志</button>`;
+        return `<div class="active-task-row">
+          <div class="task-info">
+            <div class="task-url" title="${course_url || ""}">${course_url || "-"}</div>
+            <div class="task-meta">ID: ${formatTaskId(id)} · 状态：${statusLabel}</div>
+          </div>
+          ${actionBtn}
+        </div>`;
+      })
+      .join("");
+  } catch (err) {
+    container.textContent = err.message || "加载失败";
+  }
+}
+
+async function handleHistoryClick(e) {
+  const btn = e.target.closest(".generate-article-btn");
+  if (!btn) return;
+  const taskId = btn.dataset.taskId;
+  if (!taskId) return;
+  btn.disabled = true;
+  btn.textContent = "生成中...";
+  try {
+    await request(`/api/history/${taskId}/generate-article`, {
+      method: "POST",
+      body: JSON.stringify({ status: "draft" }),
+    });
+    await refreshHistory({ showLoading: false });
+  } catch (err) {
+    alert(err.message);
+    btn.disabled = false;
+    btn.textContent = "生成文章";
+  }
+}
+
+async function handleHistoryLogClick(e) {
+  const btn = e.target.closest(".view-article-log");
+  if (!btn) return;
+  const taskId = btn.dataset.taskId;
+  const courseUrl = btn.dataset.courseUrl;
+  if (!taskId) return;
+  state.activeTask = `article-${taskId}`;
+  startArticleLogStream(taskId, courseUrl);
+}
+
+function flushLogs() {
   const pre = qs("#log-output");
-  pre.textContent += `${line}\n`;
+  if (!pre) {
+    state.logFlushScheduled = false;
+    return;
+  }
+  pre.textContent = state.logLines.join("\n");
   pre.scrollTop = pre.scrollHeight;
+  state.logFlushScheduled = false;
+}
+
+function scheduleLogFlush() {
+  if (state.logFlushScheduled) return;
+  state.logFlushScheduled = true;
+  requestAnimationFrame(flushLogs);
+}
+
+function appendLog(line) {
+  state.logLines.push(line);
+  if (state.logLines.length > LOG_BUFFER_LIMIT) {
+    state.logLines = state.logLines.slice(-LOG_BUFFER_LIMIT);
+  }
+  scheduleLogFlush();
 }
 
 function clearLogPanel() {
@@ -169,6 +304,8 @@ function clearLogPanel() {
   if (pre) {
     pre.textContent = "";
   }
+  state.logLines = [];
+  state.logFlushScheduled = false;
   const info = qs("#active-task-info");
   if (info) {
     info.textContent = "";
@@ -187,6 +324,26 @@ function startLogStream(taskId) {
     stopLogStream();
     clearLogPanel();
     refreshHistory();
+    refreshActiveTasks({ showLoading: false });
+  });
+  state.eventSource.onerror = () => {
+    appendLog("[system] 连接中断");
+    stopLogStream();
+  };
+}
+
+function startArticleLogStream(taskId, courseUrl) {
+  stopLogStream();
+  clearLogPanel();
+  qs("#active-task-info").textContent = `生成文章日志：${courseUrl || taskId}`;
+  state.eventSource = new EventSource(`/api/history/${taskId}/article/logs?token=${state.token}`);
+  state.eventSource.onmessage = (event) => {
+    appendLog(event.data);
+  };
+  state.eventSource.addEventListener("end", () => {
+    stopLogStream();
+    clearLogPanel();
+    refreshHistory({ showLoading: false });
   });
   state.eventSource.onerror = () => {
     appendLog("[system] 连接中断");
@@ -237,5 +394,26 @@ document.addEventListener("DOMContentLoaded", () => {
   qs("#precheck-btn").addEventListener("click", handlePrecheck);
   qs("#start-download-btn").addEventListener("click", startDownload);
   document.querySelectorAll(".toggle-visibility").forEach((btn) => btn.addEventListener("click", toggleVisibility));
+  qs("#history-body").addEventListener("click", handleHistoryClick);
+  qs("#history-body").addEventListener("click", handleHistoryLogClick);
+  document.body.addEventListener("click", (event) => {
+    const btn = event.target.closest(".attach-log-btn");
+    if (!btn) return;
+    const taskId = btn.dataset.taskId;
+    if (!taskId) return;
+    state.activeTask = taskId;
+    startLogStream(taskId);
+  });
+  const refreshActiveBtn = qs("#refresh-active-tasks");
+  if (refreshActiveBtn) {
+    refreshActiveBtn.addEventListener("click", () => refreshActiveTasks({ showLoading: true }));
+  }
   refreshHistory();
+  refreshActiveTasks();
+
+  setInterval(() => {
+    if (!state.token) return;
+    refreshHistory({ showLoading: false });
+    refreshActiveTasks({ showLoading: false });
+  }, 5000);
 });

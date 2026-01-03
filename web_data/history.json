@@ -1,12 +1,42 @@
 [
   {
+    "task_id": "5a648b7f2661424da88d6e8ecac839c5",
+    "course_url": "https://www.udemy.com/course/ai-for-business-analysts/learn/lecture/52437517#overview",
+    "started_at": "2026-01-03T11:28:29.983203",
+    "finished_at": "2026-01-03T12:10:20.107689",
+    "status": "生成文章中",
+    "message": "Exit code 0",
+    "is_drm": false,
+    "article_status": "running",
+    "article_started_at": "2026-01-03T12:17:20.305360",
+    "article_finished_at": null,
+    "article_message": null
+  },
+  {
+    "task_id": "392a8e9b53fb404b82fd23e923fe9cf8",
+    "course_url": "https://www.udemy.com/course/ai-for-business-analysts/learn/lecture/52437517#overview",
+    "started_at": "2026-01-03T11:06:47.755357",
+    "finished_at": "2026-01-03T12:10:20.103676",
+    "status": "已生成",
+    "message": "Exit code 0",
+    "is_drm": false,
+    "article_status": "success",
+    "article_started_at": "2026-01-03T12:27:16.873255",
+    "article_finished_at": "2026-01-03T12:31:59.885002",
+    "article_message": "Exit code 0"
+  },
+  {
     "task_id": "6ef26d0a1b45470bb716af0cdcbd451b",
     "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
     "started_at": "2026-01-02T09:09:53.141990",
     "finished_at": "2026-01-02T09:11:40.530279",
-    "status": "success",
+    "status": "已生成",
     "message": "Exit code 0",
-    "is_drm": false
+    "is_drm": false,
+    "article_status": "success",
+    "article_started_at": "2026-01-03T12:29:07.496237",
+    "article_finished_at": "2026-01-03T12:31:20.545953",
+    "article_message": "Exit code 0"
   },
   {
     "task_id": "f9adaffc088a47d8aa17fa7ba3ce8873",

@@ -20,3 +20,4 @@ HISTORY_LIMIT = 10
 KEYFILE_PATH = BASE_DIR / "keyfile.json"
 MAIN_SCRIPT = BASE_DIR / "main.py"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "out_dir"
+PIPELINE_SCRIPT = BASE_DIR / "scripts" / "run_course_pipeline.py"

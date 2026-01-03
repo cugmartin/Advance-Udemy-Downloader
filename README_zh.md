@@ -41,25 +41,43 @@
    - 在 Udemy 播放任意加密视频，并在播放过程中打开插件，点击 “Guess” 等待自动填充 Key 和 Key ID。
    - 将插件返回的 Key/Key ID 写入 `keyfile.json`（示例可参考仓库中的文件）。
 
-3. **安装 Python 依赖**
+3. **配置环境变量**
+   - 复制 `.env.example` 为 `.env`
+   - 填入你的 `UDEMY_BEARER` token
+   - （可选）填入 `DEEPL_API_KEY` 以启用自动中英文字幕翻译
+
+4. **安装 Python 依赖**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **运行下载脚本**
+5. **运行下载脚本**
    ```bash
-   python main.py -c <课程网址> -b <Bearer Token>
+   python main.py -c <课程网址>
    ```
-   Bearer Token 可选（如果不提供，脚本会尝试读取 `.env` 中的 `UDEMY_BEARER`）。
+   脚本会自动从 `.env` 读取 Bearer Token，并在下载视频时自动下载英文字幕。如果配置了 DeepL API Key，会自动生成中文翻译。
+
+## 自动中英文字幕功能
+
+**新功能：** 脚本现在支持自动下载英文字幕并翻译为中文！
+
+- 下载视频时会自动下载英文字幕（无需手动指定 `--download-captions`）
+- 如果在 `.env` 中配置了 `DEEPL_API_KEY`，会生成单一的 `LectureTitle_en_zh.srt` 文件（每条字幕显示英文+中文）
+- 翻译支持缓存机制，避免重复翻译
+- 翻译失败会自动重试 3 次，失败后会保留英文内容
+- 日志会显示翻译进度
+
+**如何获取 DeepL API Key：**
+1. 访问 [DeepL API](https://www.deepl.com/pro-api) 注册账号
+2. 免费版每月可翻译 50 万字符
+3. 将 API Key 填入 `.env` 文件的 `DEEPL_API_KEY` 变量
 
 ## 常用命令示例
 
 - 下载特定画质：`python main.py -c <Course URL> -q 720`
 - 同时下载课程素材：`python main.py -c <Course URL> --download-assets`
-- 下载字幕（默认英文）：`python main.py -c <Course URL> --download-captions`
-- 下载所有字幕：`python main.py -c <Course URL> --download-captions -l all`
-- 仅下载字幕或素材：`python main.py -c <Course URL> --skip-lectures --download-captions`
-- 保留 .vtt 文件：`python main.py -c <Course URL> --download-captions --keep-vtt`
+- 仅下载字幕（不下载视频）：`python main.py -c <Course URL> --skip-lectures --download-captions`
+- 保留 .vtt 文件：`python main.py -c <Course URL> --keep-vtt`
 - 跳过解析 HLS（速度更快）：`python main.py -c <Course URL> --skip-hls`
 - 打印课程信息：`python main.py -c <Course URL> --info`
 - 指定并行下载线程：`python main.py -c <Course URL> -cd 20`
@@ -68,7 +86,6 @@
 - 指定 H.265 的 CRF：`python main.py -c <Course URL> --use-h265 -h265-crf 20`
 - 用 NVIDIA 硬件编码：`python main.py -c <Course URL> --use-h265 --use-nvenc`
 - 下载指定章节：`python main.py -c <Course URL> --chapter "1,3-5"`
-- 下载指定章节字幕：`python main.py -c <Course URL> --chapter "1,3" --download-captions`
 - 缓存课程信息：`python main.py -c <Course URL> --save-to-file`
 - 读取缓存：`python main.py -c <Course URL> --load-from-file`
 - 设置日志等级：`--log-level DEBUG|INFO|WARNING|CRITICAL`

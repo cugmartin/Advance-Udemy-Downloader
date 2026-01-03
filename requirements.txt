@@ -12,8 +12,12 @@ bitstring
 unidecode
 beautifulsoup4
 lxml
-six
-pathvalidate
 coloredlogs
 browser_cookie3
 demoji
+deepl
+fastapi
+uvicorn
+python-multipart
+jinja2
+firecrawl-py>=0.0.1

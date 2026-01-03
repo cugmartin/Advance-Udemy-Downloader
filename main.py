@@ -29,8 +29,10 @@ from constants import *
 from tls import SSLCiphers
 from utils import extract_kid
 from vtt_to_srt import convert
+from translator import SubtitleTranslator
 
 DOWNLOAD_DIR = os.path.join(os.getcwd(), "out_dir")
+TEMP_DIR = os.path.join(os.getcwd(), "temp")
 
 retry = 3
 downloader = None
@@ -58,10 +60,13 @@ use_h265 = False
 h265_crf = 28
 h265_preset = "medium"
 use_nvenc = False
+translator = None
+auto_translate = False
 browser = None
 cj = None
 use_continuous_lecture_numbers = False
 chapter_filter = None
+auto_zip = False
 YTDLP_PATH = None
 
 
@@ -101,8 +106,11 @@ def parse_chapter_filter(chapter_str: str):
 
 # this is the first function that is called, we parse the arguments, setup the logger, and ensure that required directories exist
 def pre_run():
-    global dl_assets, dl_captions, dl_quizzes, skip_lectures, caption_locale, quality, bearer_token, course_name, keep_vtt, skip_hls, concurrent_downloads, load_from_file, save_to_file, bearer_token, course_url, info, logger, keys, id_as_course_name, LOG_LEVEL, use_h265, h265_crf, h265_preset, use_nvenc, browser, is_subscription_course, DOWNLOAD_DIR, use_continuous_lecture_numbers, chapter_filter
+    global dl_assets, dl_captions, dl_quizzes, skip_lectures, caption_locale, quality, bearer_token, course_name, keep_vtt, skip_hls, concurrent_downloads, load_from_file, save_to_file, bearer_token, course_url, info, logger, keys, id_as_course_name, LOG_LEVEL, use_h265, h265_crf, h265_preset, use_nvenc, browser, is_subscription_course, DOWNLOAD_DIR, use_continuous_lecture_numbers, chapter_filter, translator, auto_translate, auto_zip
 
+    # Load environment variables first
+    load_dotenv()
+    
     # make sure the logs directory exists
     if not os.path.exists(LOG_DIR_PATH):
         os.makedirs(LOG_DIR_PATH, exist_ok=True)
@@ -264,6 +272,12 @@ def pre_run():
         type=str,
         help="Download specific chapters. Use comma separated values and ranges (e.g., '1,3-5,7,9-11').",
     )
+    parser.add_argument(
+        "--auto-zip",
+        dest="auto_zip",
+        action="store_true",
+        help="Automatically zip the downloaded course directory after completion",
+    )
     # parser.add_argument("-v", "--version", action="version", version="You are running version {version}".format(version=__version__))
 
     args = parser.parse_args()
@@ -334,6 +348,28 @@ def pre_run():
         DOWNLOAD_DIR = os.path.abspath(args.out)
     if args.use_continuous_lecture_numbers:
         use_continuous_lecture_numbers = args.use_continuous_lecture_numbers
+    if args.auto_zip:
+        auto_zip = True
+    
+    # Auto-enable captions and translation when downloading videos
+    if not skip_lectures and not info:
+        dl_captions = True
+        caption_locale = "en"
+        logger_temp = logging.getLogger("udemy-downloader")
+        logger_temp.info("Auto-enabling English captions for video downloads")
+        
+        # Initialize translator if DEEPL_API_KEY is available
+        deepl_key = os.getenv("DEEPL_API_KEY")
+        if deepl_key:
+            try:
+                translator = SubtitleTranslator(api_key=deepl_key)
+                auto_translate = True
+                logger_temp.info("Auto-translation enabled (EN -> ZH)")
+            except Exception as e:
+                logger_temp.warning(f"Failed to initialize translator: {e}. Continuing without translation.")
+                auto_translate = False
+        else:
+            logger_temp.info("DEEPL_API_KEY not found, translation disabled")
 
     # setup a logger
     logger = logging.getLogger(__name__)
@@ -1172,14 +1208,29 @@ class Session(object):
         self._headers["X-Udemy-Authorization"] = "Bearer {}".format(bearer_token)
 
     def _get(self, url, params=None):
+        last_response = None
         for i in range(10):
             session = self._session.get(url, headers=self._headers, cookies=cj, params=params)
-            if session.ok or session.status_code in [502, 503]:
+            if session.ok:
                 return session
-            if not session.ok:
+            if session.status_code in [502, 503]:
+                last_response = session
                 logger.error("Failed request " + url)
                 logger.error(f"{session.status_code} {session.reason}, retrying (attempt {i} )...")
                 time.sleep(0.8)
+                continue
+            if session.status_code in [403, 429]:
+                raise Exception(f"Failed request {url} ({session.status_code} {session.reason})")
+            last_response = session
+            logger.error("Failed request " + url)
+            logger.error(f"{session.status_code} {session.reason}, retrying (attempt {i} )...")
+            time.sleep(0.8)
+
+        if last_response is not None:
+            raise Exception(
+                f"Failed request {url} after 10 attempts ({last_response.status_code} {last_response.reason})"
+            )
+        raise Exception(f"Failed request {url}: no response received")
 
     def _post(self, url, data, redirect=True):
         session = self._session.post(url, data, headers=self._headers, allow_redirects=redirect, cookies=cj)
@@ -1499,6 +1550,8 @@ def download_aria(url, file_dir, filename):
 
 
 def process_caption(caption, lecture_title, lecture_dir, tries=0):
+    global translator, auto_translate
+    
     filename = f"%s_%s.%s" % (sanitize_filename(lecture_title), caption.get("language"), caption.get("extension"))
     filename_no_ext = f"%s_%s" % (sanitize_filename(lecture_title), caption.get("language"))
     filepath = os.path.join(lecture_dir, filename)
@@ -1526,6 +1579,68 @@ def process_caption(caption, lecture_title, lecture_dir, tries=0):
                     os.remove(filepath)
             except Exception:
                 logger.exception(f"    > Error converting caption")
+    
+    # Auto-translate English captions to Chinese if enabled
+    if auto_translate and translator and caption.get("language") == "en":
+        srt_filepath = os.path.join(lecture_dir, filename_no_ext + ".srt")
+        dual_srt_path = os.path.join(lecture_dir, f"{sanitize_filename(lecture_title)}_en_zh.srt")
+        if os.path.isfile(dual_srt_path):
+            logger.info(
+                "    > Dual-language subtitle already exists (%s), skipping translation.",
+                os.path.basename(dual_srt_path),
+            )
+            if os.path.isfile(srt_filepath):
+                try:
+                    os.remove(srt_filepath)
+                    logger.info("    > Removed redundant English subtitle after skipping translation.")
+                except OSError as err:
+                    logger.warning("    > Could not remove redundant English subtitle: %s", err)
+        elif os.path.isfile(srt_filepath):
+            try:
+                import pysrt
+                logger.info("    > Translating caption to Chinese...")
+                
+                # Load English SRT
+                subs = pysrt.open(srt_filepath, encoding='utf-8')
+                
+                # Extract all text for translation
+                texts = [sub.text for sub in subs]
+                
+                # Translate all texts
+                translated_texts = translator.translate_batch(texts, source_lang="EN", target_lang="ZH", max_retries=3)
+                
+                # Create dual-language version (EN + ZH)
+                dual_subs = pysrt.SubRipFile()
+                for idx, (sub, zh_text) in enumerate(zip(subs, translated_texts)):
+                    if zh_text:
+                        # Combine English and Chinese
+                        dual_text = f"{sub.text}\n{zh_text}"
+                    else:
+                        # If translation failed, keep English only
+                        dual_text = sub.text
+                        logger.warning(f"    > Translation failed for subtitle {idx + 1}, keeping English only")
+                    
+                    dual_sub = pysrt.SubRipItem(
+                        index=sub.index,
+                        start=sub.start,
+                        end=sub.end,
+                        text=dual_text
+                    )
+                    dual_subs.append(dual_sub)
+                
+                # Save dual-language SRT
+                dual_subs.save(dual_srt_path, encoding='utf-8')
+                logger.info(f"    > Dual-language subtitle saved: {os.path.basename(dual_srt_path)}")
+                
+                # Remove standalone English caption to keep only the bilingual file
+                try:
+                    os.remove(srt_filepath)
+                    logger.info("    > Removed original English subtitle (kept EN+ZH file only)")
+                except OSError as err:
+                    logger.warning(f"    > Could not remove English subtitle: {err}")
+                
+            except Exception as e:
+                logger.exception(f"    > Error during translation: {e}")
 
 
 def process_lecture(lecture, lecture_path, chapter_dir):
@@ -1683,6 +1798,7 @@ def process_coding_assignment(quiz, lecture, chapter_dir):
 
 
 def parse_new(udemy: Udemy, udemy_object: dict):
+    global auto_zip
     total_chapters = udemy_object.get("total_chapters")
     total_lectures = udemy_object.get("total_lectures")
     logger.info(f"Chapter(s) ({total_chapters})")
@@ -1826,6 +1942,52 @@ def parse_new(udemy: Udemy, udemy_object: dict):
                             with open(filename, "a", encoding="utf-8", errors="ignore") as f:
                                 f.write(content)
 
+    if auto_zip:
+        _zip_course_directory(course_dir)
+
+
+def _zip_course_directory(course_dir: str) -> None:
+    if not os.path.isdir(course_dir):
+        logger.warning("> Auto-zip skipped：目录不存在 %s", course_dir)
+        return
+
+    course_name_only = os.path.basename(course_dir.rstrip(os.sep))
+    zip_base = os.path.join(DOWNLOAD_DIR, course_name_only)
+    zip_path = f"{zip_base}.zip"
+
+    if os.path.isfile(zip_path):
+        try:
+            os.remove(zip_path)
+            logger.info("> Auto-zip：检测到已有压缩包，已删除 %s", zip_path)
+        except OSError as err:
+            logger.warning("> Auto-zip：无法删除旧压缩包 %s，原因：%s", zip_path, err)
+
+    logger.info("> Auto-zip：开始压缩 %s -> %s", course_dir, zip_path)
+    try:
+        shutil.make_archive(zip_base, "zip", root_dir=DOWNLOAD_DIR, base_dir=course_name_only)
+        logger.info("> Auto-zip：完成，压缩包路径 %s", zip_path)
+    except Exception as exc:
+        logger.warning("> Auto-zip：压缩失败 %s", exc)
+
+
+def cleanup_temp_dir(temp_path: str = TEMP_DIR) -> None:
+    temp_dir = Path(temp_path)
+    if not temp_dir.exists():
+        return
+    removed_any = False
+    for child in temp_dir.iterdir():
+        try:
+            if child.is_file() or child.is_symlink():
+                child.unlink()
+                removed_any = True
+            elif child.is_dir():
+                shutil.rmtree(child)
+                removed_any = True
+        except OSError as exc:
+            logger.warning("> Temp 清理失败: %s (原因: %s)", child, exc)
+    if removed_any:
+        logger.info("> Temp 目录已清理：%s", temp_dir)
+
 
 def _print_course_info(udemy: Udemy, udemy_object: dict):
     course_title = udemy_object.get("title")
@@ -1934,7 +2096,6 @@ def main():
     if save_to_file:
         logger.info("> 'save_to_file' was specified, data will be saved to json files")
 
-    load_dotenv()
     if bearer_token:
         bearer_token = bearer_token
     else:
@@ -2117,4 +2278,7 @@ if __name__ == "__main__":
     # pre run parses arguments, sets up logging, and creates directories
     pre_run()
     # run main program
-    main()
+    try:
+        main()
+    finally:
+        cleanup_temp_dir()

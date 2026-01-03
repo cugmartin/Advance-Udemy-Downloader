@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "6ef26d0a1b45470bb716af0cdcbd451b",
+    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
+    "started_at": "2026-01-02T09:09:53.141990",
+    "finished_at": "2026-01-02T09:11:40.530279",
+    "status": "success",
+    "message": "Exit code 0",
+    "is_drm": false
+  },
+  {
+    "task_id": "f9adaffc088a47d8aa17fa7ba3ce8873",
+    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
+    "started_at": "2026-01-02T09:02:57.000087",
+    "finished_at": "2026-01-02T09:09:16.918128",
+    "status": "failed",
+    "message": "Exit code 3221225786",
+    "is_drm": false
+  },
+  {
+    "task_id": "717dbc33bc264937ae4fd159d24c8986",
+    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
+    "started_at": "2026-01-02T08:51:43.986672",
+    "finished_at": "2026-01-02T08:52:07.097544",
+    "status": "failed",
+    "message": "'gbk' codec can't decode byte 0xa9 in position 118: illegal multibyte sequence",
+    "is_drm": false
+  },
+  {
+    "task_id": "6141abfb52874a2aa6c67bfe8c53f7ef",
+    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
+    "started_at": "2026-01-02T08:30:10.216777",
+    "finished_at": "2026-01-02T08:30:35.509837",
+    "status": "failed",
+    "message": "'gbk' codec can't decode byte 0xa3 in position 108: illegal multibyte sequence",
+    "is_drm": false
+  },
+  {
+    "task_id": "690398b93a5545b4aecdef9775a3a15d",
+    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
+    "started_at": "2026-01-02T08:27:21.662811",
+    "finished_at": "2026-01-02T08:27:46.575471",
+    "status": "failed",
+    "message": "'gbk' codec can't decode byte 0xa9 in position 118: illegal multibyte sequence",
+    "is_drm": false
+  },
+  {
+    "task_id": "4f7f17c582ac4ddebfbb9544065875c0",
+    "course_url": "https://external-teksystems.udemy.com/course/machinelearning/learn/lecture/6083658#overview",
+    "started_at": "2026-01-02T05:34:13.362759",
+    "finished_at": "2026-01-02T05:40:09.096392",
+    "status": "success",
+    "message": "Exit code 0",
+    "is_drm": true
+  },
+  {
+    "task_id": "ef847c6308b744f2bc74179e3140e2df",
+    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=ACCAGE0923",
+    "started_at": "2026-01-02T04:42:40.943748",
+    "finished_at": "2026-01-02T04:43:55.268030",
+    "status": "success",
+    "message": "Exit code 0",
+    "is_drm": false
+  },
+  {
+    "task_id": "a5936530e4224e358f4722d09efe5560",
+    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=ACCAGE0923",
+    "started_at": "2026-01-02T04:37:35.848580",
+    "finished_at": "2026-01-02T04:38:02.240281",
+    "status": "success",
+    "message": "Exit code 0",
+    "is_drm": false
+  }
+]

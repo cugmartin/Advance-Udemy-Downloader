@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Udemy 课程下载控制台</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="login-panel" class="card auth-card">
+        <div class="auth-card__header">
+          <h1>登录控制台</h1>
+          <p>使用管理员账号进入下载面板</p>
+        </div>
+        <form id="login-form">
+          <label>
+            用户名
+            <input type="text" id="login-username" value="admin" required />
+          </label>
+          <label>
+            密码
+            <span class="input-group password-field">
+              <input type="password" id="login-password" value="Lead123456@" required />
+              <button type="button" class="toggle-visibility" data-target="login-password" aria-label="显示或隐藏密码">
+                👁
+              </button>
+            </span>
+          </label>
+          <div class="remember-row">
+            <label class="remember-checkbox">
+              <input type="checkbox" id="remember-login" />
+              7 天内记住账号和密码
+            </label>
+          </div>
+          <button type="submit" class="primary login-btn">登录</button>
+          <p id="login-error" class="error-text"></p>
+        </form>
+      </section>
+    </div>
+    <script src="/static/login.js" type="module"></script>
+  </body>
+</html>

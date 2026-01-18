@@ -7,6 +7,22 @@ services:
     volumes:
       - ./output:/app/out_dir:rw
       - ./keyfile.json:/app/keyfile.json:ro
+      - ./cookie.txt:/app/cookie.txt:ro
     env_file:
       - .env
-    command: python main.py -c $COURSE_URL
+    command: sleep infinity
+
+  udemy-web:
+    image: udemy-downloader:latest
+    depends_on:
+      - udemy-downloader
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./output:/app/out_dir:rw
+      - ./keyfile.json:/app/keyfile.json:ro
+      - ./cookie.txt:/app/cookie.txt:ro
+      - ./web_data:/app/web_data:rw
+    env_file:
+      - .env
+    command: uvicorn webapp.server:app --host 0.0.0.0 --port 8000

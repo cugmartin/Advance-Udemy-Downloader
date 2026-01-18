@@ -13,10 +13,13 @@ bitstring
 unidecode
 beautifulsoup4
 lxml
+pathvalidate
 coloredlogs
 browser_cookie3
 demoji
 deepl
+six
+markdown
 fastapi
 uvicorn
 python-multipart

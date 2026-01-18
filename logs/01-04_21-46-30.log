@@ -1,0 +1,115 @@
+[09:46:34] [udemy-downloader] [pre_run:406] INFO: Output directory set to F:\Cursor\Advance-Udemy-Downloader\out_dir
+[09:46:34] [udemy-downloader] [pre_run:421] INFO: Chapter filter applied: [7]
+[09:46:36] [udemy-downloader] [__init__:463] INFO: Found cookie.txt, attempting to use for authentication...
+[09:46:36] [udemy-downloader] [main:2161] INFO: > Fetching course information, this may take a minute...
+[09:46:37] [udemy-downloader] [main:2164] INFO: > Course information retrieved!
+[09:46:37] [udemy-downloader] [main:2169] INFO: > Fetching course curriculum, this may take a minute...
+[09:46:38] [udemy-downloader] [main:2185] INFO: > Course curriculum retrieved!
+[09:46:38] [udemy-downloader] [main:2212] INFO: > Processing course data, this may take a minute. 
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 2 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 3 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 4 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 6 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 8 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 9 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 11 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 13 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 15 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 16 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 17 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 18 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 20 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 21 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 23 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 25 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 26 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 27 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 28 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 30 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 31 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 32 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 34 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 36 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 38 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 39 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 41 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 42 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 43 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 44 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 45 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 46 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 47 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 49 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 50 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 51 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 53 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 54 of 63
+[09:46:38] [udemy-downloader] [main:2292] INFO: Processing 55 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 56 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 57 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 58 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 59 of 63
+[09:46:38] [udemy-downloader] [main:2292] INFO: Processing 60 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 62 of 63
+[09:46:38] [udemy-downloader] [main:2256] INFO: Processing 63 of 63
+[09:46:38] [udemy-downloader] [parse_new:1858] INFO: Chapter(s) (17)
+[09:46:38] [udemy-downloader] [parse_new:1859] INFO: Lecture(s) (46)
+[09:46:38] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 1 as it is not in the specified filter
+[09:46:38] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 2 as it is not in the specified filter
+[09:46:38] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 3 as it is not in the specified filter
+[09:46:38] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 4 as it is not in the specified filter
+[09:46:38] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 5 as it is not in the specified filter
+[09:46:38] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 6 as it is not in the specified filter
+[09:46:38] [udemy-downloader] [parse_new:1878] INFO: ======= Processing chapter 7 of 17 =======
+[09:46:42] [udemy-downloader] [parse_new:1906] INFO:   > Processing lecture 1 of 46
+[09:46:42] [udemy-downloader] [process_lecture:1730] INFO:       > Lecture doesn't have DRM, attempting to download...
+[09:46:42] [udemy-downloader] [process_lecture:1735] INFO:       ====== Selected quality: hls 1080
+[09:55:01] [udemy-downloader] [process_lecture:1760] INFO:       > HLS Download success
+[09:55:01] [udemy-downloader] [parse_new:1929] INFO: Processing 1 caption(s)...
+[09:55:01] [udemy-downloader] [process_caption:1536] INFO:     >  Downloading caption: '001 What is Business Model Canvas_en.vtt'
+[09:55:08] [udemy-downloader] [process_caption:1549] INFO:     > Converting caption to SRT format...
+[09:55:08] [udemy-downloader] [process_caption:1551] INFO:     > Caption conversion complete.
+[09:55:08] [udemy-downloader] [process_caption:1575] INFO:     > Translating caption to Chinese...
+[09:55:08] [udemy-downloader] [_ensure_translation_executor:1666] INFO:     > Translation executor started (workers=2)
+[09:55:08] [udemy-downloader] [process_caption:1645] INFO:     > Translation task submitted (001 What is Business Model Canvas_en.srt)
+[09:55:08] [udemy-downloader] [parse_new:1937] INFO:     > Processing 2 asset(s) for lecture...
+[09:55:08] [udemy-downloader] [translate_batch:382] INFO:     > [Gemini] Preparing 75 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=1)
+[09:55:08] [udemy-downloader] [process_batch:396] INFO:     > [Gemini] Batch 1/2: 37 subtitles (~2408 chars) ...
+[09:55:34] [udemy-downloader] [parse_new:1906] INFO:   > Processing lecture 2 of 46
+[09:55:34] [udemy-downloader] [process_lecture:1730] INFO:       > Lecture doesn't have DRM, attempting to download...
+[09:55:34] [udemy-downloader] [process_lecture:1735] INFO:       ====== Selected quality: hls 1080
+[09:55:53] [udemy-downloader] [process_batch:406] INFO:     > [Gemini] Batch 1/2 completed in 44.94s
+[09:55:53] [udemy-downloader] [process_batch:396] INFO:     > [Gemini] Batch 2/2: 38 subtitles (~2388 chars) ...
+[09:56:34] [udemy-downloader] [process_batch:406] INFO:     > [Gemini] Batch 2/2 completed in 40.72s
+[09:56:34] [udemy-downloader] [_translate_and_save:1615] INFO:     > Dual-language subtitle saved: 001 What is Business Model Canvas_en_zh.srt
+[09:56:34] [udemy-downloader] [_translate_and_save:1620] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[09:56:34] [udemy-downloader] [_translate_and_save:1625] INFO:     > Translation finished in 85.68s (001 What is Business Model Canvas_en_zh.srt)
+[09:57:50] [udemy-downloader] [process_lecture:1760] INFO:       > HLS Download success
+[09:57:50] [udemy-downloader] [parse_new:1929] INFO: Processing 1 caption(s)...
+[09:57:50] [udemy-downloader] [process_caption:1536] INFO:     >  Downloading caption: '002 Generate Business Model Canvas using ChatGPT_en.vtt'
+[09:57:57] [udemy-downloader] [process_caption:1549] INFO:     > Converting caption to SRT format...
+[09:57:57] [udemy-downloader] [process_caption:1551] INFO:     > Caption conversion complete.
+[09:57:57] [udemy-downloader] [process_caption:1575] INFO:     > Translating caption to Chinese...
+[09:57:57] [udemy-downloader] [process_caption:1645] INFO:     > Translation task submitted (002 Generate Business Model Canvas using ChatGPT_en.srt)
+[09:57:57] [udemy-downloader] [parse_new:1937] INFO:     > Processing 2 asset(s) for lecture...
+[09:57:57] [udemy-downloader] [_translate_and_save:1615] INFO:     > Dual-language subtitle saved: 002 Generate Business Model Canvas using ChatGPT_en_zh.srt
+[09:57:57] [udemy-downloader] [_translate_and_save:1620] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[09:57:57] [udemy-downloader] [_translate_and_save:1625] INFO:     > Translation finished in 0.02s (002 Generate Business Model Canvas using ChatGPT_en_zh.srt)
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 8 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 9 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 10 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 11 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 12 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 13 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 14 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 15 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 16 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [parse_new:1870] INFO: Skipping chapter 17 as it is not in the specified filter
+[09:58:12] [udemy-downloader] [wait_for_translation_tasks:1683] INFO: > Waiting for 2 translation task(s) to finish...
+[09:58:12] [udemy-downloader] [wait_for_translation_tasks:1690] INFO: > Translation task 1/2 completed (001 What is Business Model Canvas)
+[09:58:12] [udemy-downloader] [wait_for_translation_tasks:1690] INFO: > Translation task 2/2 completed (002 Generate Business Model Canvas using ChatGPT)
+[09:58:12] [udemy-downloader] [wait_for_translation_tasks:1695] INFO: > All translation tasks completed in 0.00s
+[09:58:12] [udemy-downloader] [_zip_course_directory:2016] INFO: > Auto-zip：检测到已有压缩包，已删除 F:\Cursor\Advance-Udemy-Downloader\out_dir\ai-for-business-analysts.zip
+[09:58:12] [udemy-downloader] [_zip_course_directory:2020] INFO: > Auto-zip：开始压缩 F:\Cursor\Advance-Udemy-Downloader\out_dir\ai-for-business-analysts -> F:\Cursor\Advance-Udemy-Downloader\out_dir\ai-for-business-analysts.zip
+[10:02:54] [udemy-downloader] [_zip_course_directory:2023] INFO: > Auto-zip：完成，压缩包路径 F:\Cursor\Advance-Udemy-Downloader\out_dir\ai-for-business-analysts.zip
+[10:02:54] [udemy-downloader] [cleanup_temp_dir:2044] INFO: > Temp 目录已清理：F:\Cursor\Advance-Udemy-Downloader\temp

@@ -85,6 +85,7 @@ def main() -> None:
 
     final_md = REPORTS_DIR / f"{slug}_final.md"
     final_zh_md = REPORTS_DIR / f"{slug}_final_zh.md"
+    final_zh_html = REPORTS_DIR / f"{slug}_final_zh.html"
 
     if not args.skip_download:
         cmd = [
@@ -126,9 +127,13 @@ def main() -> None:
             sys.executable,
             str(SCRIPTS_DIR / "md_to_html_converter.py"),
             str(final_zh_md),
+            str(final_zh_html),
         ],
         "Markdown 转 HTML（内联样式）",
     )
+
+    if not final_zh_html.exists():
+        raise SystemExit(f"❌ HTML 转换完成但未找到输出文件 {final_zh_html}")
 
     if args.dry_run or args.skip_upload:
         print("\nℹ️ 已按要求跳过上传步骤。")
@@ -138,7 +143,7 @@ def main() -> None:
         [
             sys.executable,
             str(SCRIPTS_DIR / "upload_html_to_wordpress.py"),
-            str(final_zh_md),
+            str(final_zh_html),
             "--status",
             args.status,
         ],

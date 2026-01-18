@@ -141,30 +141,47 @@ class OpenAICompatibleTranslator:
         max_retries: Optional[int] = None,
         retry_delay: Optional[float] = None,
     ):
-        self.api_key = api_key or os.getenv("TRANSLATE_API_KEY") or os.getenv("OPENAI_API_KEY")
-        self.base_url = base_url or os.getenv("TRANSLATE_BASE_URL") or os.getenv("OPENAI_BASE_URL")
-        self.model = model or os.getenv("TRANSLATE_MODEL") or "gpt-4o-mini"
+        self.api_key = (
+            api_key
+            or os.getenv("SUBTITLE_TRANSLATE_API_KEY")
+            or os.getenv("TRANSLATE_API_KEY")
+            or os.getenv("OPENAI_API_KEY")
+        )
+        self.base_url = (
+            base_url
+            or os.getenv("SUBTITLE_TRANSLATE_BASE_URL")
+            or os.getenv("TRANSLATE_BASE_URL")
+            or os.getenv("OPENAI_BASE_URL")
+        )
+        self.model = (
+            model
+            or os.getenv("SUBTITLE_TRANSLATE_MODEL")
+            or os.getenv("TRANSLATE_MODEL")
+            or "gpt-4o-mini"
+        )
         self.request_timeout = request_timeout
         if self.request_timeout is None:
-            timeout_env = os.getenv("TRANSLATE_REQUEST_TIMEOUT")
+            timeout_env = os.getenv("SUBTITLE_TRANSLATE_REQUEST_TIMEOUT") or os.getenv(
+                "TRANSLATE_REQUEST_TIMEOUT"
+            )
             self.request_timeout = float(timeout_env) if timeout_env else 60.0
  
         self.chunk_size = chunk_size
         if self.chunk_size is None:
-            chunk_env = os.getenv("TRANSLATE_CHUNK_SIZE")
+            chunk_env = os.getenv("SUBTITLE_TRANSLATE_CHUNK_SIZE") or os.getenv("TRANSLATE_CHUNK_SIZE")
             self.chunk_size = int(chunk_env) if chunk_env else 2800
  
         self.max_retries = max_retries
         if self.max_retries is None:
-            retries_env = os.getenv("TRANSLATE_MAX_RETRIES")
+            retries_env = os.getenv("SUBTITLE_TRANSLATE_MAX_RETRIES") or os.getenv("TRANSLATE_MAX_RETRIES")
             self.max_retries = int(retries_env) if retries_env else 3
  
         self.retry_delay = retry_delay
         if self.retry_delay is None:
-            delay_env = os.getenv("TRANSLATE_RETRY_DELAY")
+            delay_env = os.getenv("SUBTITLE_TRANSLATE_RETRY_DELAY") or os.getenv("TRANSLATE_RETRY_DELAY")
             self.retry_delay = float(delay_env) if delay_env else 5.0
  
-        workers_env = os.getenv("TRANSLATE_MAX_WORKERS")
+        workers_env = os.getenv("SUBTITLE_TRANSLATE_MAX_WORKERS") or os.getenv("TRANSLATE_MAX_WORKERS")
         try:
             self.max_workers = max(1, int(workers_env)) if workers_env else 1
         except ValueError:
@@ -436,7 +453,12 @@ class OpenAICompatibleTranslator:
 
 
 def create_translator(provider: Optional[str] = None, cache_dir: str = ".translation_cache"):
-    normalized = (provider or os.getenv("TRANSLATE_PROVIDER") or "").strip().lower()
+    normalized = (
+        provider
+        or os.getenv("SUBTITLE_TRANSLATE_PROVIDER")
+        or os.getenv("TRANSLATE_PROVIDER")
+        or ""
+    ).strip().lower()
     if normalized in ("", "none", "false", "0"):
         deepl_key = os.getenv("DEEPL_API_KEY")
         if deepl_key:

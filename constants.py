@@ -37,11 +37,13 @@ SAVED_DIR = os.path.join(os.getcwd(), "saved")
 KEY_FILE_PATH = os.path.join(os.getcwd(), "keyfile.json")
 COOKIE_FILE_PATH = os.path.join(os.getcwd(), "cookies.txt")
 LOG_DIR_PATH = os.path.join(os.getcwd(), "logs")
-LOG_FILE_PATH = os.path.join(
-    os.getcwd(),
-    "logs",
-    f"{time.strftime('%m-%d_%H-%M-%S')}.log",
+_TASK_SUFFIX = os.getenv("TASK_ID_SUFFIX", "").strip().upper()
+_log_filename = (
+    f"{time.strftime('%m-%d_%H-%M-%S')}_{_TASK_SUFFIX}.log"
+    if _TASK_SUFFIX
+    else f"{time.strftime('%m-%d_%H-%M-%S')}.log"
 )
+LOG_FILE_PATH = os.path.join(os.getcwd(), "logs", _log_filename)
 LOG_FORMAT = "[%(asctime)s] [%(name)s] [%(funcName)s:%(lineno)d] %(levelname)s: %(message)s"
 LOG_DATE_FORMAT = "%I:%M:%S"
 LOG_LEVEL = logging.INFO

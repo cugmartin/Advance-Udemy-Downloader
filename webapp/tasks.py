@@ -1,4 +1,5 @@
 import asyncio
+import os
 import subprocess
 import sys
 import threading
@@ -128,6 +129,8 @@ class TaskManager:
         try:
             task.status = TaskStatus.RUNNING
             task.started_at = datetime.utcnow()
+            env = os.environ.copy()
+            env["TASK_ID_SUFFIX"] = task.id[-6:].upper()
             process = subprocess.Popen(
                 task.command,
                 cwd=str(task.workdir),
@@ -137,6 +140,7 @@ class TaskManager:
                 encoding="utf-8",
                 errors="replace",
                 bufsize=1,
+                env=env,
             )
             task.process = process
             _emit(f"[system] Spawned process PID {process.pid}")

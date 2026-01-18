@@ -9,6 +9,8 @@ import shutil
 import subprocess
 import sys
 import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from http.cookiejar import MozillaCookieJar
 from pathlib import Path
 from typing import IO, Union
@@ -62,6 +64,9 @@ h265_preset = "medium"
 use_nvenc = False
 translator = None
 auto_translate = False
+translation_executor = None
+translation_futures = []
+translation_lock = threading.Lock()
 browser = None
 cj = None
 use_continuous_lecture_numbers = False
@@ -453,7 +458,7 @@ class Udemy:
                 # load netscape cookies from file
                 cj = MozillaCookieJar("cookies.txt")
                 cj.load()
-        
+
         if os.path.exists("cookie.txt"):
             logger.info("Found cookie.txt, attempting to use for authentication...")
             cj = MozillaCookieJar("cookie.txt")
@@ -1288,40 +1293,6 @@ def durationtoseconds(period):
         return None
 
 
-def mux_process(
-    video_filepath: str,
-    audio_filepath: str,
-    video_title: str,
-    output_path: str,
-    audio_key: Union[str | None] = None,
-    video_key: Union[str | None] = None,
-):
-    codec = "hevc_nvenc" if use_nvenc else "libx265"
-    transcode = "-hwaccel cuda -hwaccel_output_format cuda" if use_nvenc else ""
-    audio_decryption_arg = f"-decryption_key {audio_key}" if audio_key is not None else ""
-    video_decryption_arg = f"-decryption_key {video_key}" if video_key is not None else ""
-
-    if os.name == "nt":
-        if use_h265:
-            command = f'ffmpeg {transcode} -y {video_decryption_arg} -i "{video_filepath}" {audio_decryption_arg} -i "{audio_filepath}" -c:v {codec} -vtag hvc1 -crf {h265_crf} -preset {h265_preset} -c:a copy -fflags +bitexact -shortest -map_metadata -1 -metadata title="{video_title}" -metadata comment="Downloaded with Udemy-Downloader by Sheikh Bilal (https://github.com/sheikh-bilal65)" "{output_path}"'
-        else:
-            command = f'ffmpeg -y {video_decryption_arg} -i "{video_filepath}" {audio_decryption_arg} -i "{audio_filepath}" -c copy -fflags +bitexact -shortest -map_metadata -1 -metadata title="{video_title}" -metadata comment="Downloaded with Udemy-Downloader by Sheikh Bilal (https://github.com/sheikh-bilal65)" "{output_path}"'
-    else:
-        if use_h265:
-            command = f'nice -n 7 ffmpeg {transcode} -y {video_decryption_arg} -i "{video_filepath}" {audio_decryption_arg} -i "{audio_filepath}" -c:v {codec} -vtag hvc1 -crf {h265_crf} -preset {h265_preset} -c:a copy -fflags +bitexact -shortest -map_metadata -1 -metadata title="{video_title}" -metadata comment="Downloaded with Udemy-Downloader by Sheikh Bilal (https://github.com/sheikh-bilal65)" "{output_path}"'
-        else:
-            command = f'nice -n 7 ffmpeg -y {video_decryption_arg} -i "{video_filepath}" {audio_decryption_arg} -i "{audio_filepath}" -c copy -fflags +bitexact -shortest -map_metadata -1 -metadata title="{video_title}" -metadata comment="Downloaded with Udemy-Downloader by Sheikh Bilal (https://github.com/sheikh-bilal65)" "{output_path}"'
-
-    process = subprocess.Popen(command, shell=True)
-    log_subprocess_output("FFMPEG-STDOUT", process.stdout)
-    log_subprocess_output("FFMPEG-STDERR", process.stderr)
-    ret_code = process.wait()
-    if ret_code != 0:
-        raise Exception("Muxing returned a non-zero exit code")
-
-    return ret_code
-
-
 def handle_segments(url, format_id, lecture_id, video_title, output_path, chapter_dir):
     os.chdir(os.path.join(chapter_dir))
 
@@ -1602,48 +1573,128 @@ def process_caption(caption, lecture_title, lecture_dir, tries=0):
             try:
                 import pysrt
                 logger.info("    > Translating caption to Chinese...")
-                
-                # Load English SRT
-                subs = pysrt.open(srt_filepath, encoding='utf-8')
-                
-                # Extract all text for translation
-                texts = [sub.text for sub in subs]
-                
-                # Translate all texts
-                translated_texts = translator.translate_batch(texts, source_lang="EN", target_lang="ZH", max_retries=3)
-                
-                # Create dual-language version (EN + ZH)
-                dual_subs = pysrt.SubRipFile()
-                for idx, (sub, zh_text) in enumerate(zip(subs, translated_texts)):
-                    if zh_text:
-                        # Combine English and Chinese
-                        dual_text = f"{sub.text}\n{zh_text}"
-                    else:
-                        # If translation failed, keep English only
-                        dual_text = sub.text
-                        logger.warning(f"    > Translation failed for subtitle {idx + 1}, keeping English only")
-                    
-                    dual_sub = pysrt.SubRipItem(
-                        index=sub.index,
-                        start=sub.start,
-                        end=sub.end,
-                        text=dual_text
+
+                def _translate_and_save(src_path: str, out_path: str, lecture_name: str):
+                    start_time = time.time()
+
+                    # Load English SRT
+                    subs = pysrt.open(src_path, encoding='utf-8')
+
+                    # Extract all text for translation
+                    texts = [sub.text for sub in subs]
+
+                    # Translate all texts
+                    translated_texts = translator.translate_batch(
+                        texts,
+                        source_lang="EN",
+                        target_lang="ZH",
+                        max_retries=3,
                     )
-                    dual_subs.append(dual_sub)
-                
-                # Save dual-language SRT
-                dual_subs.save(dual_srt_path, encoding='utf-8')
-                logger.info(f"    > Dual-language subtitle saved: {os.path.basename(dual_srt_path)}")
-                
-                # Remove standalone English caption to keep only the bilingual file
-                try:
-                    os.remove(srt_filepath)
-                    logger.info("    > Removed original English subtitle (kept EN+ZH file only)")
-                except OSError as err:
-                    logger.warning(f"    > Could not remove English subtitle: {err}")
+
+                    # Create dual-language version (EN + ZH)
+                    dual_subs = pysrt.SubRipFile()
+                    for idx, (sub, zh_text) in enumerate(zip(subs, translated_texts)):
+                        if zh_text:
+                            # Combine English and Chinese
+                            dual_text = f"{sub.text}\n{zh_text}"
+                        else:
+                            # If translation failed, keep English only
+                            dual_text = sub.text
+                            logger.warning(f"    > Translation failed for subtitle {idx + 1}, keeping English only")
+
+                        dual_sub = pysrt.SubRipItem(
+                            index=sub.index,
+                            start=sub.start,
+                            end=sub.end,
+                            text=dual_text
+                        )
+                        dual_subs.append(dual_sub)
+
+                    # Save dual-language SRT
+                    dual_subs.save(out_path, encoding='utf-8')
+                    logger.info(f"    > Dual-language subtitle saved: {os.path.basename(out_path)}")
+
+                    # Remove standalone English caption to keep only the bilingual file
+                    try:
+                        os.remove(src_path)
+                        logger.info("    > Removed original English subtitle (kept EN+ZH file only)")
+                    except OSError as err:
+                        logger.warning(f"    > Could not remove English subtitle: {err}")
+
+                    duration = time.time() - start_time
+                    logger.info(
+                        "    > Translation finished in %.2fs (%s)",
+                        duration,
+                        os.path.basename(out_path),
+                    )
+                    return lecture_name
+
+                async_env = os.getenv("TRANSLATE_ASYNC", "1").strip().lower()
+                async_enabled = async_env not in ("0", "false", "no")
+
+                if async_enabled:
+                    _ensure_translation_executor()
+                    future = translation_executor.submit(
+                        _translate_and_save,
+                        srt_filepath,
+                        dual_srt_path,
+                        lecture_title,
+                    )
+                    with translation_lock:
+                        translation_futures.append(future)
+                    logger.info(
+                        "    > Translation task submitted (%s)",
+                        os.path.basename(srt_filepath),
+                    )
+                else:
+                    _translate_and_save(srt_filepath, dual_srt_path, lecture_title)
                 
             except Exception as e:
                 logger.exception(f"    > Error during translation: {e}")
+
+
+def _ensure_translation_executor():
+    global translation_executor
+    if translation_executor is not None:
+        return
+    workers_env = os.getenv("SUBTITLE_TRANSLATE_FILE_MAX_WORKERS") or os.getenv("TRANSLATE_FILE_MAX_WORKERS")
+    try:
+        workers = max(1, int(workers_env)) if workers_env else 1
+    except ValueError:
+        workers = 1
+    translation_executor = ThreadPoolExecutor(max_workers=workers)
+    logger.info("    > Translation executor started (workers=%d)", workers)
+
+
+def wait_for_translation_tasks():
+    global translation_executor, translation_futures
+    if translation_executor is None:
+        return
+
+    with translation_lock:
+        futures = list(translation_futures)
+        translation_futures = []
+
+    if not futures:
+        translation_executor.shutdown(wait=True)
+        translation_executor = None
+        return
+
+    logger.info("> Waiting for %d translation task(s) to finish...", len(futures))
+    start = time.time()
+    completed = 0
+    for future in as_completed(futures):
+        completed += 1
+        try:
+            lecture = future.result()
+            logger.info("> Translation task %d/%d completed (%s)", completed, len(futures), lecture)
+        except Exception as exc:
+            logger.error("> Translation task %d/%d failed: %s", completed, len(futures), exc)
+
+    duration = time.time() - start
+    logger.info("> All translation tasks completed in %.2fs", duration)
+    translation_executor.shutdown(wait=True)
+    translation_executor = None
 
 
 def process_lecture(lecture, lecture_path, chapter_dir):
@@ -1946,6 +1997,7 @@ def parse_new(udemy: Udemy, udemy_object: dict):
                                 f.write(content)
 
     if auto_zip:
+        wait_for_translation_tasks()
         _zip_course_directory(course_dir)
 
 
@@ -2284,4 +2336,5 @@ if __name__ == "__main__":
     try:
         main()
     finally:
+        wait_for_translation_tasks()
         cleanup_temp_dir()

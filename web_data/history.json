@@ -1,5 +1,31 @@
 [
   {
+    "task_id": "ab48f4f143df48f0a7864b488edb1cc5",
+    "course_url": "https://cognizant.udemy.com/course/llm-engineering-master-ai-and-large-language-models/learn/lecture/52941379#overview",
+    "started_at": "2026-01-24T14:09:25.451315",
+    "finished_at": "2026-01-24T14:11:05.138186",
+    "status": "failed",
+    "message": "Exit code 3221225786",
+    "is_drm": false,
+    "article_status": null,
+    "article_started_at": null,
+    "article_finished_at": null,
+    "article_message": null
+  },
+  {
+    "task_id": "768046ccac924358a7fc913a5bfaf9ea",
+    "course_url": "https://cognizant.udemy.com/course/llm-engineering-master-ai-and-large-language-models/learn/lecture/53095221#overview",
+    "started_at": "2026-01-24T13:40:18.965000",
+    "finished_at": "2026-01-24T13:41:03.349979",
+    "status": "failed",
+    "message": "Exit code 1",
+    "is_drm": false,
+    "article_status": null,
+    "article_started_at": null,
+    "article_finished_at": null,
+    "article_message": null
+  },
+  {
     "task_id": "a92298133ac0470dbbebc6326405cfb3",
     "course_url": "https://www.udemy.com/course/ai-for-business-analysts/?srsltid=AfmBOorGKqkUy5wqssMOaA1Lps-523p_WJB7Ze3NBR_CIRZKkJKv1yJk",
     "started_at": "2026-01-18T01:41:18.099838",
@@ -17,13 +43,13 @@
     "course_url": "https://www.udemy.com/course/ai-for-business-analysts/?srsltid=AfmBOorGKqkUy5wqssMOaA1Lps-523p_WJB7Ze3NBR_CIRZKkJKv1yJk",
     "started_at": "2026-01-18T01:24:32.470999",
     "finished_at": "2026-01-18T01:25:54.852916",
-    "status": "success",
+    "status": "生成失败",
     "message": "Exit code 0",
     "is_drm": false,
-    "article_status": null,
-    "article_started_at": null,
-    "article_finished_at": null,
-    "article_message": null
+    "article_status": "failed",
+    "article_started_at": "2026-01-24T12:29:33.787288",
+    "article_finished_at": "2026-01-24T12:31:28.612792",
+    "article_message": "e\\_sync\\http11.py\", line 217, in _receive_event\n    data = self._network_stream.read(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\httpcore\\_backends\\sync.py\", line 126, in read\n    with map_exceptions(exc_map):\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\contextlib.py\", line 141, in __exit__\n    def __exit__(self, typ, value, traceback):\n\nKeyboardInterrupt\n\n============================================================\n▶️  下载课程并生成最终 Markdown\n============================================================\n\n============================================================\n▶️  翻译 Markdown 为中文\n============================================================\nTraceback (most recent call last):\n  File \"F:\\Cursor\\Advance-Udemy-Downloader\\scripts\\run_course_pipeline.py\", line 161, in <module>\n    main()\n  File \"F:\\Cursor\\Advance-Udemy-Downloader\\scripts\\run_course_pipeline.py\", line 111, in main\n    run_step(cmd, \"翻译 Markdown 为中文\")\n  File \"F:\\Cursor\\Advance-Udemy-Downloader\\scripts\\run_course_pipeline.py\", line 37, in run_step\n    subprocess.run(cmd, check=True)\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 550, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1201, in communicate\n    self.wait()\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1264, in wait\n    return self._wait(timeout=timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1590, in _wait\n    result = _winapi.WaitForSingleObject(self._handle,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyboardInterrupt"
   },
   {
     "task_id": "95579d1ef6864fce992b49e2a6147e1b",
@@ -102,23 +128,5 @@
     "article_started_at": "2026-01-03T12:29:07.496237",
     "article_finished_at": "2026-01-03T12:31:20.545953",
     "article_message": "Exit code 0"
-  },
-  {
-    "task_id": "f9adaffc088a47d8aa17fa7ba3ce8873",
-    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
-    "started_at": "2026-01-02T09:02:57.000087",
-    "finished_at": "2026-01-02T09:09:16.918128",
-    "status": "failed",
-    "message": "Exit code 3221225786",
-    "is_drm": false
-  },
-  {
-    "task_id": "717dbc33bc264937ae4fd159d24c8986",
-    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
-    "started_at": "2026-01-02T08:51:43.986672",
-    "finished_at": "2026-01-02T08:52:07.097544",
-    "status": "failed",
-    "message": "'gbk' codec can't decode byte 0xa9 in position 118: illegal multibyte sequence",
-    "is_drm": false
   }
 ]

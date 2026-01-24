@@ -172,7 +172,14 @@ async function refreshHistory(options = {}) {
           buttons.push(
             `<button class="secondary outline small view-article-log" data-task-id="${item.task_id}" data-course-url="${item.course_url}">查看日志</button>`
           );
-        } else if (item.article_status === "success" || item.article_status === "failed") {
+        } else if (item.article_status === "failed") {
+          buttons.push(
+            `<button class="primary ghost small generate-article-btn" data-task-id="${item.task_id}">重试生成</button>`
+          );
+          buttons.push(
+            `<button class="secondary outline small view-article-log" data-task-id="${item.task_id}" data-course-url="${item.course_url}">查看日志</button>`
+          );
+        } else if (item.article_status === "success") {
           buttons.push(
             `<button class="secondary outline small view-article-log" data-task-id="${item.task_id}" data-course-url="${item.course_url}">查看日志</button>`
           );
@@ -249,6 +256,9 @@ async function handleHistoryClick(e) {
   if (!btn) return;
   const taskId = btn.dataset.taskId;
   if (!taskId) return;
+  if (!btn.dataset.originalLabel) {
+    btn.dataset.originalLabel = btn.textContent;
+  }
   btn.disabled = true;
   btn.textContent = "生成中...";
   try {
@@ -260,7 +270,7 @@ async function handleHistoryClick(e) {
   } catch (err) {
     alert(err.message);
     btn.disabled = false;
-    btn.textContent = "生成文章";
+    btn.textContent = btn.dataset.originalLabel || "生成文章";
   }
 }
 

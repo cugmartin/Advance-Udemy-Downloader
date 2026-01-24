@@ -328,8 +328,9 @@ async def generate_article(task_id: str, payload: ArticleRequest, _: str = Depen
     item = history_store.get(task_id)
     if not item:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Task not found")
-    if item.get("status") != "success":
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Only success tasks can generate article")
+    can_generate = item.get("status") == "success" or item.get("article_status") == "failed"
+    if not can_generate:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Only success or previously failed article tasks can generate article")
 
     current_loop = asyncio.get_running_loop()
     history_store.update(

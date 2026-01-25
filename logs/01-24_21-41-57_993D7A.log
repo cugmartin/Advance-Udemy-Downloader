@@ -1579,3 +1579,15 @@ FileNotFoundError: [Errno 2] No such file or directory: 'F:\\Cursor\\Advance-Ude
 [10:14:16] [udemy-downloader] [process_batch:396] INFO:     > [Gemini] Batch 1/3: 48 subtitles (~2447 chars) ...
 [10:19:15] [udemy-downloader] [process_batch:406] INFO:     > [Gemini] Batch 1/3 completed in 298.63s
 [10:19:15] [udemy-downloader] [process_batch:396] INFO:     > [Gemini] Batch 2/3: 49 subtitles (~2489 chars) ...
+[10:20:49] [udemy-downloader] [process_batch:406] INFO:     > [Gemini] Batch 3/4 completed in 410.49s
+[10:20:49] [udemy-downloader] [process_batch:396] INFO:     > [Gemini] Batch 4/4: 35 subtitles (~1966 chars) ...
+[10:21:44] [udemy-downloader] [process_batch:406] INFO:     > [Gemini] Batch 2/3 completed in 149.29s
+[10:21:44] [udemy-downloader] [process_batch:396] INFO:     > [Gemini] Batch 3/3: 30 subtitles (~1756 chars) ...
+[10:22:02] [udemy-downloader] [process_batch:406] INFO:     > [Gemini] Batch 3/3 completed in 18.09s
+[10:22:02] [udemy-downloader] [_translate_and_save:1615] INFO:     > Dual-language subtitle saved: 017 Day 4 - Qwen 3 Coder vs GPT OSS OpenRouter Model Performance Showdown_en_zh.srt
+[10:22:02] [udemy-downloader] [_translate_and_save:1620] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[10:22:02] [udemy-downloader] [_translate_and_save:1625] INFO:     > Translation finished in 466.03s (017 Day 4 - Qwen 3 Coder vs GPT OSS OpenRouter Model Performance Showdown_en_zh.srt)
+[10:22:48] [udemy-downloader] [process_batch:406] INFO:     > [Gemini] Batch 4/4 completed in 119.09s
+[10:22:48] [udemy-downloader] [_translate_and_save:1615] INFO:     > Dual-language subtitle saved: 015 Day 4 - Open Source Models for Code Generation Qwen, DeepSeek & Ollama_en_zh.srt
+[10:22:48] [udemy-downloader] [_translate_and_save:1620] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[10:22:48] [udemy-downloader] [_translate_and_save:1625] INFO:     > Translation finished in 947.31s (015 Day 4 - Open Source Models for Code Generation Qwen, DeepSeek & Ollama_en_zh.srt)

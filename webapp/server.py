@@ -91,7 +91,6 @@ class DownloadRequest(BaseModel):
     use_continuous_lecture_numbers: bool = False
     chapter_filter: Optional[str] = None
     key_entries: List[KeyEntryPayload] = Field(default_factory=list)
-    auto_zip: bool = False
 
 
 class ArticleRequest(BaseModel):
@@ -169,9 +168,6 @@ def build_command(payload: DownloadRequest) -> List[str]:
     for field_name, flag in flag_map.items():
         if getattr(payload, field_name):
             cmd.append(flag)
-
-    if payload.auto_zip:
-        cmd.append("--auto-zip")
 
     return cmd
 

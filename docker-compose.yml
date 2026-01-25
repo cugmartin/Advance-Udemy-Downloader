@@ -6,8 +6,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./output:/app/out_dir:rw
-      - ./keyfile.json:/app/keyfile.json:ro
+      - ./logs:/app/logs:rw
+      - ./keyfile.json:/app/keyfile.json:rw
       - ./cookie.txt:/app/cookie.txt:ro
+
     env_file:
       - .env
     command: sleep infinity
@@ -20,9 +22,11 @@ services:
       - "9123:9123"
     volumes:
       - ./output:/app/out_dir:rw
-      - ./keyfile.json:/app/keyfile.json:ro
+      - ./logs:/app/logs:rw
+      - ./keyfile.json:/app/keyfile.json:rw
       - ./cookie.txt:/app/cookie.txt:ro
       - ./web_data:/app/web_data:rw
+
     env_file:
       - .env
     command: uvicorn webapp.server:app --host 0.0.0.0 --port 9123

@@ -1,5 +1,18 @@
 [
   {
+    "task_id": "121115bf02e7439c9e71fdd29ce90f3c",
+    "course_url": "https://cognizant.udemy.com/course/model-context-protocol/learn/lecture/49076967#overview",
+    "started_at": "2026-01-25T01:40:42.600513",
+    "finished_at": "2026-01-25T03:45:15.846437",
+    "status": "已生成",
+    "message": "Exit code 0",
+    "is_drm": false,
+    "article_status": "success",
+    "article_started_at": "2026-01-25T04:23:06.433922",
+    "article_finished_at": "2026-01-25T04:27:25.764979",
+    "article_message": "Exit code 0"
+  },
+  {
     "task_id": "ab48f4f143df48f0a7864b488edb1cc5",
     "course_url": "https://cognizant.udemy.com/course/llm-engineering-master-ai-and-large-language-models/learn/lecture/52941379#overview",
     "started_at": "2026-01-24T14:09:25.451315",
@@ -114,19 +127,6 @@
     "article_status": "success",
     "article_started_at": "2026-01-03T12:27:16.873255",
     "article_finished_at": "2026-01-03T12:31:59.885002",
-    "article_message": "Exit code 0"
-  },
-  {
-    "task_id": "6ef26d0a1b45470bb716af0cdcbd451b",
-    "course_url": "https://www.udemy.com/course/generative-ai-in-customer-support/?couponCode=PMNVD2525",
-    "started_at": "2026-01-02T09:09:53.141990",
-    "finished_at": "2026-01-02T09:11:40.530279",
-    "status": "已生成",
-    "message": "Exit code 0",
-    "is_drm": false,
-    "article_status": "success",
-    "article_started_at": "2026-01-03T12:29:07.496237",
-    "article_finished_at": "2026-01-03T12:31:20.545953",
     "article_message": "Exit code 0"
   }
 ]

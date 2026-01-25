@@ -71,7 +71,6 @@ browser = None
 cj = None
 use_continuous_lecture_numbers = False
 chapter_filter = None
-auto_zip = False
 YTDLP_PATH = None
 
 
@@ -111,7 +110,7 @@ def parse_chapter_filter(chapter_str: str):
 
 # this is the first function that is called, we parse the arguments, setup the logger, and ensure that required directories exist
 def pre_run():
-    global dl_assets, dl_captions, dl_quizzes, skip_lectures, caption_locale, quality, bearer_token, course_name, keep_vtt, skip_hls, concurrent_downloads, load_from_file, save_to_file, bearer_token, course_url, info, logger, keys, id_as_course_name, LOG_LEVEL, use_h265, h265_crf, h265_preset, use_nvenc, browser, is_subscription_course, DOWNLOAD_DIR, use_continuous_lecture_numbers, chapter_filter, translator, auto_translate, auto_zip
+    global dl_assets, dl_captions, dl_quizzes, skip_lectures, caption_locale, quality, bearer_token, course_name, keep_vtt, skip_hls, concurrent_downloads, load_from_file, save_to_file, bearer_token, course_url, info, logger, keys, id_as_course_name, LOG_LEVEL, use_h265, h265_crf, h265_preset, use_nvenc, browser, is_subscription_course, DOWNLOAD_DIR, use_continuous_lecture_numbers, chapter_filter, translator, auto_translate
 
     # Load environment variables first
     load_dotenv()
@@ -277,12 +276,6 @@ def pre_run():
         type=str,
         help="Download specific chapters. Use comma separated values and ranges (e.g., '1,3-5,7,9-11').",
     )
-    parser.add_argument(
-        "--auto-zip",
-        dest="auto_zip",
-        action="store_true",
-        help="Automatically zip the downloaded course directory after completion",
-    )
     # parser.add_argument("-v", "--version", action="version", version="You are running version {version}".format(version=__version__))
 
     args = parser.parse_args()
@@ -353,8 +346,6 @@ def pre_run():
         DOWNLOAD_DIR = os.path.abspath(args.out)
     if args.use_continuous_lecture_numbers:
         use_continuous_lecture_numbers = args.use_continuous_lecture_numbers
-    if args.auto_zip:
-        auto_zip = True
     
     # Auto-enable captions and translation when downloading videos
     if not skip_lectures and not info:
@@ -1852,7 +1843,6 @@ def process_coding_assignment(quiz, lecture, chapter_dir):
 
 
 def parse_new(udemy: Udemy, udemy_object: dict):
-    global auto_zip
     total_chapters = udemy_object.get("total_chapters")
     total_lectures = udemy_object.get("total_lectures")
     logger.info(f"Chapter(s) ({total_chapters})")
@@ -1995,35 +1985,6 @@ def parse_new(udemy: Udemy, udemy_object: dict):
                         if name.lower() not in file_data:
                             with open(filename, "a", encoding="utf-8", errors="ignore") as f:
                                 f.write(content)
-
-    if auto_zip:
-        wait_for_translation_tasks()
-        _zip_course_directory(course_dir)
-
-
-def _zip_course_directory(course_dir: str) -> None:
-    if not os.path.isdir(course_dir):
-        logger.warning("> Auto-zip skipped：目录不存在 %s", course_dir)
-        return
-
-    course_name_only = os.path.basename(course_dir.rstrip(os.sep))
-    zip_base = os.path.join(DOWNLOAD_DIR, course_name_only)
-    zip_path = f"{zip_base}.zip"
-
-    if os.path.isfile(zip_path):
-        try:
-            os.remove(zip_path)
-            logger.info("> Auto-zip：检测到已有压缩包，已删除 %s", zip_path)
-        except OSError as err:
-            logger.warning("> Auto-zip：无法删除旧压缩包 %s，原因：%s", zip_path, err)
-
-    logger.info("> Auto-zip：开始压缩 %s -> %s", course_dir, zip_path)
-    try:
-        shutil.make_archive(zip_base, "zip", root_dir=DOWNLOAD_DIR, base_dir=course_name_only)
-        logger.info("> Auto-zip：完成，压缩包路径 %s", zip_path)
-    except Exception as exc:
-        logger.warning("> Auto-zip：压缩失败 %s", exc)
-
 
 def cleanup_temp_dir(temp_path: str = TEMP_DIR) -> None:
     temp_dir = Path(temp_path)

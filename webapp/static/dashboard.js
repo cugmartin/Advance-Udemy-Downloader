@@ -74,7 +74,6 @@ function collectPayload() {
     bearer_token: qs("#bearer-token").value.trim(),
     chapter_filter: qs("#chapter-filter").value.trim() || null,
     download_assets: qs("#download-assets").checked,
-    auto_zip: qs("#auto-zip").checked,
     download_captions: false,
     download_quizzes: false,
     skip_lectures: false,

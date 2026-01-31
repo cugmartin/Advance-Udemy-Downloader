@@ -1,4 +1,5 @@
 import asyncio
+from collections import deque
 import os
 import subprocess
 import sys
@@ -63,6 +64,8 @@ class DownloadTask:
         if loop:
             for line in buffered:
                 asyncio.run_coroutine_threadsafe(queue.put(line), loop)
+            if self.finished_at is not None:
+                asyncio.run_coroutine_threadsafe(queue.put(None), loop)
         return queue
 
     def unsubscribe(self, queue: asyncio.Queue) -> None:
@@ -78,6 +81,51 @@ class TaskManager:
         self._tasks: Dict[str, DownloadTask] = {}
         self._lock = threading.Lock()
         self.loop: Optional[asyncio.AbstractEventLoop] = None
+
+    def _cleanup_logs(self) -> None:
+        try:
+            logs_dir = Path(self.base_dir) / "logs"
+            if not logs_dir.exists():
+                return
+
+            keep_suffixes = set()
+
+            try:
+                for item in self.history_store.list_items():
+                    task_id = (item or {}).get("task_id")
+                    if isinstance(task_id, str) and len(task_id) >= 6:
+                        keep_suffixes.add(task_id[-6:].upper())
+            except Exception:
+                pass
+
+            with self._lock:
+                active_tasks = list(self._tasks.values())
+            for t in active_tasks:
+                if t and isinstance(t.id, str) and len(t.id) >= 6 and t.status in (
+                    TaskStatus.QUEUED,
+                    TaskStatus.RUNNING,
+                ):
+                    keep_suffixes.add(t.id[-6:].upper())
+
+            if not keep_suffixes:
+                return
+
+            for p in logs_dir.glob("*.log"):
+                stem = p.stem
+                if "_" not in stem:
+                    continue
+                suffix = stem.rsplit("_", 1)[-1].upper()
+                if len(suffix) != 6:
+                    continue
+                if not suffix.isalnum():
+                    continue
+                if suffix not in keep_suffixes:
+                    try:
+                        p.unlink(missing_ok=True)
+                    except Exception:
+                        pass
+        except Exception:
+            return
 
     def set_loop(self, loop: asyncio.AbstractEventLoop) -> None:
         self.loop = loop
@@ -126,11 +174,26 @@ class TaskManager:
         def _emit(line: Optional[str]) -> None:
             task.broadcast(line)
 
+        log_file = None
+        log_fp = None
         try:
             task.status = TaskStatus.RUNNING
             task.started_at = datetime.utcnow()
             env = os.environ.copy()
             env["TASK_ID_SUFFIX"] = task.id[-6:].upper()
+            tail_lines = deque(maxlen=200)
+            _emit(f"[system] Command: {' '.join(task.command)}")
+
+            logs_dir = Path(task.workdir or self.base_dir) / "logs"
+            logs_dir.mkdir(parents=True, exist_ok=True)
+            log_file = logs_dir / f"{time.strftime('%m-%d_%H-%M-%S')}_{env['TASK_ID_SUFFIX']}.log"
+            log_fp = open(log_file, "a", encoding="utf-8", errors="replace")
+            _emit(f"[system] Log file: {log_file}")
+
+            creationflags = 0
+            if os.name == "nt":
+                creationflags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+
             process = subprocess.Popen(
                 task.command,
                 cwd=str(task.workdir),
@@ -141,13 +204,22 @@ class TaskManager:
                 errors="replace",
                 bufsize=1,
                 env=env,
+                creationflags=creationflags,
             )
             task.process = process
             _emit(f"[system] Spawned process PID {process.pid}")
 
             assert process.stdout is not None
             for line in process.stdout:
-                _emit(line.rstrip())
+                line_clean = line.rstrip()
+                tail_lines.append(line_clean)
+                if log_fp is not None:
+                    try:
+                        log_fp.write(line)
+                        log_fp.flush()
+                    except Exception:
+                        pass
+                _emit(line_clean)
 
             ret_code = process.wait()
             task.finished_at = datetime.utcnow()
@@ -157,13 +229,26 @@ class TaskManager:
             else:
                 task.status = TaskStatus.FAILED
                 _emit(f"[system] Process exited with code {ret_code}")
-            self._record_history(task, task.status, f"Exit code {ret_code}")
+            history_message = f"Exit code {ret_code}"
+            if ret_code != 0 and tail_lines:
+                tail = "\n".join(tail_lines).strip()
+                if len(tail) > 8000:
+                    tail = tail[-8000:]
+                history_message = f"Exit code {ret_code}\n\n{tail}"
+            self._record_history(task, task.status, history_message)
+            self._cleanup_logs()
         except Exception as exc:
             task.status = TaskStatus.FAILED
             task.finished_at = datetime.utcnow()
             _emit(f"[system] Task failed: {exc}")
             self._record_history(task, task.status, str(exc))
+            self._cleanup_logs()
         finally:
+            if log_fp is not None:
+                try:
+                    log_fp.close()
+                except Exception:
+                    pass
             _emit(None)
 
     def start_task(self, task: DownloadTask) -> None:

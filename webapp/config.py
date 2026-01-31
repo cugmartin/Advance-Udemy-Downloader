@@ -17,6 +17,8 @@ DEFAULT_BEARER_TOKEN = os.getenv("UDEMY_BEARER", "")
 HISTORY_FILE = DATA_DIR / "history.json"
 HISTORY_LIMIT = 10
 
+TOKENS_FILE = DATA_DIR / "tokens.json"
+
 KEYFILE_PATH = BASE_DIR / "keyfile.json"
 MAIN_SCRIPT = BASE_DIR / "main.py"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "out_dir"

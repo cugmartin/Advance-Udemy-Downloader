@@ -1,106 +1,220 @@
-# Udemy Downloader（支持 DRM）
+# 支持 DRM 的 Udemy 下载器
 
-这是一个面向个人学习者的 Python 自动化工具，可以将你在 Udemy 上购买的课程下载到本地，包含 DRM 加密的视频（前提是你拥有 Widevine 解密密钥）。脚本的开发平台为 Windows，但也尽力兼容 Linux。使用前务必了解并遵守 Udemy 的使用条款。
+使用这个强大的 Python 脚本，将你的 Udemy 课程解锁为离线可用！它可以无缝下载课程内容（包括 DRM 保护的内容），并通过提取 Cookie 与 Widevine Key 来完成解密与合并。该工具仅用于学习与研究目的，用于演示自动化技术的个人用途。快速上手，随时随地离线学习。
 
-## 赞助作者
+本脚本可帮助你将 Udemy 课程下载到本地离线播放（包括带 DRM 的课程）。它会引导你提取所需的 Cookie 与 Widevine 解密密钥，从而访问你已购买的内容。非常适合希望在无网络环境下学习的用户。
 
-如果这个项目对你有帮助，欢迎通过下述任一方式进行支持，以促进未来更多免费工具的开发：
+**让自动化为你赋能！**
 
-- **币安 ID 转账：**`150697028`
-- **BNB（BEP20）地址：**`0xef6e84f601441439e809088fe0355ec63b9f0017`
-- **USDT（BEP20）地址：**`0xef6e84f601441439e809088fe0355ec63b9f0017`
+如果这个工具对你有帮助，欢迎支持项目持续开发。你的支持（无论多少）都能推动更多免费、强大且功能丰富的工具诞生。
 
-> 请勿发送 NFT；如需其它链（ERC20、TRC20）可通过邮箱或 GitHub 联系作者。
+<a href="https://buymeacoffee.com/bilalsheikh" target="_blank"> <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee"> </a>
 
-## 提示与免责声明
+### 💸 加密货币捐赠
 
-1. 本项目仅用于教育和个人备份目的，下载课程可能违反 Udemy 服务条款，使用者需自行承担风险。
-2. DRM 视频必须提供 Widevine 密钥，否则无法播放或解密。
-3. 项目代码仍处于持续维护状态，按原样提供，不承担使用过程中造成的任何后果。
+如果你希望支持该项目，也可以通过加密货币捐赠。
 
-## 环境依赖
+#### **方式 1：Binance ID（适用于 Binance 用户的站内转账）**
 
-以下工具不会包含在仓库中，请提前安装并确保它们在 PATH 中可用：
+- **Binance ID：** `150697028`
+  - （可在 Binance 的“通过 Binance ID 转账”中使用，账户间秒到账）
 
-- [Python 3](https://python.org/)（建议 3.9 及以上）
-- [ffmpeg](https://www.ffmpeg.org/)
-  - 推荐使用 yt-dlp 团队提供的自定义编译版以规避兼容性问题：[FFmpeg-Builds](https://github.com/yt-dlp/FFmpeg-Builds/releases/tag/latest)
-- [aria2（aria2c）](https://github.com/aria2/aria2/)
+#### **方式 2：钱包地址（BNB Smart Chain / BEP20）**
+
+**BNB（Binance Coin，BEP20）：**
+
+- **网络：** BNB Smart Chain（BEP20）
+- **钱包地址：**
+  `0xef6e84f601441439e809088fe0355ec63b9f0017`
+
+![BNB Wallet QR code](BNB.jpg)
+
+---
+
+**USDT（Tether USD，BEP20）：**
+
+- **网络：** BNB Smart Chain（BEP20）
+- **钱包地址：**
+  `0xef6e84f601441439e809088fe0355ec63b9f0017`
+
+![USDT Wallet QR code](USDT.jpg)
+
+---
+
+> **注意：**
+> 请勿向该地址发送 NFT。
+> 如需其它币种，或需要 ERC20/TRC20 地址，请通过邮件或 GitHub 联系作者。
+
+---
+
+用于下载 Udemy 课程的工具脚本，支持 DRM 视频，但出于合规原因需要用户自行获取解密 Key（法律原因）。<br>
+Windows 是主要开发系统，同时也尽量兼容 Linux（macOS 未测试）。
+
+> [!IMPORTANT]
+> 若未提供解密 Key，本工具无法下载/合并加密课程内容。
+>
+> 下载课程可能违反 Udemy 的服务条款（Terms of Service）。因使用本程序导致账号被封禁等后果，作者不承担任何责任。
+>
+> 本程序仍在开发中（WIP），代码按“原样”提供。作者不对使用本工具可能产生的任何法律问题负责。
+
+### 运行依赖（Requirements）
+
+运行脚本需要以下第三方工具。它们 **不包含在仓库中**，需要你自行下载安装，并确保在系统 `PATH` 可被访问。
+
+- [Python 3](https://python.org/)
+- [ffmpeg](https://www.ffmpeg.org/) - Linux 也可通过包管理器安装
+  - 说明：推荐使用 yt-dlp 团队提供的自定义构建版本，包含与 yt-dlp 配合使用时的一些补丁；但不是必须。最新构建可在这里获取：
+    <https://github.com/yt-dlp/FFmpeg-Builds/releases/tag/latest>
+- [aria2/aria2c](https://github.com/aria2/aria2/) - Linux 也可通过包管理器安装
 - [shaka-packager](https://github.com/shaka-project/shaka-packager/releases/latest)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp/)（可通过 `pip install yt-dlp` 安装）
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp/) - Linux 也可通过包管理器安装，也可选择 pip 安装（`pip install yt-dlp`）
 
-## 快速上手
+### 快速开始（Quick Start）
 
-1. **准备 Udemy 登录 Cookie**
-   - 安装浏览器扩展（如 Cookies Editor），Firefox 兼容性更好。
-   - 登录 Udemy，打开扩展，将 cookies 以 Netscape 格式导出。
-   - 把内容粘贴到仓库根目录的 `cookie.txt` 中（可覆盖）。
+如果需要下载 DRM 课程，你必须先提取 Cookie 与 Widevine 解密 Key。按以下步骤操作：
 
-2. **准备 Widevine 密钥（用于 DRM 视频）**
-   - 推荐使用 **Firefox** + ["Widevine L3 Decrypter"](https://addons.mozilla.org/en-US/firefox/addon/widevine-l3-decrypter/) 插件。
-   - 在 Udemy 播放任意加密视频，并在播放过程中打开插件，点击 “Guess” 等待自动填充 Key 和 Key ID。
-   - 将插件返回的 Key/Key ID 写入 `keyfile.json`（示例可参考仓库中的文件）。
+1) **提取 Cookie（用于 Udemy 登录态）**：
 
-3. **配置环境变量**
-   - 复制 `.env.example` 为 `.env`
-   - 填入你的 `UDEMY_BEARER` token
-   - （可选）填入 `DEEPL_API_KEY` 以启用自动中英文字幕翻译
+- 为浏览器安装 “Cookies Editor” 扩展。推荐使用 Mozilla Firefox，以获得更好的 Widevine L3 Decrypter 兼容性。
+  - **Google Chrome**：<https://cookie-editor.com/>
+  - **Mozilla Firefox**：<https://cookie-editor.com/>
+- 在浏览器中登录你的 Udemy 账号。
+- 打开 Cookies Editor 扩展。
+- 以 “Netscape” 格式复制 Cookie。
+- 将复制的内容粘贴到项目目录下的 `cookie.txt` 文件中。
 
-4. **安装 Python 依赖**
-   ```bash
-   pip install -r requirements.txt
-   ```
+2) **提取 Widevine DRM Key（用于加密视频）**：
 
-5. **运行下载脚本**
-   ```bash
-   python main.py -c <课程网址>
-   ```
-   脚本会自动从 `.env` 读取 Bearer Token，并在下载视频时自动下载英文字幕。如果配置了 DeepL API Key，会自动生成中文翻译。
+- **重要：**目前 “Widevine L3 Decrypter” 在 Google Chrome 上无法完整支持 Key 提取，强烈建议使用 **Mozilla Firefox**。
+- 在 Mozilla Firefox 安装扩展：
+  - **Mozilla Firefox**：<https://addons.mozilla.org/en-US/firefox/addon/widevine-l3-decrypter/>
+- 如果你在第 1 步从 Chrome 复制了 Cookie，请确保你在 Firefox 中也处于已登录状态。
+- 打开要下载的 Udemy 课程页面，并播放任意一节视频。
+- 视频播放时打开 “Widevine L3 Decrypter” 扩展。
+- 使用默认设置，点击 “Guess”，等待扩展处理并展示解密信息。
+- 复制扩展提供的 “Key” 与 “Key ID”。
+- 将这些 Key 写入项目目录下的 `keyfile.json`。这样脚本才能解密下载的加密文件并绕过 DRM。
 
-## 自动中英文字幕功能
+3) **安装 Python 依赖**（推荐 Python 3.9+）：
 
-**新功能：** 脚本现在支持自动下载英文字幕并翻译为中文！
+```bash
+pip install -r requirements.txt
+```
 
-- 下载视频时会自动下载英文字幕（无需手动指定 `--download-captions`）
-- 如果在 `.env` 中配置了 `DEEPL_API_KEY`，会生成单一的 `LectureTitle_en_zh.srt` 文件（每条字幕显示英文+中文）
-- 翻译支持缓存机制，避免重复翻译
-- 翻译失败会自动重试 3 次，失败后会保留英文内容
-- 日志会显示翻译进度
+### Web 控制台（FastAPI）
 
-**如何获取 DeepL API Key：**
-1. 访问 [DeepL API](https://www.deepl.com/pro-api) 注册账号
-2. 免费版每月可翻译 50 万字符
-3. 将 API Key 填入 `.env` 文件的 `DEEPL_API_KEY` 变量
+启动 Web 控制台：
 
-## 常用命令示例
+```bash
+python -m uvicorn webapp.server:app --host 127.0.0.1 --port 8000
+```
 
-- 下载特定画质：`python main.py -c <Course URL> -q 720`
-- 同时下载课程素材：`python main.py -c <Course URL> --download-assets`
-- 仅下载字幕（不下载视频）：`python main.py -c <Course URL> --skip-lectures --download-captions`
-- 保留 .vtt 文件：`python main.py -c <Course URL> --keep-vtt`
-- 跳过解析 HLS（速度更快）：`python main.py -c <Course URL> --skip-hls`
-- 打印课程信息：`python main.py -c <Course URL> --info`
-- 指定并行下载线程：`python main.py -c <Course URL> -cd 20`
-- 使用课程 ID 作为输出目录名：`python main.py -c <Course URL> --id-as-course-name`
-- 使用 H.265 编码：`python main.py -c <Course URL> --use-h265`
-- 指定 H.265 的 CRF：`python main.py -c <Course URL> --use-h265 -h265-crf 20`
-- 用 NVIDIA 硬件编码：`python main.py -c <Course URL> --use-h265 --use-nvenc`
-- 下载指定章节：`python main.py -c <Course URL> --chapter "1,3-5"`
-- 缓存课程信息：`python main.py -c <Course URL> --save-to-file`
-- 读取缓存：`python main.py -c <Course URL> --load-from-file`
-- 设置日志等级：`--log-level DEBUG|INFO|WARNING|CRITICAL`
+如果你希望在开发时启用热重载（auto-reload），请确保 reload **只监控 `webapp` 目录**（否则下载任务写入 `out_dir/` 时会触发 reload，可能中断正在运行的下载任务）：
 
-## 作者与联系方式
+```bash
+python -m uvicorn webapp.server:app --host 127.0.0.1 --port 8000 --reload --reload-dir webapp
+```
 
-开发者：**Sheikh Bilal**（Java 爱好者兼自动化狂热者）
+2) **运行主下载脚本**：
 
-- GitHub：https://github.com/sheikh-bilal65
-- LinkedIn：https://www.linkedin.com/in/bilal-ahmad2
-- 邮箱：bilalahmadallbd@gmail.com
-- Instagram：https://www.instagram.com/sheikhh.bilal/
+使用 `main.py` 并通过命令行参数指定课程 URL 与下载选项。
 
-如遇问题可以通过以上渠道联系作者，或在项目 issue 中留言。
+**示例用法：**
 
-## 法律与使用说明
+- 传入 Bearer Token 与课程 URL
+  - `python main.py -c <课程 URL> -b <Bearer Token>`
+  - `python main.py -c https://www.udemy.com/courses/myawesomecourse -b <Bearer Token>`
 
-本工具仅供学习和研究，请勿用于违反 Udemy 服务条款或其他法律法规的场景。使用过程中产生的任何风险与后果均由使用者自行承担。
+- 下载指定清晰度
+  - `python main.py -c <课程 URL> -q 720`
+
+- 下载视频的同时下载素材
+  - `python main.py -c <课程 URL> --download-assets`
+
+- 下载素材并指定清晰度
+  - `python main.py -c <课程 URL> -q 360 --download-assets`
+
+- 下载字幕（默认英文）
+  - `python main.py -c <课程 URL> --download-captions`
+
+- 下载指定语言字幕
+  - `python main.py -c <课程 URL> --download-captions -l en` - 英文
+  - `python main.py -c <课程 URL> --download-captions -l es` - 西班牙语
+  - `python main.py -c <课程 URL> --download-captions -l it` - 意大利语
+  - `python main.py -c <课程 URL> --download-captions -l pl` - 波兰语
+  - `python main.py -c <课程 URL> --download-captions -l all` - 下载全部字幕
+  - 等等
+
+- 跳过下载视频（只下载字幕/素材）
+  - `python main.py -c <课程 URL> --skip-lectures --download-captions` - 仅下载字幕
+  - `python main.py -c <课程 URL> --skip-lectures --download-assets` - 仅下载素材
+
+- 保留 .VTT 字幕文件
+  - `python main.py -c <课程 URL> --download-captions --keep-vtt`
+
+- 跳过解析 HLS 流（非 DRM 视频通常 HLS 里包含 1080p）
+  - `python main.py -c <课程 URL> --skip-hls`
+
+- 仅打印课程信息
+  - `python main.py -c <课程 URL> --info`
+
+- 指定最大并发下载数
+  - `python main.py -c <课程 URL> --concurrent-downloads 20`
+  - `python main.py -c <课程 URL> -cd 20`
+
+- 缓存课程信息
+  - `python main.py -c <课程 URL> --save-to-file`
+
+- 读取课程缓存
+  - `python main.py -c <课程 URL> --load-from-file`
+
+- 修改日志级别
+  - `python main.py -c <课程 URL> --log-level DEBUG`
+  - `python main.py -c <课程 URL> --log-level WARNING`
+  - `python main.py -c <课程 URL> --log-level INFO`
+  - `python main.py -c <课程 URL> --log-level CRITICAL`
+
+- 使用课程 ID 作为课程目录名
+  - `python main.py -c <课程 URL> --id-as-course-name`
+
+- H.265 编码
+  - `python main.py -c <课程 URL> --use-h265`
+
+- H.265 编码并指定 CRF
+  - `python main.py -c <课程 URL> --use-h265 -h265-crf 20`
+
+- H.265 编码并指定 preset
+  - `python main.py -c <课程 URL> --use-h265 --h265-preset faster`
+
+- 使用 NVIDIA 硬件编码（NVENC）
+  - `python main.py -c <课程 URL> --use-h265 --use-nvenc`
+
+- 连续编号（每章不从 1 重新开始）
+  - `python main.py -c <课程 URL> --continue-lecture-numbers`
+  - `python main.py -c <课程 URL> -n`
+
+- 下载指定章节
+  - `python main.py -c <课程 URL> --chapter "1,3,5"` - 下载第 1、3、5 章
+  - `python main.py -c <课程 URL> --chapter "1-5"` - 下载第 1~5 章
+  - `python main.py -c <课程 URL> --chapter "1,3-5,7,9-11"` - 下载第 1 章、第 3~5 章、第 7 章、第 9~11 章
+
+- 下载指定章节并指定清晰度
+  - `python main.py -c <课程 URL> --chapter "1-3" -q 720`
+
+- 下载指定章节并下载字幕
+  - `python main.py -c <课程 URL> --chapter "1,3" --download-captions`
+
+### 关于作者（About the Creator）
+
+你好！我叫 **Sheikh Bilal**，是一名热爱编码与自动化的 Java 开发者。这个工具是我兴趣与热情的体现，旨在帮助你学习与探索 Udemy 自动化。
+
+联系作者：
+
+- **GitHub**：<https://github.com/sheikh-bilal65>
+- **LinkedIn**：<https://www.linkedin.com/in/bilal-ahmad2>
+- **Gmail**：<mailto:bilalahmadallbd@gmail.com>
+- **Instagram**：<https://www.instagram.com/sheikhh.bilal/>
+
+遇到问题？欢迎通过 Instagram 或邮件联系我！
+
+本工具仅用于 **教育用途**。它演示自动化技术，不应被用于违反 Udemy 服务条款或任何适用法律。作者 Sheikh Bilal 不对任何滥用该工具或由此产生的后果负责。用户需自行确保遵守 Udemy 政策与当地法规。

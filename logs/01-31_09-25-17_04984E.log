@@ -1,0 +1,187 @@
+[09:25:20] [udemy-downloader] [pre_run:536] INFO: Output directory set to F:\Cursor\Advance-Udemy-Downloader\out_dir
+[09:25:20] [udemy-downloader] [pre_run:551] INFO: Chapter filter applied: [7]
+[09:25:21] [udemy-downloader] [__init__:593] INFO: Found cookies.txt, attempting to use for authentication...
+[09:25:21] [udemy-downloader] [main:2804] INFO: > Fetching course information, this may take a minute...
+[09:25:27] [udemy-downloader] [main:2807] INFO: > Course information retrieved!
+[09:25:27] [udemy-downloader] [main:2812] INFO: > Fetching course curriculum, this may take a minute...
+[09:25:38] [udemy-downloader] [main:2824] INFO: > Course curriculum retrieved!
+[09:25:38] [udemy-downloader] [main:2856] INFO: > Processing course data, this may take a minute. 
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 2 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 3 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 4 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 5 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 6 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 7 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 8 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 9 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 10 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 11 of 97
+[09:25:38] [udemy-downloader] [main:2936] INFO: Processing 12 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 14 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 15 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 16 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 17 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 18 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 19 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 20 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 21 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 22 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 23 of 97
+[09:25:38] [udemy-downloader] [main:2936] INFO: Processing 24 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 26 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 27 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 28 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 29 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 30 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 32 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 33 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 34 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 35 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 37 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 39 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 40 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 41 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 42 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 43 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 44 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 45 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 46 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 47 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 48 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 49 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 50 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 51 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 52 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 53 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 54 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 56 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 57 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 58 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 59 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 60 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 61 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 62 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 63 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 65 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 66 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 67 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 68 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 69 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 70 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 71 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 72 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 73 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 74 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 75 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 76 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 78 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 79 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 80 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 81 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 82 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 83 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 84 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 85 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 86 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 87 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 89 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 90 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 91 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 92 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 93 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 95 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 96 of 97
+[09:25:38] [udemy-downloader] [main:2900] INFO: Processing 97 of 97
+[09:25:38] [udemy-downloader] [parse_new:2511] INFO: Chapter(s) (11)
+[09:25:38] [udemy-downloader] [parse_new:2512] INFO: Lecture(s) (86)
+[09:25:38] [udemy-downloader] [parse_new:2525] INFO: Skipping chapter 1 as it is not in the specified filter
+[09:25:38] [udemy-downloader] [parse_new:2525] INFO: Skipping chapter 2 as it is not in the specified filter
+[09:25:38] [udemy-downloader] [parse_new:2525] INFO: Skipping chapter 3 as it is not in the specified filter
+[09:25:38] [udemy-downloader] [parse_new:2525] INFO: Skipping chapter 4 as it is not in the specified filter
+[09:25:38] [udemy-downloader] [parse_new:2525] INFO: Skipping chapter 5 as it is not in the specified filter
+[09:25:38] [udemy-downloader] [parse_new:2525] INFO: Skipping chapter 6 as it is not in the specified filter
+[09:25:38] [udemy-downloader] [parse_new:2533] INFO: ======= Processing chapter 7 of 11 =======
+[09:25:38] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[09:25:44] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[09:25:50] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[09:25:51] [udemy-downloader] [parse_new:2561] INFO:   > Processing lecture 1 of 86
+[09:25:51] [udemy-downloader] [parse_new:2565] INFO:       > Lecture '001 Section intro' is already downloaded, skipping...
+[09:25:51] [udemy-downloader] [parse_new:2598] INFO: Processing 19 caption(s)...
+[09:25:51] [udemy-downloader] [process_caption:2173] INFO:     >  Downloading caption: '001 Section intro_en.vtt'
+[09:25:51] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333255/en_US/2024-08-05_06-12-14-c25c6b3805c6eb13d3c8b68ff146e4ca.vtt?Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '001 Section intro_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:25:57] [udemy-downloader] [process_caption:2186] INFO:     > Converting caption to SRT format...
+[09:25:57] [udemy-downloader] [process_caption:2188] INFO:     > Caption conversion complete.
+[09:25:57] [udemy-downloader] [process_caption:2199] INFO:     > Dual-language subtitle already exists (001 Section intro_en_zh.srt), skipping translation.
+[09:25:57] [udemy-downloader] [process_caption:2206] INFO:     > Removed redundant English subtitle after skipping translation.
+[09:25:57] [udemy-downloader] [parse_new:2606] INFO:     > Processing 1 asset(s) for lecture...
+[09:25:57] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2024-08-05_08-03-31-00bd3622058c73050c1dfe96602c402b/original.zip?response-content-disposition=attachment%3B+filename%3DPython.zip&Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '001 Python.zip', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:26:09] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[09:26:15] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[09:26:21] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[09:26:22] [udemy-downloader] [parse_new:2561] INFO:   > Processing lecture 2 of 86
+[09:26:22] [udemy-downloader] [parse_new:2565] INFO:       > Lecture '002 Python coding assistance' is already downloaded, skipping...
+[09:26:22] [udemy-downloader] [parse_new:2598] INFO: Processing 19 caption(s)...
+[09:26:22] [udemy-downloader] [process_caption:2173] INFO:     >  Downloading caption: '002 Python coding assistance_en.vtt'
+[09:26:22] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333277/en_US/2024-08-05_06-17-14-ae641eb57718d9edcdf4250735bf91da.vtt?Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '002 Python coding assistance_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:26:28] [udemy-downloader] [process_caption:2186] INFO:     > Converting caption to SRT format...
+[09:26:28] [udemy-downloader] [process_caption:2188] INFO:     > Caption conversion complete.
+[09:26:28] [udemy-downloader] [process_caption:2199] INFO:     > Dual-language subtitle already exists (002 Python coding assistance_en_zh.srt), skipping translation.
+[09:26:28] [udemy-downloader] [process_caption:2206] INFO:     > Removed redundant English subtitle after skipping translation.
+[09:26:28] [udemy-downloader] [parse_new:2606] INFO:     > Processing 4 asset(s) for lecture...
+[09:26:28] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-25-01-8658b0ba0d3e1ba963dde365f540ad5b/original.py?response-content-disposition=attachment%3B+filename%3Dpassword_checker.py&Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '002 password-checker.py', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:26:34] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-25-01-a3f286c9d9ecb1aaa5609b5d9a85eb7b/original.py?response-content-disposition=attachment%3B+filename%3Ddata.py&Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '002 data.py', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:26:40] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-25-01-ed552c1239e582afac58a1bc24d23184/original.py?response-content-disposition=attachment%3B+filename%3Dtest_password_checker.py&Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '002 test-password-checker.py', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:26:52] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[09:26:58] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[09:27:04] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[09:27:05] [udemy-downloader] [parse_new:2561] INFO:   > Processing lecture 3 of 86
+[09:27:05] [udemy-downloader] [parse_new:2565] INFO:       > Lecture '003 Generating text' is already downloaded, skipping...
+[09:27:05] [udemy-downloader] [parse_new:2598] INFO: Processing 19 caption(s)...
+[09:27:05] [udemy-downloader] [process_caption:2173] INFO:     >  Downloading caption: '003 Generating text_en.vtt'
+[09:27:05] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53568024/en_US/2023-12-29_17-16-58-347e0c2741b048f2e18647fde450dd4e.vtt?Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '003 Generating text_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:27:11] [udemy-downloader] [process_caption:2186] INFO:     > Converting caption to SRT format...
+[09:27:11] [udemy-downloader] [process_caption:2188] INFO:     > Caption conversion complete.
+[09:27:11] [udemy-downloader] [process_caption:2199] INFO:     > Dual-language subtitle already exists (003 Generating text_en_zh.srt), skipping translation.
+[09:27:11] [udemy-downloader] [process_caption:2206] INFO:     > Removed redundant English subtitle after skipping translation.
+[09:27:11] [udemy-downloader] [parse_new:2606] INFO:     > Processing 0 asset(s) for lecture...
+[09:27:17] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[09:27:22] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[09:27:28] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[09:27:29] [udemy-downloader] [parse_new:2561] INFO:   > Processing lecture 4 of 86
+[09:27:29] [udemy-downloader] [parse_new:2565] INFO:       > Lecture '004 Unit tests assistance' is already downloaded, skipping...
+[09:27:29] [udemy-downloader] [parse_new:2598] INFO: Processing 19 caption(s)...
+[09:27:29] [udemy-downloader] [process_caption:2173] INFO:     >  Downloading caption: '004 Unit tests assistance_en.vtt'
+[09:27:29] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53568026/en_US/2023-12-29_17-16-58-c32bf57bd33ad9767323859666361e4d.vtt?Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '004 Unit tests assistance_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:27:35] [udemy-downloader] [process_caption:2186] INFO:     > Converting caption to SRT format...
+[09:27:35] [udemy-downloader] [process_caption:2188] INFO:     > Caption conversion complete.
+[09:27:35] [udemy-downloader] [process_caption:2199] INFO:     > Dual-language subtitle already exists (004 Unit tests assistance_en_zh.srt), skipping translation.
+[09:27:35] [udemy-downloader] [process_caption:2206] INFO:     > Removed redundant English subtitle after skipping translation.
+[09:27:35] [udemy-downloader] [parse_new:2606] INFO:     > Processing 0 asset(s) for lecture...
+[09:27:40] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[09:27:46] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[09:27:54] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[09:27:54] [udemy-downloader] [parse_new:2561] INFO:   > Processing lecture 5 of 86
+[09:27:54] [udemy-downloader] [parse_new:2565] INFO:       > Lecture '005 Generating tests' is already downloaded, skipping...
+[09:27:54] [udemy-downloader] [parse_new:2598] INFO: Processing 19 caption(s)...
+[09:27:54] [udemy-downloader] [process_caption:2173] INFO:     >  Downloading caption: '005 Generating tests_en.vtt'
+[09:27:54] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53568030/en_US/2023-12-29_17-16-58-6725f52258b380de404da8cb80a4a615.vtt?Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '005 Generating tests_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:28:00] [udemy-downloader] [process_caption:2186] INFO:     > Converting caption to SRT format...
+[09:28:00] [udemy-downloader] [process_caption:2188] INFO:     > Caption conversion complete.
+[09:28:00] [udemy-downloader] [process_caption:2199] INFO:     > Dual-language subtitle already exists (005 Generating tests_en_zh.srt), skipping translation.
+[09:28:00] [udemy-downloader] [process_caption:2206] INFO:     > Removed redundant English subtitle after skipping translation.
+[09:28:00] [udemy-downloader] [parse_new:2606] INFO:     > Processing 0 asset(s) for lecture...
+[09:28:06] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[09:28:12] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[09:28:18] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[09:28:18] [udemy-downloader] [parse_new:2561] INFO:   > Processing lecture 6 of 86
+[09:28:18] [udemy-downloader] [parse_new:2565] INFO:       > Lecture '006 Working with lists' is already downloaded, skipping...
+[09:28:18] [udemy-downloader] [parse_new:2598] INFO: Processing 19 caption(s)...
+[09:28:18] [udemy-downloader] [process_caption:2173] INFO:     >  Downloading caption: '006 Working with lists_en.vtt'
+[09:28:18] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53568032/en_US/2023-12-29_17-16-58-f11c14fc3b42fde48c0e2d8bef7c57c2.vtt?Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '006 Working with lists_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:28:25] [udemy-downloader] [process_caption:2186] INFO:     > Converting caption to SRT format...
+[09:28:25] [udemy-downloader] [process_caption:2188] INFO:     > Caption conversion complete.
+[09:28:25] [udemy-downloader] [process_caption:2199] INFO:     > Dual-language subtitle already exists (006 Working with lists_en_zh.srt), skipping translation.
+[09:28:25] [udemy-downloader] [process_caption:2206] INFO:     > Removed redundant English subtitle after skipping translation.
+[09:28:25] [udemy-downloader] [parse_new:2606] INFO:     > Processing 1 asset(s) for lecture...
+[09:28:25] [udemy-downloader] [download_aria:2151] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2023-12-29_11-23-02-e2d430f3103b3e213ac355ce7ac6bc12/original.py?response-content-disposition=attachment%3B+filename%3Ddata.py&Expires=1769838931&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '006 data.py', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\07 - GitHub Copilot for Python', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[09:28:31] [udemy-downloader] [cleanup_temp_dir:2687] INFO: > Temp 目录已清理：F:\Cursor\Advance-Udemy-Downloader\temp

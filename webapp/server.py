@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import os
 import subprocess
 import sys
 import threading
@@ -28,6 +29,7 @@ from .config import (
     KEYFILE_PATH,
     MAIN_SCRIPT,
     PIPELINE_SCRIPT,
+    TOKENS_FILE,
     TOKEN_TTL_SECONDS,
 )
 from .history import HistoryStore
@@ -44,7 +46,7 @@ static_dir = BASE_DIR / "webapp" / "static"
 if static_dir.exists():
     app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 
-token_manager = TokenManager(TOKEN_TTL_SECONDS)
+token_manager = TokenManager(TOKEN_TTL_SECONDS, storage_path=TOKENS_FILE)
 history_store = HistoryStore(HISTORY_FILE, HISTORY_LIMIT)
 task_manager = TaskManager(history_store, BASE_DIR)
 key_manager = KeyfileManager(KEYFILE_PATH)
@@ -144,6 +146,9 @@ def build_command(payload: DownloadRequest) -> List[str]:
     cmd = [sys.executable, str(MAIN_SCRIPT), "-c", payload.course_url, "-b", payload.bearer_token]
     output_dir = payload.output_dir or str(DEFAULT_OUTPUT_DIR)
     cmd.extend(["--out", output_dir])
+
+    if os.getenv("NO_PROXY_MODE", "0").strip().lower() in ("1", "true", "yes"):
+        cmd.append("--no-proxy")
 
     if payload.lang:
         cmd.extend(["--lang", payload.lang])

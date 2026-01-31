@@ -1,0 +1,504 @@
+[32m[08:55:52][0m [34m[udemy-downloader][0m [pre_run:536] [1;30mINFO:[0m Output directory set to F:\Cursor\Advance-Udemy-Downloader\out_dir
+[32m[08:55:52][0m [34m[udemy-downloader][0m [pre_run:551] [1;30mINFO:[0m Chapter filter applied: [7]
+[32m[08:55:53][0m [34m[udemy-downloader][0m [__init__:593] [1;30mINFO:[0m Found cookies.txt, attempting to use for authentication...
+[32m[08:55:53][0m [34m[udemy-downloader][0m [main:2769] [1;30mINFO:[0m > Fetching course information, this may take a minute...
+[32m[08:56:00][0m [34m[udemy-downloader][0m [main:2772] [1;30mINFO:[0m > Course information retrieved!
+[32m[08:56:00][0m [34m[udemy-downloader][0m [main:2777] [1;30mINFO:[0m > Fetching course curriculum, this may take a minute...
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2789] [1;30mINFO:[0m > Course curriculum retrieved!
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2821] [1;30mINFO:[0m > Processing course data, this may take a minute. 
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 2 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 3 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 4 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 5 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 6 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 7 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 8 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 9 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 10 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 11 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2901] [1;30mINFO:[0m Processing 12 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 14 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 15 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 16 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 17 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 18 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 19 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 20 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 21 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 22 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 23 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2901] [1;30mINFO:[0m Processing 24 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 26 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 27 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 28 of 97
+[32m[08:56:09][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 29 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 30 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 32 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 33 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 34 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 35 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 37 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 39 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 40 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 41 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 42 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 43 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 44 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 45 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 46 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 47 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 48 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 49 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 50 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 51 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 52 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 53 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 54 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 56 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 57 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 58 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 59 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 60 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 61 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 62 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 63 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 65 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 66 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 67 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 68 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 69 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 70 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 71 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 72 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 73 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 74 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 75 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 76 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 78 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 79 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 80 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 81 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 82 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 83 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 84 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 85 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 86 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 87 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 89 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 90 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 91 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 92 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 93 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 95 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 96 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [main:2865] [1;30mINFO:[0m Processing 97 of 97
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2476] [1;30mINFO:[0m Chapter(s) (11)
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2477] [1;30mINFO:[0m Lecture(s) (86)
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2490] [1;30mINFO:[0m Skipping chapter 1 as it is not in the specified filter
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2490] [1;30mINFO:[0m Skipping chapter 2 as it is not in the specified filter
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2490] [1;30mINFO:[0m Skipping chapter 3 as it is not in the specified filter
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2490] [1;30mINFO:[0m Skipping chapter 4 as it is not in the specified filter
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2490] [1;30mINFO:[0m Skipping chapter 5 as it is not in the specified filter
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2490] [1;30mINFO:[0m Skipping chapter 6 as it is not in the specified filter
+[32m[08:56:10][0m [34m[udemy-downloader][0m [parse_new:2498] [1;30mINFO:[0m ======= Processing chapter 7 of 11 =======
+[32m[08:56:10][0m [34m[udemy-downloader][0m [_extract_mpd:1063] [1;30mWARNING:[0m [33mMPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))[0m
+[32m[08:56:15][0m [34m[udemy-downloader][0m [_extract_mpd:1082] [1;30mWARNING:[0m [33mMPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam[0m
+[32m[08:56:23][0m [34m[udemy-downloader][0m [_extract_mpd:1095] [1;30mINFO:[0m MPD Cloudflare challenge bypassed via curl_cffi
+[32m[08:56:24][0m [34m[udemy-downloader][0m [parse_new:2526] [1;30mINFO:[0m   > Processing lecture 1 of 86
+[32m[08:56:24][0m [34m[udemy-downloader][0m [parse_new:2530] [1;30mINFO:[0m       > Lecture '001 Section intro' is already downloaded, skipping...
+[32m[08:56:24][0m [34m[udemy-downloader][0m [parse_new:2563] [1;30mINFO:[0m Processing 19 caption(s)...
+[32m[08:56:24][0m [34m[udemy-downloader][0m [process_caption:2138] [1;30mINFO:[0m     >  Downloading caption: '001 Section intro_en.vtt'
+
+01/31 08:56:24 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#d7c90b 0B/0B CN:1 DL:0B]
+                                                                               
+[#d7c90b 0B/0B CN:1 DL:0B]
+                                                                               
+[#d7c90b 0B/0B CN:1 DL:0B]
+                                                                               
+[#d7c90b 0B/0B CN:1 DL:0B]
+                                                                               
+[#d7c90b 0B/0B CN:1 DL:0B]
+01/31 08:56:30 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/001 Section intro_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d7c90b|OK  |   216KiB/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/001 Section intro_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[08:56:30][0m [34m[udemy-downloader][0m [process_caption:2151] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[08:56:30][0m [34m[udemy-downloader][0m [process_caption:2153] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[08:56:30][0m [34m[udemy-downloader][0m [process_caption:2164] [1;30mINFO:[0m     > Dual-language subtitle already exists (001 Section intro_en_zh.srt), skipping translation.
+[32m[08:56:30][0m [34m[udemy-downloader][0m [process_caption:2171] [1;30mINFO:[0m     > Removed redundant English subtitle after skipping translation.
+[32m[08:56:30][0m [34m[udemy-downloader][0m [parse_new:2571] [1;30mINFO:[0m     > Processing 1 asset(s) for lecture...
+
+01/31 08:56:30 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#a6e248 0B/0B CN:1 DL:0B]
+                                                                               
+[#a6e248 0B/0B CN:1 DL:0B]
+                                                                               
+[#a6e248 0B/0B CN:1 DL:0B]
+                                                                               
+[#a6e248 0B/0B CN:1 DL:0B]
+                                                                               
+[#a6e248 0B/0B CN:1 DL:0B]
+                                                                               
+[#a6e248 0B/0B CN:1 DL:0B]
+01/31 08:56:37 [[1;32mNOTICE[0m] GID#a6e2488d7eca766b - Download has already completed: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/001 Python.zip
+
+01/31 08:56:37 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/001 Python.zip
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+a6e248|OK  |       0B/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/001 Python.zip
+
+Status Legend:
+(OK):download completed.
+[32m[08:56:42][0m [34m[udemy-downloader][0m [_extract_mpd:1063] [1;30mWARNING:[0m [33mMPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))[0m
+[32m[08:56:47][0m [34m[udemy-downloader][0m [_extract_mpd:1082] [1;30mWARNING:[0m [33mMPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam[0m
+[32m[08:56:53][0m [34m[udemy-downloader][0m [_extract_mpd:1095] [1;30mINFO:[0m MPD Cloudflare challenge bypassed via curl_cffi
+[32m[08:56:54][0m [34m[udemy-downloader][0m [parse_new:2526] [1;30mINFO:[0m   > Processing lecture 2 of 86
+[32m[08:56:54][0m [34m[udemy-downloader][0m [parse_new:2530] [1;30mINFO:[0m       > Lecture '002 Python coding assistance' is already downloaded, skipping...
+[32m[08:56:54][0m [34m[udemy-downloader][0m [parse_new:2563] [1;30mINFO:[0m Processing 19 caption(s)...
+[32m[08:56:54][0m [34m[udemy-downloader][0m [process_caption:2138] [1;30mINFO:[0m     >  Downloading caption: '002 Python coding assistance_en.vtt'
+
+01/31 08:56:54 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#57a997 0B/0B CN:1 DL:0B]
+                                                                               
+[#57a997 0B/0B CN:1 DL:0B]
+                                                                               
+[#57a997 0B/0B CN:1 DL:0B]
+                                                                               
+[#57a997 0B/0B CN:1 DL:0B]
+                                                                               
+[#57a997 0B/0B CN:1 DL:0B]
+01/31 08:57:00 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 Python coding assistance_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+57a997|OK  |   716KiB/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 Python coding assistance_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[08:57:00][0m [34m[udemy-downloader][0m [process_caption:2151] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[08:57:00][0m [34m[udemy-downloader][0m [process_caption:2153] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[08:57:00][0m [34m[udemy-downloader][0m [process_caption:2164] [1;30mINFO:[0m     > Dual-language subtitle already exists (002 Python coding assistance_en_zh.srt), skipping translation.
+[32m[08:57:00][0m [34m[udemy-downloader][0m [process_caption:2171] [1;30mINFO:[0m     > Removed redundant English subtitle after skipping translation.
+[32m[08:57:00][0m [34m[udemy-downloader][0m [parse_new:2571] [1;30mINFO:[0m     > Processing 4 asset(s) for lecture...
+
+01/31 08:57:00 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#d18fcb 0B/0B CN:1 DL:0B]
+                                                                               
+[#d18fcb 0B/0B CN:1 DL:0B]
+                                                                               
+[#d18fcb 0B/0B CN:1 DL:0B]
+                                                                               
+[#d18fcb 0B/0B CN:1 DL:0B]
+                                                                               
+[#d18fcb 0B/0B CN:1 DL:0B]
+01/31 08:57:06 [[1;32mNOTICE[0m] GID#d18fcb6cf9150de1 - Download has already completed: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 password-checker.py
+
+01/31 08:57:06 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 password-checker.py
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d18fcb|OK  |       0B/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 password-checker.py
+
+Status Legend:
+(OK):download completed.
+
+01/31 08:57:07 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#d38a9c 0B/0B CN:1 DL:0B]
+                                                                               
+[#d38a9c 0B/0B CN:1 DL:0B]
+                                                                               
+[#d38a9c 0B/0B CN:1 DL:0B]
+                                                                               
+[#d38a9c 0B/0B CN:1 DL:0B]
+                                                                               
+[#d38a9c 0B/0B CN:1 DL:0B]
+01/31 08:57:12 [[1;32mNOTICE[0m] GID#d38a9ca31e660046 - Download has already completed: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 data.py
+
+01/31 08:57:12 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 data.py
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d38a9c|OK  |       0B/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 data.py
+
+Status Legend:
+(OK):download completed.
+
+01/31 08:57:13 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#d58ae6 0B/0B CN:1 DL:0B]
+                                                                               
+[#d58ae6 0B/0B CN:1 DL:0B]
+                                                                               
+[#d58ae6 0B/0B CN:1 DL:0B]
+                                                                               
+[#d58ae6 0B/0B CN:1 DL:0B]
+                                                                               
+[#d58ae6 0B/0B CN:1 DL:0B]
+01/31 08:57:18 [[1;32mNOTICE[0m] GID#d58ae61a93141714 - Download has already completed: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 test-password-checker.py
+
+01/31 08:57:18 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 test-password-checker.py
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d58ae6|OK  |       0B/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/002 test-password-checker.py
+
+Status Legend:
+(OK):download completed.
+[32m[08:57:24][0m [34m[udemy-downloader][0m [_extract_mpd:1063] [1;30mWARNING:[0m [33mMPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))[0m
+[32m[08:57:29][0m [34m[udemy-downloader][0m [_extract_mpd:1082] [1;30mWARNING:[0m [33mMPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam[0m
+[32m[08:57:35][0m [34m[udemy-downloader][0m [_extract_mpd:1095] [1;30mINFO:[0m MPD Cloudflare challenge bypassed via curl_cffi
+[32m[08:57:36][0m [34m[udemy-downloader][0m [parse_new:2526] [1;30mINFO:[0m   > Processing lecture 3 of 86
+[32m[08:57:36][0m [34m[udemy-downloader][0m [process_lecture:2313] [1;30mINFO:[0m       > Lecture '003 Generating text' has DRM, attempting to download. Selected quality: 1080
+[32m[08:57:36][0m [34m[udemy-downloader][0m [handle_segments:1823] [1;30mINFO:[0m > Downloading Lecture Tracks...
+[32m[08:58:11][0m [34m[udemy-downloader][0m [handle_segments:1917] [1;30mINFO:[0m > Lecture Tracks Downloaded
+[32m[08:58:11][0m [34m[udemy-downloader][0m [handle_segments:1924] [1;30mINFO:[0m KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[08:58:11][0m [34m[udemy-downloader][0m [handle_segments:1932] [1;30mINFO:[0m KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[08:58:11][0m [34m[udemy-downloader][0m [handle_segments:1974] [1;30mINFO:[0m > Merging video and audio, this might take a minute...
+[32m[08:58:13][0m [34m[udemy-downloader][0m [handle_segments:1989] [1;30mINFO:[0m > Merging complete, renaming final file...
+[32m[08:58:13][0m [34m[udemy-downloader][0m [handle_segments:1991] [1;30mINFO:[0m > Cleaning up temporary files...
+[32m[08:58:13][0m [34m[udemy-downloader][0m [parse_new:2563] [1;30mINFO:[0m Processing 19 caption(s)...
+[32m[08:58:13][0m [34m[udemy-downloader][0m [process_caption:2138] [1;30mINFO:[0m     >  Downloading caption: '003 Generating text_en.vtt'
+
+01/31 08:58:13 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#cbed5f 0B/0B CN:1 DL:0B]
+                                                                               
+[#cbed5f 0B/0B CN:1 DL:0B]
+                                                                               
+[#cbed5f 0B/0B CN:1 DL:0B]
+                                                                               
+[#cbed5f 0B/0B CN:1 DL:0B]
+                                                                               
+[#cbed5f 0B/0B CN:1 DL:0B]
+01/31 08:58:19 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/003 Generating text_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+cbed5f|OK  |   221KiB/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/003 Generating text_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[08:58:19][0m [34m[udemy-downloader][0m [process_caption:2151] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[08:58:19][0m [34m[udemy-downloader][0m [process_caption:2153] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[08:58:19][0m [34m[udemy-downloader][0m [process_caption:2177] [1;30mINFO:[0m     > Translating caption to Chinese...
+[32m[08:58:19][0m [34m[udemy-downloader][0m [_ensure_translation_executor:2268] [1;30mINFO:[0m     > Translation executor started (workers=3)
+[32m[08:58:19][0m [34m[udemy-downloader][0m [process_caption:2247] [1;30mINFO:[0m     > Translation task submitted (003 Generating text_en.srt)
+[32m[08:58:19][0m [34m[udemy-downloader][0m [parse_new:2571] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[08:58:19][0m [34m[udemy-downloader][0m [translate_batch:382] [1;30mINFO:[0m     > [Gemini] Preparing 40 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[32m[08:58:19][0m [34m[udemy-downloader][0m [process_batch:396] [1;30mINFO:[0m     > [Gemini] Batch 1/1: 40 subtitles (~2465 chars) ...
+[32m[08:58:25][0m [34m[udemy-downloader][0m [_extract_mpd:1063] [1;30mWARNING:[0m [33mMPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))[0m
+[32m[08:58:31][0m [34m[udemy-downloader][0m [_extract_mpd:1082] [1;30mWARNING:[0m [33mMPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam[0m
+[32m[08:58:37][0m [34m[udemy-downloader][0m [_extract_mpd:1095] [1;30mINFO:[0m MPD Cloudflare challenge bypassed via curl_cffi
+[32m[08:58:37][0m [34m[udemy-downloader][0m [parse_new:2526] [1;30mINFO:[0m   > Processing lecture 4 of 86
+[32m[08:58:37][0m [34m[udemy-downloader][0m [process_lecture:2313] [1;30mINFO:[0m       > Lecture '004 Unit tests assistance' has DRM, attempting to download. Selected quality: 1080
+[32m[08:58:37][0m [34m[udemy-downloader][0m [handle_segments:1823] [1;30mINFO:[0m > Downloading Lecture Tracks...
+[32m[08:58:47][0m [34m[udemy-downloader][0m [process_batch:406] [1;30mINFO:[0m     > [Gemini] Batch 1/1 completed in 27.98s
+[32m[08:58:47][0m [34m[udemy-downloader][0m [_save_cache:239] [1;30mWARNING:[0m [33mFailed to save translation cache: [Errno 2] No such file or directory: '.translation_cache\\translation_cache.json'[0m
+[32m[08:58:47][0m [34m[udemy-downloader][0m [_translate_and_save:2217] [1;30mINFO:[0m     > Dual-language subtitle saved: 003 Generating text_en_zh.srt
+[32m[08:58:47][0m [34m[udemy-downloader][0m [_translate_and_save:2222] [1;30mINFO:[0m     > Removed original English subtitle (kept EN+ZH file only)
+[32m[08:58:47][0m [34m[udemy-downloader][0m [_translate_and_save:2227] [1;30mINFO:[0m     > Translation finished in 28.01s (003 Generating text_en_zh.srt)
+[32m[08:59:22][0m [34m[udemy-downloader][0m [handle_segments:1917] [1;30mINFO:[0m > Lecture Tracks Downloaded
+[32m[08:59:22][0m [34m[udemy-downloader][0m [handle_segments:1924] [1;30mINFO:[0m KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[08:59:22][0m [34m[udemy-downloader][0m [handle_segments:1932] [1;30mINFO:[0m KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[08:59:22][0m [34m[udemy-downloader][0m [handle_segments:1974] [1;30mINFO:[0m > Merging video and audio, this might take a minute...
+[32m[08:59:25][0m [34m[udemy-downloader][0m [handle_segments:1989] [1;30mINFO:[0m > Merging complete, renaming final file...
+[32m[08:59:25][0m [34m[udemy-downloader][0m [handle_segments:1991] [1;30mINFO:[0m > Cleaning up temporary files...
+[32m[08:59:25][0m [34m[udemy-downloader][0m [parse_new:2563] [1;30mINFO:[0m Processing 19 caption(s)...
+[32m[08:59:25][0m [34m[udemy-downloader][0m [process_caption:2138] [1;30mINFO:[0m     >  Downloading caption: '004 Unit tests assistance_en.vtt'
+
+01/31 08:59:25 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#4d1618 0B/0B CN:1 DL:0B]
+                                                                               
+[#4d1618 0B/0B CN:1 DL:0B]
+                                                                               
+[#4d1618 0B/0B CN:1 DL:0B]
+                                                                               
+[#4d1618 0B/0B CN:1 DL:0B]
+                                                                               
+[#4d1618 0B/0B CN:1 DL:0B]
+01/31 08:59:31 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/004 Unit tests assistance_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+4d1618|OK  |   458KiB/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/004 Unit tests assistance_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[08:59:31][0m [34m[udemy-downloader][0m [process_caption:2151] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[08:59:31][0m [34m[udemy-downloader][0m [process_caption:2153] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[08:59:31][0m [34m[udemy-downloader][0m [process_caption:2177] [1;30mINFO:[0m     > Translating caption to Chinese...
+[32m[08:59:31][0m [34m[udemy-downloader][0m [process_caption:2247] [1;30mINFO:[0m     > Translation task submitted (004 Unit tests assistance_en.srt)
+[32m[08:59:31][0m [34m[udemy-downloader][0m [parse_new:2571] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[08:59:31][0m [34m[udemy-downloader][0m [translate_batch:382] [1;30mINFO:[0m     > [Gemini] Preparing 65 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[32m[08:59:31][0m [34m[udemy-downloader][0m [process_batch:396] [1;30mINFO:[0m     > [Gemini] Batch 1/2: 50 subtitles (~2484 chars) ...
+[32m[08:59:31][0m [34m[udemy-downloader][0m [process_batch:396] [1;30mINFO:[0m     > [Gemini] Batch 2/2: 15 subtitles (~801 chars) ...
+[32m[08:59:37][0m [34m[udemy-downloader][0m [_extract_mpd:1063] [1;30mWARNING:[0m [33mMPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))[0m
+[32m[08:59:43][0m [34m[udemy-downloader][0m [_extract_mpd:1082] [1;30mWARNING:[0m [33mMPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam[0m
+[32m[08:59:49][0m [34m[udemy-downloader][0m [process_batch:406] [1;30mINFO:[0m     > [Gemini] Batch 2/2 completed in 17.62s
+[32m[08:59:49][0m [34m[udemy-downloader][0m [_extract_mpd:1095] [1;30mINFO:[0m MPD Cloudflare challenge bypassed via curl_cffi
+[32m[08:59:50][0m [34m[udemy-downloader][0m [parse_new:2526] [1;30mINFO:[0m   > Processing lecture 5 of 86
+[32m[08:59:50][0m [34m[udemy-downloader][0m [process_lecture:2313] [1;30mINFO:[0m       > Lecture '005 Generating tests' has DRM, attempting to download. Selected quality: 1080
+[32m[08:59:50][0m [34m[udemy-downloader][0m [handle_segments:1823] [1;30mINFO:[0m > Downloading Lecture Tracks...
+[32m[09:00:38][0m [34m[udemy-downloader][0m [handle_segments:1917] [1;30mINFO:[0m > Lecture Tracks Downloaded
+[32m[09:00:38][0m [34m[udemy-downloader][0m [handle_segments:1924] [1;30mINFO:[0m KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[09:00:38][0m [34m[udemy-downloader][0m [handle_segments:1932] [1;30mINFO:[0m KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[09:00:38][0m [34m[udemy-downloader][0m [handle_segments:1974] [1;30mINFO:[0m > Merging video and audio, this might take a minute...
+[32m[09:00:41][0m [34m[udemy-downloader][0m [handle_segments:1989] [1;30mINFO:[0m > Merging complete, renaming final file...
+[32m[09:00:41][0m [34m[udemy-downloader][0m [handle_segments:1991] [1;30mINFO:[0m > Cleaning up temporary files...
+[32m[09:00:41][0m [34m[udemy-downloader][0m [parse_new:2563] [1;30mINFO:[0m Processing 19 caption(s)...
+[32m[09:00:41][0m [34m[udemy-downloader][0m [process_caption:2138] [1;30mINFO:[0m     >  Downloading caption: '005 Generating tests_en.vtt'
+
+01/31 09:00:42 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#d63d8e 0B/0B CN:1 DL:0B]
+                                                                               
+[#d63d8e 0B/0B CN:1 DL:0B]
+                                                                               
+[#d63d8e 0B/0B CN:1 DL:0B]
+                                                                               
+[#d63d8e 0B/0B CN:1 DL:0B]
+                                                                               
+[#d63d8e 0B/0B CN:1 DL:0B]
+01/31 09:00:48 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/005 Generating tests_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d63d8e|OK  |   604KiB/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/005 Generating tests_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[09:00:48][0m [34m[udemy-downloader][0m [process_caption:2151] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[09:00:48][0m [34m[udemy-downloader][0m [process_caption:2153] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[09:00:48][0m [34m[udemy-downloader][0m [process_caption:2177] [1;30mINFO:[0m     > Translating caption to Chinese...
+[32m[09:00:48][0m [34m[udemy-downloader][0m [process_caption:2247] [1;30mINFO:[0m     > Translation task submitted (005 Generating tests_en.srt)
+[32m[09:00:48][0m [34m[udemy-downloader][0m [parse_new:2571] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[09:00:48][0m [34m[udemy-downloader][0m [translate_batch:382] [1;30mINFO:[0m     > [Gemini] Preparing 89 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[32m[09:00:48][0m [34m[udemy-downloader][0m [process_batch:396] [1;30mINFO:[0m     > [Gemini] Batch 1/2: 52 subtitles (~2472 chars) ...
+[32m[09:00:48][0m [34m[udemy-downloader][0m [process_batch:396] [1;30mINFO:[0m     > [Gemini] Batch 2/2: 37 subtitles (~1941 chars) ...
+[32m[09:00:53][0m [34m[udemy-downloader][0m [_extract_mpd:1063] [1;30mWARNING:[0m [33mMPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))[0m
+[32m[09:00:59][0m [34m[udemy-downloader][0m [_extract_mpd:1082] [1;30mWARNING:[0m [33mMPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam[0m
+[32m[09:01:01][0m [34m[udemy-downloader][0m [process_batch:406] [1;30mINFO:[0m     > [Gemini] Batch 1/2 completed in 90.21s
+[32m[09:01:02][0m [34m[udemy-downloader][0m [_translate_and_save:2217] [1;30mINFO:[0m     > Dual-language subtitle saved: 004 Unit tests assistance_en_zh.srt
+[32m[09:01:02][0m [34m[udemy-downloader][0m [_translate_and_save:2222] [1;30mINFO:[0m     > Removed original English subtitle (kept EN+ZH file only)
+[32m[09:01:02][0m [34m[udemy-downloader][0m [_translate_and_save:2227] [1;30mINFO:[0m     > Translation finished in 90.32s (004 Unit tests assistance_en_zh.srt)
+[32m[09:01:06][0m [34m[udemy-downloader][0m [_extract_mpd:1095] [1;30mINFO:[0m MPD Cloudflare challenge bypassed via curl_cffi
+[32m[09:01:07][0m [34m[udemy-downloader][0m [parse_new:2526] [1;30mINFO:[0m   > Processing lecture 6 of 86
+[32m[09:01:07][0m [34m[udemy-downloader][0m [process_lecture:2313] [1;30mINFO:[0m       > Lecture '006 Working with lists' has DRM, attempting to download. Selected quality: 1080
+[32m[09:01:07][0m [34m[udemy-downloader][0m [handle_segments:1823] [1;30mINFO:[0m > Downloading Lecture Tracks...
+[32m[09:01:38][0m [34m[udemy-downloader][0m [handle_segments:1917] [1;30mINFO:[0m > Lecture Tracks Downloaded
+[32m[09:01:38][0m [34m[udemy-downloader][0m [handle_segments:1924] [1;30mINFO:[0m KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[09:01:38][0m [34m[udemy-downloader][0m [handle_segments:1932] [1;30mINFO:[0m KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[32m[09:01:38][0m [34m[udemy-downloader][0m [handle_segments:1974] [1;30mINFO:[0m > Merging video and audio, this might take a minute...
+[32m[09:01:39][0m [34m[udemy-downloader][0m [handle_segments:1989] [1;30mINFO:[0m > Merging complete, renaming final file...
+[32m[09:01:40][0m [34m[udemy-downloader][0m [handle_segments:1991] [1;30mINFO:[0m > Cleaning up temporary files...
+[32m[09:01:53][0m [34m[udemy-downloader][0m [process_batch:406] [1;30mINFO:[0m     > [Gemini] Batch 2/2 completed in 64.96s
+[32m[09:01:56][0m [34m[udemy-downloader][0m [parse_new:2563] [1;30mINFO:[0m Processing 19 caption(s)...
+[32m[09:01:56][0m [34m[udemy-downloader][0m [process_caption:2138] [1;30mINFO:[0m     >  Downloading caption: '006 Working with lists_en.vtt'
+
+01/31 09:01:57 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#b0acc4 0B/0B CN:1 DL:0B]
+                                                                               
+[#b0acc4 0B/0B CN:1 DL:0B]
+                                                                               
+[#b0acc4 0B/0B CN:1 DL:0B]
+                                                                               
+[#b0acc4 0B/0B CN:1 DL:0B]
+                                                                               
+[#b0acc4 0B/0B CN:1 DL:0B]
+01/31 09:02:03 [[1;32mNOTICE[0m] Download complete: F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/006 Working with lists_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+b0acc4|OK  |   368KiB/s|F:/Cursor/Advance-Udemy-Downloader/out_dir/github-copilot-the-complete-guide/07 - GitHub Copilot for Python/006 Working with lists_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[09:02:03][0m [34m[udemy-downloader][0m [process_caption:2151] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[09:02:03][0m [34m[udemy-downloader][0m [process_caption:2153] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[09:02:03][0m [34m[udemy-downloader][0m [process_caption:2177] [1;30mINFO:[0m     > Translating caption to Chinese...
+[32m[09:02:03][0m [34m[udemy-downloader][0m [process_caption:2247] [1;30mINFO:[0m     > Translation task submitted (006 Working with lists_en.srt)
+[32m[09:02:03][0m [34m[udemy-downloader][0m [parse_new:2571] [1;30mINFO:[0m     > Processing 1 asset(s) for lecture...
+[32m[09:02:03][0m [34m[udemy-downloader][0m [translate_batch:382] [1;30mINFO:[0m     > [Gemini] Preparing 61 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[32m[09:02:03][0m [34m[udemy-downloader][0m [process_batch:396] [1;30mINFO:[0m     > [Gemini] Batch 1/2: 53 subtitles (~2489 chars) ...
+[32m[09:02:03][0m [34m[udemy-downloader][0m [process_batch:396] [1;30mINFO:[0m     > [Gemini] Batch 2/2: 8 subtitles (~426 chars) ...
+
+01/31 09:02:04 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+                                                                               
+[#527c96 0B/0B CN:1 DL:0B]
+                                                                               
+[#527c96 0B/0B CN:1 DL:0B]
+                                                                               
+[#527c96 0B/0B CN:1 DL:0B]
+                                                                               
+[#527c96 0B/0B CN:1 DL:0B][32m[09:02:08][0m [34m[udemy-downloader][0m [process_batch:406] [1;30mINFO:[0m     > [Gemini] Batch 1/2 completed in 80.64s
+[32m[09:02:08][0m [34m[udemy-downloader][0m [_translate_and_save:2217] [1;30mINFO:[0m     > Dual-language subtitle saved: 005 Generating tests_en_zh.srt
+[32m[09:02:08][0m [34m[udemy-downloader][0m [_translate_and_save:2222] [1;30mINFO:[0m     > Removed original English subtitle (kept EN+ZH file only)
+[32m[09:02:08][0m [34m[udemy-downloader][0m [_translate_and_save:2227] [1;30mINFO:[0m     > Translation finished in 80.74s (005 Generating tests_en_zh.srt)
+
+                                                                               
+[#527c96 0B/0B CN:1 DL:0B]
+                                                                               
+[#527c96 0B/0B CN:1 DL:0B][32m[09:02:10][0m [34m[udemy-downloader][0m [wait_for_translation_tasks:2285] [1;30mINFO:[0m > Waiting for 4 translation task(s) to finish...
+[32m[09:02:10][0m [34m[udemy-downloader][0m [wait_for_translation_tasks:2292] [1;30mINFO:[0m > Translation task 1/4 completed (004 Unit tests assistance)
+[32m[09:02:10][0m [34m[udemy-downloader][0m [wait_for_translation_tasks:2292] [1;30mINFO:[0m > Translation task 2/4 completed (003 Generating text)
+[32m[09:02:10][0m [34m[udemy-downloader][0m [wait_for_translation_tasks:2292] [1;30mINFO:[0m > Translation task 3/4 completed (005 Generating tests)
+[32m[09:02:15][0m [34m[udemy-downloader][0m [process_batch:406] [1;30mINFO:[0m     > [Gemini] Batch 2/2 completed in 12.03s
+[32m[09:02:28][0m [34m[udemy-downloader][0m [process_batch:406] [1;30mINFO:[0m     > [Gemini] Batch 1/2 completed in 24.98s
+[32m[09:02:28][0m [34m[udemy-downloader][0m [_translate_and_save:2217] [1;30mINFO:[0m     > Dual-language subtitle saved: 006 Working with lists_en_zh.srt
+[32m[09:02:28][0m [34m[udemy-downloader][0m [_translate_and_save:2222] [1;30mINFO:[0m     > Removed original English subtitle (kept EN+ZH file only)
+[32m[09:02:28][0m [34m[udemy-downloader][0m [_translate_and_save:2227] [1;30mINFO:[0m     > Translation finished in 25.08s (006 Working with lists_en_zh.srt)
+[32m[09:02:28][0m [34m[udemy-downloader][0m [wait_for_translation_tasks:2292] [1;30mINFO:[0m > Translation task 4/4 completed (006 Working with lists)
+[32m[09:02:28][0m [34m[udemy-downloader][0m [wait_for_translation_tasks:2297] [1;30mINFO:[0m > All translation tasks completed in 18.03s
+[32m[09:02:28][0m [34m[udemy-downloader][0m [cleanup_temp_dir:2652] [1;30mINFO:[0m > Temp 目录已清理：F:\Cursor\Advance-Udemy-Downloader\temp
+Traceback (most recent call last):
+  File "F:\Cursor\Advance-Udemy-Downloader\main.py", line 2951, in <module>
+    main()
+  File "F:\Cursor\Advance-Udemy-Downloader\main.py", line 2938, in main
+    parse_new(udemy, udemy_object)
+  File "F:\Cursor\Advance-Udemy-Downloader\main.py", line 2606, in parse_new
+    ret_code = download_aria(download_url, chapter_dir, filename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Cursor\Advance-Udemy-Downloader\main.py", line 2122, in download_aria
+    ret_code = process.wait()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1590, in _wait
+    result = _winapi.WaitForSingleObject(self._handle,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

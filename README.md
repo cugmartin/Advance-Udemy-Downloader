@@ -95,6 +95,20 @@ To download DRM-protected courses, you'll need to extract cookies and Widevine d
     pip install -r requirements.txt
     ```
 
+### Web Console (FastAPI)
+
+Start the Web console:
+
+```bash
+python -m uvicorn webapp.server:app --host 127.0.0.1 --port 8000
+```
+
+If you want auto-reload during development, make sure reload only watches the `webapp` folder (otherwise changes in `out_dir/` during downloads may trigger reload and interrupt running tasks):
+
+```bash
+python -m uvicorn webapp.server:app --host 127.0.0.1 --port 8000 --reload --reload-dir webapp
+```
+
 2)  **Run the automation script**:
     Use the `main.py` script with command-line arguments to specify the target URL and desired actions.
 

@@ -222,7 +222,6 @@ async function refreshActiveTasks(options = {}) {
       container.textContent = "暂无运行中的任务";
       document.body.classList.remove("has-active-task");
       stopLogStream();
-      clearLogPanel();
       return;
     }
     document.body.classList.add("has-active-task");
@@ -331,7 +330,7 @@ function startLogStream(taskId) {
   };
   state.eventSource.addEventListener("end", () => {
     stopLogStream();
-    clearLogPanel();
+    appendLog("[system] 日志结束");
     refreshHistory();
     refreshActiveTasks({ showLoading: false });
   });

@@ -1,0 +1,609 @@
+[08:32:07] [udemy-downloader] [pre_run:536] INFO: Output directory set to F:\Cursor\Advance-Udemy-Downloader\out_dir
+[08:32:07] [udemy-downloader] [pre_run:551] INFO: Chapter filter applied: [9, 10, 11]
+[08:32:07] [udemy-downloader] [__init__:593] INFO: Found cookies.txt, attempting to use for authentication...
+[08:32:07] [udemy-downloader] [main:2850] INFO: > Fetching course information, this may take a minute...
+[08:32:15] [udemy-downloader] [main:2853] INFO: > Course information retrieved!
+[08:32:15] [udemy-downloader] [main:2858] INFO: > Fetching course curriculum, this may take a minute...
+[08:32:29] [udemy-downloader] [main:2870] INFO: > Course curriculum retrieved!
+[08:32:29] [udemy-downloader] [main:2902] INFO: > Processing course data, this may take a minute. 
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 2 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 3 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 4 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 5 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 6 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 7 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 8 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 9 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 10 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 11 of 97
+[08:32:29] [udemy-downloader] [main:2982] INFO: Processing 12 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 14 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 15 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 16 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 17 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 18 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 19 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 20 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 21 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 22 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 23 of 97
+[08:32:29] [udemy-downloader] [main:2982] INFO: Processing 24 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 26 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 27 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 28 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 29 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 30 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 32 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 33 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 34 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 35 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 37 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 39 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 40 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 41 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 42 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 43 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 44 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 45 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 46 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 47 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 48 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 49 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 50 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 51 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 52 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 53 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 54 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 56 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 57 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 58 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 59 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 60 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 61 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 62 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 63 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 65 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 66 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 67 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 68 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 69 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 70 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 71 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 72 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 73 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 74 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 75 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 76 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 78 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 79 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 80 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 81 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 82 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 83 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 84 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 85 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 86 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 87 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 89 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 90 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 91 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 92 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 93 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 95 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 96 of 97
+[08:32:29] [udemy-downloader] [main:2946] INFO: Processing 97 of 97
+[08:32:29] [udemy-downloader] [parse_new:2557] INFO: Chapter(s) (11)
+[08:32:29] [udemy-downloader] [parse_new:2558] INFO: Lecture(s) (86)
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 1 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 2 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 3 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 4 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 5 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 6 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 7 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2571] INFO: Skipping chapter 8 as it is not in the specified filter
+[08:32:29] [udemy-downloader] [parse_new:2579] INFO: ======= Processing chapter 9 of 11 =======
+[08:32:30] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:32:36] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:32:43] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:32:44] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 1 of 86
+[08:32:44] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '001 Section intro' has DRM, attempting to download. Selected quality: 1080
+[08:32:44] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:32:44] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128057.encrypted.%(ext)s', '-f', '8,9', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333599.mpd']
+[08:37:56] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 312.18s (method=aria2c, code=0)
+[08:37:56] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:37:56] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:37:56] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:37:56] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:37:58] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:37:58] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:37:58] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:37:58] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '001 Section intro_en.vtt'
+[08:37:58] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333599/en_US/2024-08-05_07-02-52-61ff2e5cc095ef4c9cefb69593712fa1.vtt?Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '001 Section intro_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:38:04] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:38:04] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:38:04] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:38:04] [udemy-downloader] [_ensure_translation_executor:2349] INFO:     > Translation executor started (workers=3)
+[08:38:04] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (001 Section intro_en.srt)
+[08:38:04] [udemy-downloader] [parse_new:2652] INFO:     > Processing 2 asset(s) for lecture...
+[08:38:04] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2024-08-05_07-24-55-ffb04969be2f0f360e1391a0e3407e8c/original.zip?response-content-disposition=attachment%3B+filename%3DEmplBack-inMemory.zip&Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '001 EmplBack-inMemory.zip', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:38:04] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 28 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[08:38:04] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/1: 28 subtitles (~1629 chars) ...
+[08:38:11] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2024-08-05_08-06-19-3eb274761c78e2b80ececcfef8fe0e45/original.zip?response-content-disposition=attachment%3B+filename%3DReact.zip&Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '001 React.zip', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:38:23] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:38:28] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:38:34] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:38:35] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 2 of 86
+[08:38:35] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '002 React app setup' has DRM, attempting to download. Selected quality: 1080
+[08:38:35] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:38:35] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128069.encrypted.%(ext)s', '-f', '8,9', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333617.mpd']
+[08:39:04] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/1 completed in 59.62s
+[08:39:04] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 001 Section intro_en_zh.srt
+[08:39:04] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:39:04] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 59.70s (001 Section intro_en_zh.srt)
+[08:39:09] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 33.58s (method=aria2c, code=0)
+[08:39:09] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:39:09] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:39:09] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:39:09] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:39:11] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:39:11] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:39:11] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:39:11] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '002 React app setup_en.vtt'
+[08:39:11] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333617/en_US/2024-08-05_07-02-53-6232e3466f6e11b7e67a9813939383e2.vtt?Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '002 React app setup_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:39:18] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:39:18] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:39:18] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:39:18] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (002 React app setup_en.srt)
+[08:39:18] [udemy-downloader] [parse_new:2652] INFO:     > Processing 1 asset(s) for lecture...
+[08:39:18] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 52 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:39:18] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 49 subtitles (~2457 chars) ...
+[08:39:18] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 3 subtitles (~148 chars) ...
+[08:39:23] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:39:29] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:39:29] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 11.34s
+[08:39:36] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:39:36] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 3 of 86
+[08:39:36] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '003 React Router' has DRM, attempting to download. Selected quality: 1080
+[08:39:36] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:39:36] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128071.encrypted.%(ext)s', '-f', '8,9', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333625.mpd']
+[08:39:43] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 25.45s
+[08:39:43] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 002 React app setup_en_zh.srt
+[08:39:43] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:39:43] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 25.53s (002 React app setup_en_zh.srt)
+[08:40:13] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 37.32s (method=aria2c, code=0)
+[08:40:13] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:40:13] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:40:13] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:40:13] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:40:15] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:40:15] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:40:15] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:40:15] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '003 React Router_en.vtt'
+[08:40:15] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333625/en_US/2024-08-05_07-02-54-a55d74d0266f4c5b5d6601f8f2c83b84.vtt?Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '003 React Router_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:40:22] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:40:22] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:40:22] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:40:22] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (003 React Router_en.srt)
+[08:40:22] [udemy-downloader] [parse_new:2652] INFO:     > Processing 3 asset(s) for lecture...
+[08:40:22] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 49 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:40:22] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 42 subtitles (~2451 chars) ...
+[08:40:22] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-51-067076df235da5068157aa860a3dae91/original.tsx?response-content-disposition=attachment%3B+filename%3DApp.tsx&Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '003 App.tsx', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:40:22] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 7 subtitles (~358 chars) ...
+[08:40:28] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-53-d0beba487da4184b50788fa2ce91d4fc/original.tsx?response-content-disposition=attachment%3B+filename%3DAddEmple.tsx&Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '003 AddEmple.tsx', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:40:40] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:40:44] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 21.97s
+[08:40:46] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:40:53] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:40:53] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 4 of 86
+[08:40:53] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '004 BackEnd configuration' has DRM, attempting to download. Selected quality: 1080
+[08:40:53] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:40:53] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128079.encrypted.%(ext)s', '-f', '7,8', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333627.mpd']
+[08:41:26] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 33.38s (method=aria2c, code=0)
+[08:41:26] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:41:26] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:41:26] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:41:26] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:41:28] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:41:28] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:41:28] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:41:28] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '004 BackEnd configuration_en.vtt'
+[08:41:28] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333627/en_US/2024-08-05_07-02-55-d29d005bf28d7442c876d72a677b2b87.vtt?Expires=1769878942&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '004 BackEnd configuration_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:41:35] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:41:35] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:41:35] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:41:35] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (004 BackEnd configuration_en.srt)
+[08:41:35] [udemy-downloader] [parse_new:2652] INFO:     > Processing 2 asset(s) for lecture...
+[08:41:35] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 41 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:41:35] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 38 subtitles (~2442 chars) ...
+[08:41:35] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 3 subtitles (~200 chars) ...
+[08:41:35] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-57-feda1dfca075bd1bb55fa7e3e0223571/original.ts?response-content-disposition=attachment%3B+filename%3DInMemoryRepository.ts&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '004 InMemoryRepository.ts', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:41:44] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 9.04s
+[08:41:46] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:41:52] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:41:54] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 92.16s
+[08:41:54] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 003 React Router_en_zh.srt
+[08:41:54] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:41:54] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 92.25s (003 React Router_en_zh.srt)
+[08:41:56] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 21.29s
+[08:41:56] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 004 BackEnd configuration_en_zh.srt
+[08:41:56] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:41:56] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 21.36s (004 BackEnd configuration_en_zh.srt)
+[08:41:59] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:42:00] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 5 of 86
+[08:42:00] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '005 Create Data Form' has DRM, attempting to download. Selected quality: 1080
+[08:42:00] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:42:00] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128083.encrypted.%(ext)s', '-f', '8,9', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333629.mpd']
+[08:42:55] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 54.86s (method=aria2c, code=0)
+[08:42:55] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:42:55] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:42:55] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:42:55] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:42:58] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:42:58] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:42:58] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:42:58] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '005 Create Data Form_en.vtt'
+[08:42:58] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333629/en_US/2024-08-05_07-02-56-92c4193371a1f4437e7b83c7f1414cad.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '005 Create Data Form_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:43:04] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:43:04] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:43:04] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:43:04] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (005 Create Data Form_en.srt)
+[08:43:04] [udemy-downloader] [parse_new:2652] INFO:     > Processing 4 asset(s) for lecture...
+[08:43:04] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 87 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:43:04] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 44 subtitles (~2495 chars) ...
+[08:43:04] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 43 subtitles (~2308 chars) ...
+[08:43:04] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-57-a51121b1b1822edf3fa161071e1003f6/original.tsx?response-content-disposition=attachment%3B+filename%3DAddEmple.tsx&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '005 AddEmple.tsx', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:43:10] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-57-5bb4f3dc6552fc49f792b4f12638a952/original.ts?response-content-disposition=attachment%3B+filename%3DEmployee.ts&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '005 Employee.ts', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:43:17] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-59-fa9ce92de55687626f2cf5ed46861677/original.ts?response-content-disposition=attachment%3B+filename%3DDataService.ts&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '005 DataService.ts', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:43:23] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 6 of 86
+[08:43:23] [udemy-downloader] [parse_new:2652] INFO:     > Processing 2 asset(s) for lecture...
+[08:43:23] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2024-08-05_07-21-28-e85b0ff78d23348f7fb331c998021f70/original.ts?response-content-disposition=attachment%3B+filename%3DDataService.ts&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '006 DataService.ts', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:43:35] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:43:41] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:43:42] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 37.36s
+[08:43:48] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:43:48] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 7 of 86
+[08:43:48] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '007 Prepare server for browser access' has DRM, attempting to download. Selected quality: 1080
+[08:43:48] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:43:48] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128093.encrypted.%(ext)s', '-f', '10,11', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333635.mpd']
+[08:44:49] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 104.88s
+[08:44:49] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 005 Create Data Form_en_zh.srt
+[08:44:49] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:44:49] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 104.97s (005 Create Data Form_en_zh.srt)
+[08:44:56] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 67.82s (method=aria2c, code=0)
+[08:44:56] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:44:56] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:44:56] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:44:56] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:44:59] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:44:59] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:44:59] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:44:59] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '007 Prepare server for browser access_en.vtt'
+[08:44:59] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333635/en_US/2024-08-05_07-02-57-ca8a421fc1c873f4ee284fb71ab2fca7.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '007 Prepare server for browser access_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:45:06] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:45:06] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:45:06] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:45:06] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (007 Prepare server for browser access_en.srt)
+[08:45:06] [udemy-downloader] [parse_new:2652] INFO:     > Processing 1 asset(s) for lecture...
+[08:45:06] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 67 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:45:06] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 39 subtitles (~2493 chars) ...
+[08:45:06] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 28 subtitles (~1525 chars) ...
+[08:45:11] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:45:17] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:45:24] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:45:25] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 8 of 86
+[08:45:25] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '008 List Data Component' has DRM, attempting to download. Selected quality: 1080
+[08:45:25] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:45:25] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128099.encrypted.%(ext)s', '-f', '10,11', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333631.mpd']
+[08:45:28] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 22.12s
+[08:46:09] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 43.68s (method=aria2c, code=0)
+[08:46:09] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:46:09] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:46:09] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:46:09] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:46:11] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:46:11] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:46:11] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:46:11] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '008 List Data Component_en.vtt'
+[08:46:11] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333631/en_US/2024-08-05_07-02-59-891a7188c2ed987d05ed6ea3f34bb0f3.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '008 List Data Component_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:46:17] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:46:17] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:46:17] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:46:17] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (008 List Data Component_en.srt)
+[08:46:17] [udemy-downloader] [parse_new:2652] INFO:     > Processing 2 asset(s) for lecture...
+[08:46:17] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 50 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:46:17] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 46 subtitles (~2459 chars) ...
+[08:46:17] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 4 subtitles (~310 chars) ...
+[08:46:17] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-58-bd77015f51bf629d1f9168da59d2e5c8/original.tsx?response-content-disposition=attachment%3B+filename%3DListEmpl.tsx&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '008 ListEmpl.tsx', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:46:29] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:46:34] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:46:38] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 20.95s
+[08:46:40] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 94.12s
+[08:46:40] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 007 Prepare server for browser access_en_zh.srt
+[08:46:40] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:46:40] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 94.22s (007 Prepare server for browser access_en_zh.srt)
+[08:46:41] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:46:42] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 9 of 86
+[08:46:42] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '009 Employee details component' has DRM, attempting to download. Selected quality: 1080
+[08:46:42] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:46:42] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '45128105.encrypted.%(ext)s', '-f', '9,10', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333645.mpd']
+[08:47:39] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 57.15s (method=aria2c, code=0)
+[08:47:39] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:47:39] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:47:39] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:47:39] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:47:42] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:47:42] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:47:42] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:47:42] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '009 Employee details component_en.vtt'
+[08:47:42] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333645/en_US/2024-08-05_07-03-01-fb248221c9bd09a77c89f3b670d6c20b.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '009 Employee details component_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:47:49] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:47:49] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:47:49] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:47:49] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (009 Employee details component_en.srt)
+[08:47:49] [udemy-downloader] [parse_new:2652] INFO:     > Processing 2 asset(s) for lecture...
+[08:47:49] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 93 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:47:49] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 42 subtitles (~2491 chars) ...
+[08:47:49] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 51 subtitles (~2285 chars) ...
+[08:47:49] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2025-08-12_11-31-59-b0d6fb859335408bde03c681eb3979bd/original.tsx?response-content-disposition=attachment%3B+filename%3DEmplDetails.tsx&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '009 EmplDetails.tsx', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:48:01] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:48:06] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:48:14] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:48:14] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 10 of 86
+[08:48:14] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '010 Navigation' has DRM, attempting to download. Selected quality: 1080
+[08:48:14] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:48:14] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '41514398.encrypted.%(ext)s', '-f', '10,11', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333665.mpd']
+[08:48:14] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 25.50s
+[08:48:41] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 143.54s
+[08:48:41] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 008 List Data Component_en_zh.srt
+[08:48:41] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:48:41] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 143.64s (008 List Data Component_en_zh.srt)
+[08:48:51] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 62.31s
+[08:48:51] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 009 Employee details component_en_zh.srt
+[08:48:51] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:48:51] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 62.40s (009 Employee details component_en_zh.srt)
+[08:48:59] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 44.62s (method=aria2c, code=0)
+[08:48:59] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:48:59] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:48:59] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:48:59] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:49:02] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:49:02] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:49:02] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:49:02] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '010 Navigation_en.vtt'
+[08:49:02] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333665/en_US/2024-08-05_06-56-54-118056880de587f78a6b2d3d5dfdab66.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '010 Navigation_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\09 - React', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:49:09] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:49:09] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:49:09] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:49:09] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (010 Navigation_en.srt)
+[08:49:09] [udemy-downloader] [parse_new:2652] INFO:     > Processing 1 asset(s) for lecture...
+[08:49:09] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 44 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[08:49:09] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/1: 44 subtitles (~2482 chars) ...
+[08:49:09] [udemy-downloader] [parse_new:2579] INFO: ======= Processing chapter 10 of 11 =======
+[08:49:15] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:49:21] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:49:27] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:49:28] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 1 of 86
+[08:49:28] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '001 Section intro' has DRM, attempting to download. Selected quality: 1080
+[08:49:28] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:49:28] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '41514374.encrypted.%(ext)s', '-f', '5,6', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_58333693.mpd']
+[08:49:28] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/1 completed in 19.23s
+[08:49:28] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 010 Navigation_en_zh.srt
+[08:49:28] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:49:28] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 19.32s (010 Navigation_en_zh.srt)
+[08:49:49] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 21.49s (method=aria2c, code=0)
+[08:49:49] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:49:49] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:49:49] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:49:49] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:49:51] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:49:52] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:49:56] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:49:56] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '001 Section intro_en.vtt'
+[08:49:56] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/58333693/en_US/2024-08-05_06-57-03-46037d36bbb98575b845b0cf23eeb07c.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '001 Section intro_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\10 - Other GitHub Copilot features', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:50:03] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:50:03] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:50:03] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:50:03] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (001 Section intro_en.srt)
+[08:50:03] [udemy-downloader] [parse_new:2652] INFO:     > Processing 0 asset(s) for lecture...
+[08:50:03] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 15 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[08:50:03] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/1: 15 subtitles (~920 chars) ...
+[08:50:09] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:50:14] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:50:22] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:50:22] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 2 of 86
+[08:50:22] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '002 GitHub Copilot CLI installation' has DRM, attempting to download. Selected quality: 1080
+[08:50:22] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:50:22] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '41514384.encrypted.%(ext)s', '-f', '8,9', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_53592564.mpd']
+[08:51:00] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 37.74s (method=aria2c, code=0)
+[08:51:00] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:51:00] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:51:00] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:51:00] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:51:05] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:51:05] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:51:05] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:51:05] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '002 GitHub Copilot CLI installation_en.vtt'
+[08:51:05] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53592564/en_US/2023-12-29_17-16-58-f248b9fe9095d144f2c33662a537eddc.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '002 GitHub Copilot CLI installation_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\10 - Other GitHub Copilot features', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:51:11] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:51:11] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:51:11] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:51:11] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (002 GitHub Copilot CLI installation_en.srt)
+[08:51:11] [udemy-downloader] [parse_new:2652] INFO:     > Processing 1 asset(s) for lecture...
+[08:51:11] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 41 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[08:51:11] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/1: 41 subtitles (~2323 chars) ...
+[08:51:17] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:51:22] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:51:30] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:51:30] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 3 of 86
+[08:51:30] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '003 GitHub Copilot CLI usage' has DRM, attempting to download. Selected quality: 1080
+[08:51:30] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:51:30] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '41514388.encrypted.%(ext)s', '-f', '6,7', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_53592574.mpd']
+[08:51:45] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/1 completed in 101.73s
+[08:51:45] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 001 Section intro_en_zh.srt
+[08:51:45] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:51:45] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 101.82s (001 Section intro_en_zh.srt)
+[08:51:54] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/1 completed in 42.56s
+[08:51:54] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 002 GitHub Copilot CLI installation_en_zh.srt
+[08:51:54] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:51:54] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 42.80s (002 GitHub Copilot CLI installation_en_zh.srt)
+[08:52:02] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 31.82s (method=aria2c, code=0)
+[08:52:02] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:52:02] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:52:02] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:52:02] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:52:03] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:52:03] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:52:03] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:52:03] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '003 GitHub Copilot CLI usage_en.vtt'
+[08:52:03] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53592574/en_US/2023-12-29_17-16-58-d6a9c59ef7715e0e3c71e4f32efcb523.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '003 GitHub Copilot CLI usage_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\10 - Other GitHub Copilot features', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:52:10] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:52:10] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:52:10] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:52:10] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (003 GitHub Copilot CLI usage_en.srt)
+[08:52:10] [udemy-downloader] [parse_new:2652] INFO:     > Processing 0 asset(s) for lecture...
+[08:52:10] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 38 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[08:52:10] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/1: 38 subtitles (~2028 chars) ...
+[08:52:12] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:52:18] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:52:24] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:52:25] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 4 of 86
+[08:52:25] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '004 SQL and database queries assistance' has DRM, attempting to download. Selected quality: 1080
+[08:52:25] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:52:25] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '41514394.encrypted.%(ext)s', '-f', '8,9', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_53592586.mpd']
+[08:53:24] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 59.21s (method=aria2c, code=0)
+[08:53:24] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:53:24] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:53:24] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:53:24] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:53:27] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:53:27] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:53:27] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:53:27] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '004 SQL and database queries assistance_en.vtt'
+[08:53:27] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53592586/en_US/2023-12-29_17-16-58-c4027bf915e9fe6657479d67cf1f5525.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '004 SQL and database queries assistance_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\10 - Other GitHub Copilot features', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:53:33] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:53:33] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:53:33] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:53:33] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (004 SQL and database queries assistance_en.srt)
+[08:53:33] [udemy-downloader] [parse_new:2652] INFO:     > Processing 1 asset(s) for lecture...
+[08:53:33] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://att-c.udemycdn.com/2023-12-29_11-23-09-5af4bad3cb2feed530b281000b7bdb29/original.sql?response-content-disposition=attachment%3B+filename%3Dqueries.sql&Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '004 queries.sql', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\10 - Other GitHub Copilot features', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:53:33] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 81 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:53:33] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 57 subtitles (~2447 chars) ...
+[08:53:33] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 24 subtitles (~1344 chars) ...
+[08:53:39] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/1 completed in 88.96s
+[08:53:39] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 003 GitHub Copilot CLI usage_en_zh.srt
+[08:53:39] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:53:39] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 89.06s (003 GitHub Copilot CLI usage_en_zh.srt)
+[08:53:45] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:53:51] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:53:51] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 17.93s
+[08:53:57] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:53:57] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 5 of 86
+[08:53:57] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '005 Enabling Copilot for different file extensions' has DRM, attempting to download. Selected quality: 1080
+[08:53:57] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:53:57] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '51935381.encrypted.%(ext)s', '-f', '6,7', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_67365175.mpd']
+[08:54:25] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 27.39s (method=aria2c, code=0)
+[08:54:25] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:54:25] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:54:25] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:54:25] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:54:26] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:54:26] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:54:26] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:54:26] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '005 Enabling Copilot for different file extensions_en.vtt'
+[08:54:26] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/67365175/en_US/2025-08-12_11-39-40-b852a5c256aaaaec652883d8aa1c1704.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '005 Enabling Copilot for different file extensions_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\10 - Other GitHub Copilot features', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:54:33] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:54:33] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:54:33] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:54:33] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (005 Enabling Copilot for different file extensions_en.srt)
+[08:54:33] [udemy-downloader] [parse_new:2652] INFO:     > Processing 0 asset(s) for lecture...
+[08:54:33] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 28 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[08:54:33] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/1: 28 subtitles (~1796 chars) ...
+[08:54:33] [udemy-downloader] [parse_new:2579] INFO: ======= Processing chapter 11 of 11 =======
+[08:54:39] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:54:48] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:54:56] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:54:56] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 1 of 86
+[08:54:56] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '001 Course conclussion' has DRM, attempting to download. Selected quality: 1080
+[08:54:56] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:54:56] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '41514424.encrypted.%(ext)s', '-f', '6,7', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_53592684.mpd']
+[08:55:05] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/1 completed in 32.12s
+[08:55:05] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 005 Enabling Copilot for different file extensions_en_zh.srt
+[08:55:05] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:55:05] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 32.20s (005 Enabling Copilot for different file extensions_en_zh.srt)
+[08:55:30] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 34.20s (method=aria2c, code=0)
+[08:55:30] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:55:30] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:55:30] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:55:30] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:55:32] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:55:32] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:55:32] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:55:32] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '001 Course conclussion_en.vtt'
+[08:55:32] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53592684/en_US/2023-12-29_17-16-58-445704103a045d73b111c116dcc66a70.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '001 Course conclussion_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\11 - Ending section', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:55:38] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:55:38] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:55:38] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:55:38] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (001 Course conclussion_en.srt)
+[08:55:38] [udemy-downloader] [parse_new:2652] INFO:     > Processing 0 asset(s) for lecture...
+[08:55:38] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 50 subtitle(s) across 2 batch(es) (chunk<=2500 chars, workers=2)
+[08:55:38] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/2: 38 subtitles (~2490 chars) ...
+[08:55:38] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 2/2: 12 subtitles (~733 chars) ...
+[08:55:44] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:55:49] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:55:56] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:55:57] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 2 of 86
+[08:55:57] [udemy-downloader] [process_lecture:2394] INFO:       > Lecture '002 Thank you!' has DRM, attempting to download. Selected quality: 1080
+[08:55:57] [udemy-downloader] [handle_segments:1823] INFO: > Downloading Lecture Tracks...
+[08:55:57] [udemy-downloader] [handle_segments:1910] INFO: > DRM yt-dlp args (aria2c, concurrent_fragments=10): ['C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\yt-dlp.EXE', '--enable-file-urls', '--force-generic-extractor', '--allow-unplayable-formats', '--retries', '10', '--fragment-retries', '10', '--file-access-retries', '10', '--concurrent-fragments', '10', '--downloader', 'aria2c', '--downloader-args', 'aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4', '--fixup', 'never', '-k', '-o', '41494550.encrypted.%(ext)s', '-f', '6,7', 'file:///F:/Cursor/Advance-Udemy-Downloader/temp/index_53568088.mpd']
+[08:56:09] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 30.18s
+[08:56:12] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 2/2 completed in 33.28s
+[08:56:12] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 001 Course conclussion_en_zh.srt
+[08:56:12] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:56:12] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 33.41s (001 Course conclussion_en_zh.srt)
+[08:56:42] [udemy-downloader] [handle_segments:1914] INFO: > Lecture track download finished in 45.29s (method=aria2c, code=0)
+[08:56:42] [udemy-downloader] [handle_segments:1963] INFO: > Lecture Tracks Downloaded
+[08:56:42] [udemy-downloader] [handle_segments:1970] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:56:42] [udemy-downloader] [handle_segments:1978] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:56:42] [udemy-downloader] [handle_segments:2020] INFO: > Merging video and audio, this might take a minute...
+[08:56:43] [udemy-downloader] [handle_segments:2035] INFO: > Merging complete, renaming final file...
+[08:56:43] [udemy-downloader] [handle_segments:2037] INFO: > Cleaning up temporary files...
+[08:56:43] [udemy-downloader] [parse_new:2644] INFO: Processing 19 caption(s)...
+[08:56:43] [udemy-downloader] [process_caption:2219] INFO:     >  Downloading caption: '002 Thank you!_en.vtt'
+[08:56:43] [udemy-downloader] [download_aria:2197] INFO: aria2c args: ['aria2c', 'https://vtt-c.udemycdn.com/53568088/en_US/2023-12-29_17-16-58-145ad34ff1852b7a15adf4eee2c2b5a7.vtt?Expires=1769878943&Signature=%2A%2A%2A&Key-Pair-Id=%2A%2A%2A', '-o', '002 Thank you!_en.vtt', '-d', 'F:\\Cursor\\Advance-Udemy-Downloader\\out_dir\\github-copilot-the-complete-guide\\11 - Ending section', '-j16', '-s20', '-x16', '-c', '--auto-file-renaming=false', '--summary-interval=0', '--disable-ipv6', '--follow-torrent=false']
+[08:56:50] [udemy-downloader] [process_caption:2232] INFO:     > Converting caption to SRT format...
+[08:56:50] [udemy-downloader] [process_caption:2234] INFO:     > Caption conversion complete.
+[08:56:50] [udemy-downloader] [process_caption:2258] INFO:     > Translating caption to Chinese...
+[08:56:50] [udemy-downloader] [process_caption:2328] INFO:     > Translation task submitted (002 Thank you!_en.srt)
+[08:56:50] [udemy-downloader] [parse_new:2652] INFO:     > Processing 0 asset(s) for lecture...
+[08:56:50] [udemy-downloader] [parse_new:2607] INFO:   > Processing lecture 3 of 86
+[08:56:50] [udemy-downloader] [translate_batch:384] INFO:     > [Gemini] Preparing 12 subtitle(s) across 1 batch(es) (chunk<=2500 chars, workers=1)
+[08:56:50] [udemy-downloader] [process_batch:398] INFO:     > [Gemini] Batch 1/1: 12 subtitles (~626 chars) ...
+[08:56:50] [udemy-downloader] [parse_new:2652] INFO:     > Processing 1 asset(s) for lecture...
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2366] INFO: > Waiting for 16 translation task(s) to finish...
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 1/16 completed (001 Section intro)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 2/16 completed (002 GitHub Copilot CLI installation)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 3/16 completed (002 React app setup)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 4/16 completed (003 GitHub Copilot CLI usage)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 5/16 completed (001 Course conclussion)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 6/16 completed (004 BackEnd configuration)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 7/16 completed (007 Prepare server for browser access)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 8/16 completed (008 List Data Component)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 9/16 completed (001 Section intro)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 10/16 completed (005 Enabling Copilot for different file extensions)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 11/16 completed (003 React Router)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 12/16 completed (005 Create Data Form)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 13/16 completed (010 Navigation)
+[08:56:50] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 14/16 completed (009 Employee details component)
+[08:57:06] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/1 completed in 16.00s
+[08:57:06] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 002 Thank you!_en_zh.srt
+[08:57:06] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[08:57:06] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 16.07s (002 Thank you!_en_zh.srt)
+[08:57:06] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 15/16 completed (002 Thank you!)
+[09:00:11] [udemy-downloader] [process_batch:408] INFO:     > [Gemini] Batch 1/2 completed in 397.82s
+[09:00:11] [udemy-downloader] [_translate_and_save:2298] INFO:     > Dual-language subtitle saved: 004 SQL and database queries assistance_en_zh.srt
+[09:00:11] [udemy-downloader] [_translate_and_save:2303] INFO:     > Removed original English subtitle (kept EN+ZH file only)
+[09:00:11] [udemy-downloader] [_translate_and_save:2308] INFO:     > Translation finished in 397.90s (004 SQL and database queries assistance_en_zh.srt)
+[09:00:11] [udemy-downloader] [wait_for_translation_tasks:2373] INFO: > Translation task 16/16 completed (004 SQL and database queries assistance)
+[09:00:11] [udemy-downloader] [wait_for_translation_tasks:2378] INFO: > All translation tasks completed in 201.37s
+[09:00:11] [udemy-downloader] [cleanup_temp_dir:2733] INFO: > Temp 目录已清理：F:\Cursor\Advance-Udemy-Downloader\temp

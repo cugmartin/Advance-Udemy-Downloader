@@ -1,0 +1,128 @@
+[08:50:09] [udemy-downloader] [pre_run:536] INFO: Output directory set to F:\Cursor\Advance-Udemy-Downloader\out_dir
+[08:50:09] [udemy-downloader] [pre_run:551] INFO: Chapter filter applied: [7]
+[08:50:11] [udemy-downloader] [__init__:593] INFO: Found cookies.txt, attempting to use for authentication...
+[08:50:11] [udemy-downloader] [main:2769] INFO: > Fetching course information, this may take a minute...
+[08:50:17] [udemy-downloader] [main:2772] INFO: > Course information retrieved!
+[08:50:17] [udemy-downloader] [main:2777] INFO: > Fetching course curriculum, this may take a minute...
+[08:50:30] [udemy-downloader] [main:2789] INFO: > Course curriculum retrieved!
+[08:50:30] [udemy-downloader] [main:2821] INFO: > Processing course data, this may take a minute. 
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 2 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 3 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 4 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 5 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 6 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 7 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 8 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 9 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 10 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 11 of 97
+[08:50:30] [udemy-downloader] [main:2901] INFO: Processing 12 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 14 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 15 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 16 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 17 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 18 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 19 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 20 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 21 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 22 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 23 of 97
+[08:50:30] [udemy-downloader] [main:2901] INFO: Processing 24 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 26 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 27 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 28 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 29 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 30 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 32 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 33 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 34 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 35 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 37 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 39 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 40 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 41 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 42 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 43 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 44 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 45 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 46 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 47 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 48 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 49 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 50 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 51 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 52 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 53 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 54 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 56 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 57 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 58 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 59 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 60 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 61 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 62 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 63 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 65 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 66 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 67 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 68 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 69 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 70 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 71 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 72 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 73 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 74 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 75 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 76 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 78 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 79 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 80 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 81 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 82 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 83 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 84 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 85 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 86 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 87 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 89 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 90 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 91 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 92 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 93 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 95 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 96 of 97
+[08:50:30] [udemy-downloader] [main:2865] INFO: Processing 97 of 97
+[08:50:30] [udemy-downloader] [parse_new:2476] INFO: Chapter(s) (11)
+[08:50:30] [udemy-downloader] [parse_new:2477] INFO: Lecture(s) (86)
+[08:50:30] [udemy-downloader] [parse_new:2490] INFO: Skipping chapter 1 as it is not in the specified filter
+[08:50:30] [udemy-downloader] [parse_new:2490] INFO: Skipping chapter 2 as it is not in the specified filter
+[08:50:30] [udemy-downloader] [parse_new:2490] INFO: Skipping chapter 3 as it is not in the specified filter
+[08:50:30] [udemy-downloader] [parse_new:2490] INFO: Skipping chapter 4 as it is not in the specified filter
+[08:50:30] [udemy-downloader] [parse_new:2490] INFO: Skipping chapter 5 as it is not in the specified filter
+[08:50:30] [udemy-downloader] [parse_new:2490] INFO: Skipping chapter 6 as it is not in the specified filter
+[08:50:30] [udemy-downloader] [parse_new:2498] INFO: ======= Processing chapter 7 of 11 =======
+[08:50:31] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:50:36] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:50:42] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:50:44] [udemy-downloader] [parse_new:2526] INFO:   > Processing lecture 1 of 86
+[08:50:44] [udemy-downloader] [parse_new:2530] INFO:       > Lecture '001 Section intro' is already downloaded, skipping...
+[08:50:44] [udemy-downloader] [parse_new:2563] INFO: Processing 19 caption(s)...
+[08:50:44] [udemy-downloader] [process_caption:2138] INFO:     >  Downloading caption: '001 Section intro_en.vtt'
+[08:50:50] [udemy-downloader] [process_caption:2151] INFO:     > Converting caption to SRT format...
+[08:50:50] [udemy-downloader] [process_caption:2153] INFO:     > Caption conversion complete.
+[08:50:50] [udemy-downloader] [process_caption:2164] INFO:     > Dual-language subtitle already exists (001 Section intro_en_zh.srt), skipping translation.
+[08:50:50] [udemy-downloader] [process_caption:2171] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:50:50] [udemy-downloader] [parse_new:2571] INFO:     > Processing 1 asset(s) for lecture...
+[08:51:01] [udemy-downloader] [_extract_mpd:1063] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:51:07] [udemy-downloader] [_extract_mpd:1082] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:51:13] [udemy-downloader] [_extract_mpd:1095] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:51:14] [udemy-downloader] [parse_new:2526] INFO:   > Processing lecture 2 of 86
+[08:51:14] [udemy-downloader] [parse_new:2530] INFO:       > Lecture '002 Python coding assistance' is already downloaded, skipping...
+[08:51:14] [udemy-downloader] [parse_new:2563] INFO: Processing 19 caption(s)...
+[08:51:14] [udemy-downloader] [process_caption:2138] INFO:     >  Downloading caption: '002 Python coding assistance_en.vtt'
+[08:51:20] [udemy-downloader] [process_caption:2151] INFO:     > Converting caption to SRT format...
+[08:51:20] [udemy-downloader] [process_caption:2153] INFO:     > Caption conversion complete.
+[08:51:20] [udemy-downloader] [process_caption:2164] INFO:     > Dual-language subtitle already exists (002 Python coding assistance_en_zh.srt), skipping translation.
+[08:51:20] [udemy-downloader] [process_caption:2171] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:51:20] [udemy-downloader] [parse_new:2571] INFO:     > Processing 4 asset(s) for lecture...
+[08:51:32] [udemy-downloader] [cleanup_temp_dir:2652] INFO: > Temp 目录已清理：F:\Cursor\Advance-Udemy-Downloader\temp

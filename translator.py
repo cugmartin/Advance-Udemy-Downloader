@@ -28,8 +28,8 @@ class SubtitleTranslator:
             raise ValueError("DEEPL_API_KEY not found in environment or provided")
         
         self.translator = deepl.Translator(self.api_key)
-        self.cache_dir = Path(cache_dir)
-        self.cache_dir.mkdir(exist_ok=True)
+        self.cache_dir = Path(cache_dir).expanduser().resolve()
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.cache_file = self.cache_dir / "translation_cache.json"
         self.cache = self._load_cache()
         self._cache_lock = threading.Lock()
@@ -48,6 +48,7 @@ class SubtitleTranslator:
     def _save_cache(self):
         """Save translation cache to disk"""
         try:
+            self.cache_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.cache_file, 'w', encoding='utf-8') as f:
                 json.dump(self.cache, f, ensure_ascii=False, indent=2)
         except Exception as e:
@@ -214,8 +215,8 @@ class OpenAICompatibleTranslator:
             client_kwargs["timeout"] = self.request_timeout
         self.client = OpenAI(**client_kwargs)
  
-        self.cache_dir = Path(cache_dir)
-        self.cache_dir.mkdir(exist_ok=True)
+        self.cache_dir = Path(cache_dir).expanduser().resolve()
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.cache_file = self.cache_dir / "translation_cache.json"
         self.cache = self._load_cache()
         self._cache_lock = threading.Lock()
@@ -233,6 +234,7 @@ class OpenAICompatibleTranslator:
     def _save_cache(self):
         with self._cache_lock:
             try:
+                self.cache_file.parent.mkdir(parents=True, exist_ok=True)
                 with open(self.cache_file, "w", encoding="utf-8") as f:
                     json.dump(self.cache, f, ensure_ascii=False, indent=2)
             except Exception as e:

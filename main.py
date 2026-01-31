@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import argparse
+import copy
 import json
 import logging
 import math
@@ -13,7 +14,7 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from http.cookiejar import MozillaCookieJar
 from pathlib import Path
-from typing import IO, Union
+from typing import IO, Union, Optional
 
 import browser_cookie3
 import demoji
@@ -72,11 +73,116 @@ cj = None
 use_continuous_lecture_numbers = False
 chapter_filter = None
 YTDLP_PATH = None
+ARIA2C_DOWNLOADER_ARGS = "aria2c:--disable-ipv6 --connect-timeout=10 --timeout=30 --retry-wait=2 --max-tries=20 --max-connection-per-server=4"
+STRICT_MODE = False
+DISABLE_PROXY = False
+STRICT_FAILURES = []
+FAILED_DOWNLOAD_RETRY_LIMIT = 1
 
+
+def _curl_cffi_get(url: str, headers: dict, cookies, timeout: tuple[int, int]):
+    try:
+        from curl_cffi import requests as c_requests
+    except Exception:
+        return None
+
+    proxies = None
+    if not DISABLE_PROXY:
+        https_proxy = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
+        http_proxy = os.getenv("HTTP_PROXY") or os.getenv("http_proxy")
+        if https_proxy or http_proxy:
+            proxies = {}
+            if http_proxy:
+                proxies["http"] = http_proxy
+            if https_proxy:
+                proxies["https"] = https_proxy
+
+    try:
+        return c_requests.request(
+            "GET",
+            url,
+            headers=headers,
+            cookies=cookies,
+            timeout=timeout,
+            proxies=proxies,
+            impersonate="chrome",
+        )
+    except Exception:
+        return None
+
+
+def _raise_for_status(resp, url: str):
+    if resp is None:
+        raise Exception(f"No response for {url}")
+    raise_fn = getattr(resp, "raise_for_status", None)
+    if callable(raise_fn):
+        raise_fn()
+        return
+    status = getattr(resp, "status_code", None)
+    if status is None:
+        return
+    if int(status) >= 400:
+        reason = getattr(resp, "reason", "")
+        raise Exception(f"Failed request {url} ({status} {reason})")
 
 def deEmojify(inputStr: str):
     return demoji.replace(inputStr, "")
 
+def record_strict_failure(lecture_id: str, lecture_title: str, reason: str) -> None:
+    if not STRICT_MODE:
+        return
+    try:
+        STRICT_FAILURES.append({"id": str(lecture_id), "title": str(lecture_title), "reason": str(reason)})
+    except Exception:
+        pass
+
+
+def _clear_strict_failure(lecture_id: str) -> None:
+    if not STRICT_MODE or not STRICT_FAILURES:
+        return
+    try:
+        STRICT_FAILURES[:] = [item for item in STRICT_FAILURES if item.get("id") != str(lecture_id)]
+    except Exception:
+        pass
+
+
+def _retry_failed_downloads(failed_entries):
+    if not failed_entries:
+        return
+    if FAILED_DOWNLOAD_RETRY_LIMIT <= 0:
+        logger.warning("> Failed lecture retries disabled (limit <= 0). Skipping %d queued lecture(s).", len(failed_entries))
+        return
+
+    attempt = 1
+    pending = failed_entries
+
+    while pending and attempt <= FAILED_DOWNLOAD_RETRY_LIMIT:
+        logger.info("> Retrying %d failed lecture(s) (attempt %d/%d)...", len(pending), attempt, FAILED_DOWNLOAD_RETRY_LIMIT)
+        next_round = []
+        for entry in pending:
+            lecture_path = entry["lecture_path"]
+            lecture_title = entry["lecture_title"]
+            lecture_id = entry["lecture_id"]
+            chapter_dir = entry["chapter_dir"]
+            lecture_data = copy.deepcopy(entry["lecture_data"])
+
+            try:
+                process_lecture(lecture_data, lecture_path, chapter_dir)
+            except Exception:
+                logger.exception("    > Retry attempt raised an exception for lecture '%s'", lecture_title)
+
+            if os.path.isfile(lecture_path):
+                logger.info("    > Retry succeeded (%s)", lecture_title)
+                _clear_strict_failure(lecture_id)
+            else:
+                next_round.append(entry)
+        pending = next_round
+        attempt += 1
+
+    if pending:
+        logger.warning("> %d lecture(s) still failed after %d retry attempt(s).", len(pending), FAILED_DOWNLOAD_RETRY_LIMIT)
+        for entry in pending:
+            logger.warning("    > Still missing: %s (%s)", entry["lecture_title"], entry["lecture_id"])
 
 # from https://stackoverflow.com/a/21978778/9785713
 def log_subprocess_output(prefix: str, pipe: IO[bytes]):
@@ -110,10 +216,19 @@ def parse_chapter_filter(chapter_str: str):
 
 # this is the first function that is called, we parse the arguments, setup the logger, and ensure that required directories exist
 def pre_run():
-    global dl_assets, dl_captions, dl_quizzes, skip_lectures, caption_locale, quality, bearer_token, course_name, keep_vtt, skip_hls, concurrent_downloads, load_from_file, save_to_file, bearer_token, course_url, info, logger, keys, id_as_course_name, LOG_LEVEL, use_h265, h265_crf, h265_preset, use_nvenc, browser, is_subscription_course, DOWNLOAD_DIR, use_continuous_lecture_numbers, chapter_filter, translator, auto_translate
+    global dl_assets, dl_captions, dl_quizzes, skip_lectures, caption_locale, quality, bearer_token, course_name, keep_vtt, skip_hls, concurrent_downloads, load_from_file, save_to_file, bearer_token, course_url, info, logger, keys, id_as_course_name, LOG_LEVEL, use_h265, h265_crf, h265_preset, use_nvenc, browser, is_subscription_course, DOWNLOAD_DIR, use_continuous_lecture_numbers, chapter_filter, translator, auto_translate, STRICT_MODE, DISABLE_PROXY
 
     # Load environment variables first
     load_dotenv()
+
+    HEADERS["User-Agent"] = os.getenv(
+        "UDEMY_USER_AGENT",
+        HEADERS.get(
+            "User-Agent",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        ),
+    )
+    CURRICULUM_ITEMS_PARAMS["page_size"] = os.getenv("UDEMY_CURRICULUM_PAGE_SIZE", "200")
     
     # make sure the logs directory exists
     if not os.path.exists(LOG_DIR_PATH):
@@ -276,6 +391,18 @@ def pre_run():
         type=str,
         help="Download specific chapters. Use comma separated values and ranges (e.g., '1,3-5,7,9-11').",
     )
+    parser.add_argument(
+        "--strict",
+        dest="strict",
+        action="store_true",
+        help="If specified, any lecture download failure will cause the program to exit with code 1",
+    )
+    parser.add_argument(
+        "--no-proxy",
+        dest="no_proxy",
+        action="store_true",
+        help="If specified, disable system/environment proxy settings for network requests",
+    )
     # parser.add_argument("-v", "--version", action="version", version="You are running version {version}".format(version=__version__))
 
     args = parser.parse_args()
@@ -346,6 +473,18 @@ def pre_run():
         DOWNLOAD_DIR = os.path.abspath(args.out)
     if args.use_continuous_lecture_numbers:
         use_continuous_lecture_numbers = args.use_continuous_lecture_numbers
+    if args.chapter_filter_raw:
+        chapter_filter = parse_chapter_filter(args.chapter_filter_raw)
+        logging.getLogger("udemy-downloader").info("Chapter filter applied: %s", sorted(chapter_filter))
+    if getattr(args, "strict", False) or os.getenv("STRICT_MODE", "0").strip().lower() in ("1", "true", "yes"):
+        STRICT_MODE = True
+    if getattr(args, "no_proxy", False) or os.getenv("NO_PROXY_MODE", "0").strip().lower() in ("1", "true", "yes"):
+        DISABLE_PROXY = True
+        for k in ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"):
+            try:
+                os.environ.pop(k, None)
+            except Exception:
+                pass
     
     # Auto-enable captions and translation when downloading videos
     if not skip_lectures and not info:
@@ -448,12 +587,17 @@ class Udemy:
             elif browser == "file":
                 # load netscape cookies from file
                 cj = MozillaCookieJar("cookies.txt")
-                cj.load()
+                cj.load(ignore_discard=True, ignore_expires=True)
 
-        if os.path.exists("cookie.txt"):
+        if cj is None and os.path.exists("cookies.txt"):
+            logger.info("Found cookies.txt, attempting to use for authentication...")
+            cj = MozillaCookieJar("cookies.txt")
+            cj.load(ignore_discard=True, ignore_expires=True)
+
+        if cj is None and os.path.exists("cookie.txt"):
             logger.info("Found cookie.txt, attempting to use for authentication...")
             cj = MozillaCookieJar("cookie.txt")
-            cj.load()
+            cj.load(ignore_discard=True, ignore_expires=True)
 
     def _get_quiz(self, quiz_id):
         self.session._headers.update(
@@ -745,8 +889,33 @@ class Udemy:
         m3u8_path = Path(temp_path, f"index_{asset_id}.m3u8")
 
         try:
-            r = self.session._get(url)
-            r.raise_for_status()
+            try:
+                r = self.session._get(url)
+            except Exception as error:
+                error_str = str(error)
+                if (
+                    "403" in error_str
+                    or "ConnectionResetError" in error_str
+                    or "Connection aborted" in error_str
+                    or "10054" in error_str
+                ):
+                    try:
+                        read_timeout = int(os.getenv("UDEMY_READ_TIMEOUT", "180"))
+                    except ValueError:
+                        read_timeout = 180
+                    try:
+                        connect_timeout = int(os.getenv("UDEMY_CONNECT_TIMEOUT", "30"))
+                    except ValueError:
+                        connect_timeout = 30
+
+                    rr = _curl_cffi_get(url, dict(self.session._headers or {}), cj, (connect_timeout, read_timeout))
+                    if rr is not None and getattr(rr, "status_code", None) == 200:
+                        r = rr
+                    else:
+                        raise
+                else:
+                    raise
+            _raise_for_status(r, url)
             raw_data = r.text
 
             # write to temp file for later
@@ -773,8 +942,35 @@ class Udemy:
                 playlist_path = Path(temp_path, f"index_{asset_id}_{width}x{height}.m3u8")
 
                 with open(playlist_path, "w") as f:
-                    r = self.session._get(pl.uri)
-                    r.raise_for_status()
+                    try:
+                        r = self.session._get(pl.uri)
+                    except Exception as error:
+                        error_str = str(error)
+                        if (
+                            "403" in error_str
+                            or "ConnectionResetError" in error_str
+                            or "Connection aborted" in error_str
+                            or "10054" in error_str
+                        ):
+                            try:
+                                read_timeout = int(os.getenv("UDEMY_READ_TIMEOUT", "180"))
+                            except ValueError:
+                                read_timeout = 180
+                            try:
+                                connect_timeout = int(os.getenv("UDEMY_CONNECT_TIMEOUT", "30"))
+                            except ValueError:
+                                connect_timeout = 30
+
+                            rr = _curl_cffi_get(
+                                pl.uri, dict(self.session._headers or {}), cj, (connect_timeout, read_timeout)
+                            )
+                            if rr is not None and getattr(rr, "status_code", None) == 200:
+                                r = rr
+                            else:
+                                raise
+                        else:
+                            raise
+                    _raise_for_status(r, pl.uri)
                     f.write(r.text)
 
                 seen.add(height)
@@ -809,9 +1005,106 @@ class Udemy:
         mpd_path = Path(temp_path, f"index_{asset_id}.mpd")
 
         try:
+            if portal_name and course_name:
+                self.session._headers.update(
+                    {
+                        "Referer": f"https://{portal_name}.udemy.com/course/{course_name}/learn/",
+                        "Origin": f"https://{portal_name}.udemy.com",
+                    }
+                )
             with open(mpd_path, "wb") as f:
-                r = self.session._get(url)
-                r.raise_for_status()
+                try:
+                    r = self.session._get(url)
+                except Exception as exc:
+                    exc_str = str(exc)
+                    if "403" in exc_str and "index.mpd" in url and "token=" in url:
+                        # Some portals reject signed asset requests when Authorization/cookies are attached.
+                        # Retry with multiple strategies.
+                        try:
+                            try:
+                                read_timeout = int(os.getenv("UDEMY_READ_TIMEOUT", "180"))
+                            except ValueError:
+                                read_timeout = 180
+                            try:
+                                connect_timeout = int(os.getenv("UDEMY_CONNECT_TIMEOUT", "30"))
+                            except ValueError:
+                                connect_timeout = 30
+
+                            mpd_fetcher = os.getenv("UDEMY_MPD_FETCHER", "auto").strip().lower()
+                            curl_on_403_env = os.getenv("UDEMY_MPD_CURL_CFFI_ON_403", "1").strip().lower()
+                            curl_on_403 = curl_on_403_env not in ("0", "false", "no")
+
+                            fallback_headers = {
+                                k: v
+                                for k, v in (self.session._headers or {}).items()
+                                if k.lower() not in {"authorization", "x-udemy-authorization", "cookie"}
+                            }
+
+                            attempts = []
+
+                            if cj is not None:
+                                attempts.append(("no-auth-with-cookies", fallback_headers, cj))
+                            attempts.append(("no-auth-no-cookies", fallback_headers, None))
+                            attempts.append(("auth-no-cookies", dict(self.session._headers or {}), None))
+
+                            forced_ok = False
+                            if mpd_fetcher == "curl_cffi":
+                                for _label, _headers, _cookies in attempts:
+                                    rr0 = _curl_cffi_get(url, _headers, _cookies, (connect_timeout, read_timeout))
+                                    if rr0 is not None and getattr(rr0, "status_code", None) == 200:
+                                        logger.info("MPD fetched via curl_cffi (forced)")
+                                        r = rr0
+                                        forced_ok = True
+                                        break
+
+                            last_err = None
+                            if not forced_ok:
+                                for label, headers, cookies in attempts:
+                                    logger.warning(
+                                        "MPD 403 detected; retrying %s (timeout=(%s,%s))",
+                                        label,
+                                        connect_timeout,
+                                        read_timeout,
+                                    )
+                                    try:
+                                        rr = self.session._session.get(
+                                            url,
+                                            headers=headers,
+                                            cookies=cookies,
+                                            timeout=(connect_timeout, read_timeout),
+                                        )
+                                        if rr.status_code == 403:
+                                            body_snippet = ""
+                                            try:
+                                                body_snippet = (rr.text or "")[:200].replace("\n", " ").replace("\r", " ")
+                                            except Exception:
+                                                body_snippet = ""
+                                            logger.warning(
+                                                "MPD retry %s returned 403. Response snippet: %s",
+                                                label,
+                                                body_snippet,
+                                            )
+                                            if curl_on_403 or "just a moment" in body_snippet.lower():
+                                                rr2 = _curl_cffi_get(
+                                                    url,
+                                                    headers,
+                                                    cookies,
+                                                    (connect_timeout, read_timeout),
+                                                )
+                                                if rr2 is not None and getattr(rr2, "status_code", None) == 200:
+                                                    logger.info("MPD Cloudflare challenge bypassed via curl_cffi")
+                                                    r = rr2
+                                                    break
+                                        rr.raise_for_status()
+                                        r = rr
+                                        break
+                                    except Exception as retry_exc:
+                                        last_err = retry_exc
+                                        continue
+                                else:
+                                    raise last_err or exc
+                        except Exception:
+                            raise exc
                 f.write(r.content)
 
             ytdl = yt_dlp.YoutubeDL(
@@ -891,7 +1184,11 @@ class Udemy:
                 ),
             }
         )
-        url = COURSE_SEARCH.format(portal_name=portal_name, course_name=course_name)
+        url = COURSE_SEARCH.format(
+            portal_name=portal_name,
+            course_name=course_name,
+            page_size=os.getenv("UDEMY_COURSE_SEARCH_PAGE_SIZE", "100"),
+        )
         try:
             webpage = self.session._get(url).content
             webpage = webpage.decode("utf8", "ignore")
@@ -901,6 +1198,10 @@ class Udemy:
             time.sleep(0.8)
             sys.exit(1)
         except (ValueError, Exception) as error:
+            err_str = str(error)
+            if "403" in err_str:
+                logger.warning("Subscribed course search returned 403; falling back to subscription-course flow")
+                return []
             logger.fatal(f"{error} on {url}")
             time.sleep(0.8)
             sys.exit(1)
@@ -1021,7 +1322,87 @@ class Udemy:
         return results
 
     def _extract_subscription_course_info(self, url):
-        course_html = self.session._get(url).text
+        url = (url or "").split("#", 1)[0]
+        if portal_name:
+            self.session._headers.update(
+                {
+                    "Host": f"{portal_name}.udemy.com",
+                    "Origin": f"https://{portal_name}.udemy.com",
+                    "Referer": f"https://{portal_name}.udemy.com/",
+                }
+            )
+
+        try:
+            try:
+                read_timeout = int(os.getenv("UDEMY_READ_TIMEOUT", "180"))
+            except ValueError:
+                read_timeout = 180
+            try:
+                connect_timeout = int(os.getenv("UDEMY_CONNECT_TIMEOUT", "30"))
+            except ValueError:
+                connect_timeout = 30
+
+            course_html = self.session._get(url).text
+        except Exception as exc:
+            exc_str = str(exc)
+            if "403" in exc_str:
+                fallback_no_auth_headers = {
+                    k: v
+                    for k, v in (self.session._headers or {}).items()
+                    if k.lower() not in {"authorization", "x-udemy-authorization", "cookie"}
+                }
+                if portal_name:
+                    fallback_no_auth_headers.update(
+                        {
+                            "Host": f"{portal_name}.udemy.com",
+                            "Origin": f"https://{portal_name}.udemy.com",
+                            "Referer": f"https://{portal_name}.udemy.com/",
+                        }
+                    )
+
+                attempts = [
+                    ("auth-with-cookies", dict(self.session._headers or {}), cj),
+                    ("no-auth-with-cookies", fallback_no_auth_headers, cj),
+                    ("auth-no-cookies", dict(self.session._headers or {}), None),
+                    ("no-auth-no-cookies", fallback_no_auth_headers, None),
+                ]
+
+                last_err = exc
+                for label, headers, cookies in attempts:
+                    logger.warning(
+                        "Course page 403 detected; retrying %s (timeout=(%s,%s))",
+                        label,
+                        connect_timeout,
+                        read_timeout,
+                    )
+                    try:
+                        rr = self.session._session.get(
+                            url,
+                            headers=headers,
+                            cookies=cookies,
+                            timeout=(connect_timeout, read_timeout),
+                        )
+                        if rr.status_code == 403:
+                            body_snippet = ""
+                            try:
+                                body_snippet = (rr.text or "")[:200].replace("\n", " ").replace("\r", " ")
+                            except Exception:
+                                body_snippet = ""
+                            logger.warning(
+                                "Course page retry %s returned 403. Response snippet: %s",
+                                label,
+                                body_snippet,
+                            )
+                        rr.raise_for_status()
+                        course_html = rr.text
+                        break
+                    except Exception as retry_exc:
+                        last_err = retry_exc
+                        continue
+                else:
+                    raise last_err
+            else:
+                raise
         soup = BeautifulSoup(course_html, "lxml")
         data = soup.find("div", {"class": "ud-component--course-taking--app"})
         if not data:
@@ -1195,6 +1576,8 @@ class Session(object):
     def __init__(self):
         self._headers = HEADERS
         self._session = requests.sessions.Session()
+        if DISABLE_PROXY:
+            self._session.trust_env = False
         self._session.mount(
             "https://",
             SSLCiphers(
@@ -1208,27 +1591,80 @@ class Session(object):
 
     def _get(self, url, params=None):
         last_response = None
-        for i in range(10):
-            session = self._session.get(url, headers=self._headers, cookies=cj, params=params)
+        last_exc = None
+        try:
+            max_retries = int(os.getenv("UDEMY_MAX_RETRIES", "10"))
+        except ValueError:
+            max_retries = 10
+        try:
+            read_timeout = int(os.getenv("UDEMY_READ_TIMEOUT", "180"))
+        except ValueError:
+            read_timeout = 180
+        try:
+            connect_timeout = int(os.getenv("UDEMY_CONNECT_TIMEOUT", "30"))
+        except ValueError:
+            connect_timeout = 30
+        try:
+            backoff_max = float(os.getenv("UDEMY_RETRY_BACKOFF_MAX", "30"))
+        except ValueError:
+            backoff_max = 30.0
+        for i in range(max_retries):
+            try:
+                session = self._session.get(
+                    url,
+                    headers=self._headers,
+                    cookies=cj,
+                    params=params,
+                    timeout=(connect_timeout, read_timeout),
+                )
+            except requests.exceptions.RequestException as exc:
+                last_exc = exc
+                logger.error("Failed request " + url)
+                logger.error(
+                    f"{exc} (timeout=({connect_timeout},{read_timeout})), retrying (attempt {i} )..."
+                )
+                time.sleep(min(backoff_max, 1.0 * (2**i)))
+                continue
             if session.ok:
                 return session
-            if session.status_code in [502, 503]:
+            if session.status_code in [502, 503, 504]:
                 last_response = session
                 logger.error("Failed request " + url)
-                logger.error(f"{session.status_code} {session.reason}, retrying (attempt {i} )...")
-                time.sleep(0.8)
+                logger.error(
+                    f"{session.status_code} {session.reason} (timeout=({connect_timeout},{read_timeout})), retrying (attempt {i} )..."
+                )
+                time.sleep(min(backoff_max, 1.0 * (2**i)))
                 continue
-            if session.status_code in [403, 429]:
+            if session.status_code == 429:
+                last_response = session
+                retry_after = session.headers.get("Retry-After")
+                try:
+                    wait = int(retry_after) if retry_after else 0
+                except ValueError:
+                    wait = 0
+                if wait <= 0:
+                    wait = min(30, 2 * (i + 1))
+                logger.error("Failed request " + url)
+                logger.error(
+                    f"{session.status_code} {session.reason} (timeout=({connect_timeout},{read_timeout})), retrying (attempt {i} )..."
+                )
+                time.sleep(wait)
+                continue
+            if session.status_code == 403:
                 raise Exception(f"Failed request {url} ({session.status_code} {session.reason})")
             last_response = session
             logger.error("Failed request " + url)
-            logger.error(f"{session.status_code} {session.reason}, retrying (attempt {i} )...")
-            time.sleep(0.8)
+            logger.error(
+                f"{session.status_code} {session.reason} (timeout=({connect_timeout},{read_timeout})), retrying (attempt {i} )..."
+            )
+            time.sleep(min(backoff_max, 1.0 * (2**i)))
 
         if last_response is not None:
             raise Exception(
-                f"Failed request {url} after 10 attempts ({last_response.status_code} {last_response.reason})"
+                f"Failed request {url} after {max_retries} attempts ({last_response.status_code} {last_response.reason})"
             )
+        if last_exc is not None:
+            raise Exception(f"Failed request {url} after {max_retries} attempts ({last_exc})")
         raise Exception(f"Failed request {url}: no response received")
 
     def _post(self, url, data, redirect=True):
@@ -1284,6 +1720,99 @@ def durationtoseconds(period):
         return None
 
 
+def mux_process(
+    video_in: str,
+    audio_in: str,
+    video_title: str,
+    output_path: str,
+    audio_key: str,
+    video_key: str,
+    audio_kid: Optional[str] = None,
+    video_kid: Optional[str] = None,
+) -> int:
+    try:
+        output_target = Path(output_path)
+        workdir = output_target.parent
+
+        video_input_path = Path(video_in)
+        audio_input_path = Path(audio_in)
+        if not video_input_path.is_absolute():
+            video_input_path = workdir / video_input_path
+        if not audio_input_path.is_absolute():
+            audio_input_path = workdir / audio_input_path
+
+        resolved_video_kid = video_kid or extract_kid(str(video_input_path))
+        resolved_audio_kid = audio_kid or extract_kid(str(audio_input_path))
+        if not resolved_video_kid or not resolved_audio_kid:
+            logger.error("Could not extract KID(s) for DRM lecture: %s", video_title)
+            return 1
+
+        # Shaka Packager stream descriptors use comma-separated fields.
+        # Avoid putting full output paths (which may contain commas) into the descriptor.
+        dec_stem = output_target.with_suffix("").name
+        video_dec_name = f"{dec_stem}.video.dec.mp4"
+        audio_dec_name = f"{dec_stem}.audio.dec.mp4"
+
+        packager_cmd = [
+            "shaka-packager",
+            f"in={video_input_path.name},stream=video,output={video_dec_name},drm_label=VIDEO",
+            f"in={audio_input_path.name},stream=audio,output={audio_dec_name},drm_label=AUDIO",
+            "--enable_raw_key_decryption",
+            "--keys",
+            f"label=VIDEO:key_id={resolved_video_kid}:key={video_key},label=AUDIO:key_id={resolved_audio_kid}:key={audio_key}",
+        ]
+        packager = subprocess.run(packager_cmd, capture_output=True, text=True, cwd=str(workdir))
+        if packager.returncode != 0:
+            logger.error("> shaka-packager failed (code=%s) for lecture: %s", packager.returncode, video_title)
+            if packager.stdout:
+                logger.error("> shaka-packager stdout: %s", packager.stdout.strip())
+            if packager.stderr:
+                logger.error("> shaka-packager stderr: %s", packager.stderr.strip())
+            return packager.returncode
+
+        ffmpeg_cmd = [
+            "ffmpeg",
+            "-y",
+            "-i",
+            video_dec_name,
+            "-i",
+            audio_dec_name,
+            "-map",
+            "0:v:0",
+            "-map",
+            "1:a:0",
+            "-c",
+            "copy",
+            "-movflags",
+            "+faststart",
+            output_path,
+        ]
+        ffmpeg = subprocess.run(ffmpeg_cmd, capture_output=True, text=True, cwd=str(workdir))
+        if ffmpeg.returncode != 0:
+            logger.error("> ffmpeg merge failed (code=%s) for lecture: %s", ffmpeg.returncode, video_title)
+            if ffmpeg.stdout:
+                logger.error("> ffmpeg stdout: %s", ffmpeg.stdout.strip())
+            if ffmpeg.stderr:
+                logger.error("> ffmpeg stderr: %s", ffmpeg.stderr.strip())
+        return ffmpeg.returncode
+    except Exception:
+        logger.exception("Muxing pipeline failed for lecture: %s", video_title)
+        return 1
+    finally:
+        try:
+            output_target = Path(output_path)
+            workdir = output_target.parent
+            dec_stem = output_target.with_suffix("").name
+            video_dec = workdir / f"{dec_stem}.video.dec.mp4"
+            audio_dec = workdir / f"{dec_stem}.audio.dec.mp4"
+            if video_dec.exists():
+                os.remove(str(video_dec))
+            if audio_dec.exists():
+                os.remove(str(audio_dec))
+        except Exception:
+            pass
+
+
 def handle_segments(url, format_id, lecture_id, video_title, output_path, chapter_dir):
     os.chdir(os.path.join(chapter_dir))
 
@@ -1292,17 +1821,46 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
     temp_output_path = os.path.join(chapter_dir, lecture_id + ".mp4")
 
     logger.info("> Downloading Lecture Tracks...")
-    args = [
+
+    def _sanitize_url_for_log(u: str) -> str:
+        try:
+            from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+            parts = urlsplit(u)
+            q = parse_qsl(parts.query, keep_blank_values=True)
+            if not q:
+                return u
+            redacted_keys = {
+                "token",
+                "signature",
+                "policy",
+                "key-pair-id",
+                "x-amz-signature",
+                "x-amz-credential",
+                "x-amz-security-token",
+            }
+            nq = []
+            for k, v in q:
+                if k.lower() in redacted_keys:
+                    nq.append((k, "***"))
+                else:
+                    nq.append((k, v))
+            new_query = urlencode(nq)
+            return urlunsplit((parts.scheme, parts.netloc, parts.path, new_query, parts.fragment))
+        except Exception:
+            return u
+
+    base_args = [
         YTDLP_PATH,
         "--enable-file-urls",
         "--force-generic-extractor",
         "--allow-unplayable-formats",
-        "--concurrent-fragments",
-        f"{concurrent_downloads}",
-        "--downloader",
-        "aria2c",
-        "--downloader-args",
-        'aria2c:"--disable-ipv6"',
+        "--retries",
+        "10",
+        "--fragment-retries",
+        "10",
+        "--file-access-retries",
+        "10",
         "--fixup",
         "never",
         "-k",
@@ -1312,15 +1870,97 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
         format_id,
         f"{url}",
     ]
-    process = subprocess.Popen(args)
-    log_subprocess_output("YTDLP-STDOUT", process.stdout)
-    log_subprocess_output("YTDLP-STDERR", process.stderr)
-    ret_code = process.wait()
-    logger.info("> Lecture Tracks Downloaded")
 
+    def _run_ytdlp(cmd_args):
+        result = subprocess.run(cmd_args, capture_output=True, text=True)
+        return result.returncode, (result.stdout or ""), (result.stderr or "")
+
+    aria2_args = [
+        YTDLP_PATH,
+        "--enable-file-urls",
+        "--force-generic-extractor",
+        "--allow-unplayable-formats",
+        "--retries",
+        "10",
+        "--fragment-retries",
+        "10",
+        "--file-access-retries",
+        "10",
+        "--concurrent-fragments",
+        f"{concurrent_downloads}",
+        "--downloader",
+        "aria2c",
+        "--downloader-args",
+        ARIA2C_DOWNLOADER_ARGS,
+        "--fixup",
+        "never",
+        "-k",
+        "-o",
+        f"{lecture_id}.encrypted.%(ext)s",
+        "-f",
+        format_id,
+        f"{url}",
+    ]
+
+    download_method = "aria2c"
+    start_download = time.time()
+    try:
+        safe_args = list(aria2_args)
+        safe_args[-1] = _sanitize_url_for_log(url)
+        logger.info("> DRM yt-dlp args (%s, concurrent_fragments=%s): %s", download_method, concurrent_downloads, safe_args)
+    except Exception:
+        pass
+    ret_code, out, err = _run_ytdlp(aria2_args)
+    logger.info("> Lecture track download finished in %.2fs (method=%s, code=%s)", time.time() - start_download, download_method, ret_code)
     if ret_code != 0:
-        logger.warning("Return code from the downloader was non-0 (error), skipping!")
-        return
+        logger.warning("Return code from downloader was non-0 (code=%s). Will retry without aria2c.", ret_code)
+        if out.strip():
+            logger.error("> yt-dlp stdout (truncated): %s", out.strip()[-4000:])
+        if err.strip():
+            logger.error("> yt-dlp stderr (truncated): %s", err.strip()[-4000:])
+
+        fallback_args = [
+            YTDLP_PATH,
+            "--enable-file-urls",
+            "--force-generic-extractor",
+            "--allow-unplayable-formats",
+            "--retries",
+            "10",
+            "--fragment-retries",
+            "10",
+            "--file-access-retries",
+            "10",
+            "--concurrent-fragments",
+            "1",
+            "--fixup",
+            "never",
+            "-k",
+            "-o",
+            f"{lecture_id}.encrypted.%(ext)s",
+            "-f",
+            format_id,
+            f"{url}",
+        ]
+        download_method = "native"
+        start_download = time.time()
+        try:
+            safe_args = list(fallback_args)
+            safe_args[-1] = _sanitize_url_for_log(url)
+            logger.info("> DRM yt-dlp args (%s, concurrent_fragments=1): %s", download_method, safe_args)
+        except Exception:
+            pass
+        ret_code, out, err = _run_ytdlp(fallback_args)
+        logger.info("> Lecture track download finished in %.2fs (method=%s, code=%s)", time.time() - start_download, download_method, ret_code)
+        if ret_code != 0:
+            logger.warning("Fallback download (no aria2c) also failed (code=%s), skipping!", ret_code)
+            if out.strip():
+                logger.error("> yt-dlp stdout (truncated): %s", out.strip()[-4000:])
+            if err.strip():
+                logger.error("> yt-dlp stderr (truncated): %s", err.strip()[-4000:])
+            record_strict_failure(lecture_id, video_title, f"yt-dlp download failed (code={ret_code})")
+            return False
+
+    logger.info("> Lecture Tracks Downloaded")
 
     audio_kid = None
     video_kid = None
@@ -1330,14 +1970,16 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
         logger.info("KID for video file is: " + video_kid)
     except Exception:
         logger.exception(f"Error extracting video kid")
-        return
+        record_strict_failure(lecture_id, video_title, "failed to extract video KID")
+        return False
 
     try:
         audio_kid = extract_kid(audio_filepath_enc)
         logger.info("KID for audio file is: " + audio_kid)
     except Exception:
         logger.exception(f"Error extracting audio kid")
-        return
+        record_strict_failure(lecture_id, video_title, "failed to extract audio KID")
+        return False
 
     audio_key = None
     video_key = None
@@ -1349,7 +1991,8 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
             logger.error(
                 f"Audio key not found for {audio_kid}, if you have the key then you probably didn't add them to the key file correctly."
             )
-            return
+            record_strict_failure(lecture_id, video_title, f"audio key not found for KID {audio_kid}")
+            return False
 
     if video_kid is not None:
         try:
@@ -1358,7 +2001,8 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
             logger.error(
                 f"Video key not found for {audio_kid}, if you have the key then you probably didn't add them to the key file correctly."
             )
-            return
+            record_strict_failure(lecture_id, video_title, f"video key not found for KID {video_kid}")
+            return False
 
     try:
         # logger.info("> Decrypting video, this might take a minute...")
@@ -1374,10 +2018,20 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
         #     return
         # logger.info("> Decryption complete")
         logger.info("> Merging video and audio, this might take a minute...")
-        mux_process(video_filepath_enc, audio_filepath_enc, video_title, temp_output_path, audio_key, video_key)
+        ret_code = mux_process(
+            video_filepath_enc,
+            audio_filepath_enc,
+            video_title,
+            temp_output_path,
+            audio_key,
+            video_key,
+            audio_kid,
+            video_kid,
+        )
         if ret_code != 0:
-            logger.error("> Return code from ffmpeg was non-0 (error), skipping!")
-            return
+            logger.error("> DRM muxing pipeline returned non-0 (code=%s), skipping!", ret_code)
+            record_strict_failure(lecture_id, video_title, f"mux/merge failed (code={ret_code})")
+            return False
         logger.info("> Merging complete, renaming final file...")
         os.rename(temp_output_path, output_path)
         logger.info("> Cleaning up temporary files...")
@@ -1385,6 +2039,8 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
         os.remove(audio_filepath_enc)
     except Exception as e:
         logger.exception(f"Muxing error: {e}")
+        record_strict_failure(lecture_id, video_title, f"muxing exception: {e}")
+        return False
     finally:
         os.chdir(HOME_DIR)
         # if the url is a file url, we need to remove the file after we're done with it
@@ -1393,6 +2049,7 @@ def handle_segments(url, format_id, lecture_id, video_title, output_path, chapte
                 os.unlink(url[7:])
             except:
                 pass
+    return True
 
 
 def check_for_aria():
@@ -1489,6 +2146,34 @@ def download_aria(url, file_dir, filename):
     """
     @author Puyodead1
     """
+    def _sanitize_url_for_log(u: str) -> str:
+        try:
+            from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+            parts = urlsplit(u)
+            q = parse_qsl(parts.query, keep_blank_values=True)
+            if not q:
+                return u
+            redacted_keys = {
+                "token",
+                "signature",
+                "policy",
+                "key-pair-id",
+                "x-amz-signature",
+                "x-amz-credential",
+                "x-amz-security-token",
+            }
+            nq = []
+            for k, v in q:
+                if k.lower() in redacted_keys:
+                    nq.append((k, "***"))
+                else:
+                    nq.append((k, v))
+            new_query = urlencode(nq)
+            return urlunsplit((parts.scheme, parts.netloc, parts.path, new_query, parts.fragment))
+        except Exception:
+            return u
+
     args = [
         "aria2c",
         url,
@@ -1505,6 +2190,13 @@ def download_aria(url, file_dir, filename):
         "--disable-ipv6",
         "--follow-torrent=false",
     ]
+
+    try:
+        safe_args = list(args)
+        safe_args[1] = _sanitize_url_for_log(url)
+        logger.info("aria2c args: %s", safe_args)
+    except Exception:
+        pass
     process = subprocess.Popen(args)
     log_subprocess_output("ARIA2-STDOUT", process.stdout)
     log_subprocess_output("ARIA2-STDERR", process.stderr)
@@ -1514,7 +2206,7 @@ def download_aria(url, file_dir, filename):
     return ret_code
 
 
-def process_caption(caption, lecture_title, lecture_dir, tries=0):
+def process_caption(caption, lecture_title, lecture_dir):
     global translator, auto_translate
     
     filename = f"%s_%s.%s" % (sanitize_filename(lecture_title), caption.get("language"), caption.get("extension"))
@@ -1702,7 +2394,7 @@ def process_lecture(lecture, lecture_path, chapter_dir):
             logger.info(
                 f"      > Lecture '{lecture_title}' has DRM, attempting to download. Selected quality: {source.get('height')}"
             )
-            handle_segments(
+            ok = handle_segments(
                 source.get("download_url"),
                 source.get("format_id"),
                 str(lecture_id),
@@ -1710,9 +2402,12 @@ def process_lecture(lecture, lecture_path, chapter_dir):
                 lecture_path,
                 chapter_dir,
             )
+            if ok is False:
+                record_strict_failure(str(lecture_id), lecture_title, "DRM handler failed")
         else:
             logger.info(f"      > Lecture '{lecture_title}' is missing media links")
             logger.debug(f"Lecture source count: {len(lecture_sources)}")
+            record_strict_failure(str(lecture_id), lecture_title, "missing media links")
     else:
         sources = lecture.get("sources")
         sources = sorted(sources, key=lambda x: int(x.get("height")), reverse=True)
@@ -1732,12 +2427,19 @@ def process_lecture(lecture, lecture_path, chapter_dir):
                             YTDLP_PATH,
                             "--enable-file-urls",
                             "--force-generic-extractor",
+                            "--allow-unplayable-formats",
+                            "--retries",
+                            "10",
+                            "--fragment-retries",
+                            "10",
+                            "--file-access-retries",
+                            "10",
                             "--concurrent-fragments",
                             f"{concurrent_downloads}",
                             "--downloader",
                             "aria2c",
                             "--downloader-args",
-                            'aria2c:"--disable-ipv6"',
+                            ARIA2C_DOWNLOADER_ARGS,
                             "-o",
                             f"{temp_filepath}",
                             f"{url}",
@@ -1778,15 +2480,22 @@ def process_lecture(lecture, lecture_path, chapter_dir):
                                     logger.info("      > Encoding complete")
                                 else:
                                     logger.error("      > Encoding returned non-zero return code")
+                                    record_strict_failure(str(lecture_id), lecture_title, f"ffmpeg encode failed (code={ret_code})")
+                        else:
+                            logger.error("      > HLS Download returned non-zero return code (code=%s)", ret_code)
+                            record_strict_failure(str(lecture_id), lecture_title, f"HLS download failed (code={ret_code})")
+                            return
                     else:
                         ret_code = download_aria(url, chapter_dir, lecture_title + ".mp4")
                         logger.debug(f"      > Download return code: {ret_code}")
                 except Exception:
                     logger.exception(f">        Error downloading lecture")
+                    record_strict_failure(str(lecture_id), lecture_title, "exception downloading lecture")
             else:
                 logger.info(f"      > Lecture '{lecture_title}' is already downloaded, skipping...")
         else:
             logger.error("      > Missing sources for lecture", lecture)
+            record_strict_failure(str(lecture_id), lecture_title, "missing sources")
 
 
 def process_quiz(udemy: Udemy, lecture, chapter_dir):
@@ -1853,6 +2562,8 @@ def parse_new(udemy: Udemy, udemy_object: dict):
     if not os.path.exists(course_dir):
         os.mkdir(course_dir)
 
+    failed_lectures = []
+
     for chapter in udemy_object.get("chapters"):
         current_chapter_index = int(chapter.get("chapter_index"))
         # Skip chapters not in the filter if a filter is provided
@@ -1911,7 +2622,21 @@ def parse_new(udemy: Udemy, udemy_object: dict):
                             except Exception:
                                 logger.exception("    > Failed to write html file")
                     else:
-                        process_lecture(parsed_lecture, lecture_path, chapter_dir)
+                        try:
+                            process_lecture(parsed_lecture, lecture_path, chapter_dir)
+                        except Exception:
+                            logger.exception("    > Error while downloading lecture '%s'", lecture_title)
+
+                        if not os.path.isfile(lecture_path):
+                            failed_lectures.append(
+                                {
+                                    "lecture_id": parsed_lecture.get("id"),
+                                    "lecture_title": lecture_title,
+                                    "lecture_path": lecture_path,
+                                    "chapter_dir": chapter_dir,
+                                    "lecture_data": copy.deepcopy(parsed_lecture),
+                                }
+                            )
 
             # download subtitles for this lecture
             subtitles = parsed_lecture.get("subtitles")
@@ -1985,6 +2710,9 @@ def parse_new(udemy: Udemy, udemy_object: dict):
                         if name.lower() not in file_data:
                             with open(filename, "a", encoding="utf-8", errors="ignore") as f:
                                 f.write(content)
+
+    if failed_lectures:
+        _retry_failed_downloads(failed_lectures)
 
 def cleanup_temp_dir(temp_path: str = TEMP_DIR) -> None:
     temp_dir = Path(temp_path)
@@ -2139,10 +2867,6 @@ def main():
         course_json = udemy._extract_course_curriculum(course_url, course_id, portal_name)
         course_json["portal_name"] = portal_name
 
-    if save_to_file:
-        with open(os.path.join(os.getcwd(), "saved", "course_content.json"), encoding="utf8", mode="w") as f:
-            f.write(json.dumps(course_json))
-
     logger.info("> Course curriculum retrieved!")
     course = course_json.get("results")
     resource = course_json.get("detail")
@@ -2155,6 +2879,11 @@ def main():
             _print_course_info(udemy, udemy_object)
         else:
             parse_new(udemy, udemy_object)
+            if STRICT_MODE and STRICT_FAILURES:
+                logger.error("> Strict mode: %d lecture(s) failed, exiting with code 1", len(STRICT_FAILURES))
+                for item in STRICT_FAILURES[-20:]:
+                    logger.error("> Failed lecture: %s | %s | %s", item.get("id"), item.get("title"), item.get("reason"))
+                sys.exit(1)
     else:
         udemy_object = {}
         udemy_object["bearer_token"] = bearer_token
@@ -2288,6 +3017,11 @@ def main():
             _print_course_info(udemy, udemy_object)
         else:
             parse_new(udemy, udemy_object)
+            if STRICT_MODE and STRICT_FAILURES:
+                logger.error("> Strict mode: %d lecture(s) failed, exiting with code 1", len(STRICT_FAILURES))
+                for item in STRICT_FAILURES[-20:]:
+                    logger.error("> Failed lecture: %s | %s | %s", item.get("id"), item.get("title"), item.get("reason"))
+                sys.exit(1)
 
 
 if __name__ == "__main__":

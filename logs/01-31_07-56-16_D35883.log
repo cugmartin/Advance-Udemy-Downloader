@@ -1,0 +1,211 @@
+[07:56:18] [udemy-downloader] [pre_run:486] INFO: Output directory set to F:\Cursor\Advance-Udemy-Downloader\out_dir
+[07:56:18] [udemy-downloader] [pre_run:501] INFO: Chapter filter applied: [1]
+[07:56:19] [udemy-downloader] [__init__:543] INFO: Found cookies.txt, attempting to use for authentication...
+[07:56:19] [udemy-downloader] [main:2687] INFO: > Fetching course information, this may take a minute...
+[07:56:26] [udemy-downloader] [main:2690] INFO: > Course information retrieved!
+[07:56:26] [udemy-downloader] [main:2695] INFO: > Fetching course curriculum, this may take a minute...
+[07:56:34] [udemy-downloader] [main:2707] INFO: > Course curriculum retrieved!
+[07:56:34] [udemy-downloader] [main:2739] INFO: > Processing course data, this may take a minute. 
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 2 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 3 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 4 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 5 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 6 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 7 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 8 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 9 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 10 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 11 of 97
+[07:56:34] [udemy-downloader] [main:2819] INFO: Processing 12 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 14 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 15 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 16 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 17 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 18 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 19 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 20 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 21 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 22 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 23 of 97
+[07:56:34] [udemy-downloader] [main:2819] INFO: Processing 24 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 26 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 27 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 28 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 29 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 30 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 32 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 33 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 34 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 35 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 37 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 39 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 40 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 41 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 42 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 43 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 44 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 45 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 46 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 47 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 48 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 49 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 50 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 51 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 52 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 53 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 54 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 56 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 57 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 58 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 59 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 60 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 61 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 62 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 63 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 65 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 66 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 67 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 68 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 69 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 70 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 71 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 72 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 73 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 74 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 75 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 76 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 78 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 79 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 80 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 81 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 82 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 83 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 84 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 85 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 86 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 87 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 89 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 90 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 91 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 92 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 93 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 95 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 96 of 97
+[07:56:34] [udemy-downloader] [main:2783] INFO: Processing 97 of 97
+[07:56:34] [udemy-downloader] [parse_new:2413] INFO: Chapter(s) (11)
+[07:56:34] [udemy-downloader] [parse_new:2414] INFO: Lecture(s) (86)
+[07:56:34] [udemy-downloader] [parse_new:2433] INFO: ======= Processing chapter 1 of 11 =======
+[07:57:39] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 1 of 86
+[07:57:39] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '001 How to take this course' is already downloaded, skipping...
+[07:57:39] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[07:57:39] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '001 How to take this course_en.vtt'
+[07:57:45] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[07:57:45] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[07:57:45] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (001 How to take this course_en_zh.srt), skipping translation.
+[07:57:45] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[07:57:45] [udemy-downloader] [parse_new:2492] INFO:     > Processing 0 asset(s) for lecture...
+[07:57:45] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 2 of 86
+[07:57:45] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '002 First tip' is already downloaded, skipping...
+[07:57:45] [udemy-downloader] [parse_new:2492] INFO:     > Processing 1 asset(s) for lecture...
+[07:58:55] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 3 of 86
+[07:58:55] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '003 The Udemy experience' is already downloaded, skipping...
+[07:58:55] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[07:58:55] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '003 The Udemy experience_en.vtt'
+[07:59:01] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[07:59:01] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[07:59:01] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (003 The Udemy experience_en_zh.srt), skipping translation.
+[07:59:01] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[07:59:01] [udemy-downloader] [parse_new:2492] INFO:     > Processing 0 asset(s) for lecture...
+[07:59:01] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 4 of 86
+[07:59:01] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '004 All the code in the course' is already downloaded, skipping...
+[07:59:01] [udemy-downloader] [parse_new:2492] INFO:     > Processing 2 asset(s) for lecture...
+[08:00:17] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 5 of 86
+[08:00:17] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '005 What is GitHub Copilot' is already downloaded, skipping...
+[08:00:17] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[08:00:17] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '005 What is GitHub Copilot_en.vtt'
+[08:00:23] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[08:00:24] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[08:00:24] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (005 What is GitHub Copilot_en_zh.srt), skipping translation.
+[08:00:24] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:00:24] [udemy-downloader] [parse_new:2492] INFO:     > Processing 0 asset(s) for lecture...
+[08:00:29] [udemy-downloader] [_extract_mpd:997] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:00:39] [udemy-downloader] [_extract_mpd:997] WARNING: MPD 403 detected; retrying no-auth-no-cookies (timeout=(30,240))
+[08:00:45] [udemy-downloader] [_extract_mpd:1016] WARNING: MPD retry no-auth-no-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:00:50] [udemy-downloader] [_extract_mpd:997] WARNING: MPD 403 detected; retrying auth-no-cookies (timeout=(30,240))
+[08:00:55] [udemy-downloader] [_extract_mpd:1016] WARNING: MPD retry auth-no-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:01:01] [udemy-downloader] [_extract_mpd:1029] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:01:03] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 6 of 86
+[08:01:03] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '006 Signing up for GitHub Copilot' is already downloaded, skipping...
+[08:01:03] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[08:01:03] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '006 Signing up for GitHub Copilot_en.vtt'
+[08:01:09] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[08:01:09] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[08:01:09] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (006 Signing up for GitHub Copilot_en_zh.srt), skipping translation.
+[08:01:09] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:01:09] [udemy-downloader] [parse_new:2492] INFO:     > Processing 0 asset(s) for lecture...
+[08:01:15] [udemy-downloader] [_extract_mpd:997] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:01:20] [udemy-downloader] [_extract_mpd:1016] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:01:26] [udemy-downloader] [_extract_mpd:1029] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:01:27] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 7 of 86
+[08:01:27] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '007 Setup inside Visual Studio Code' is already downloaded, skipping...
+[08:01:27] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[08:01:27] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '007 Setup inside Visual Studio Code_en.vtt'
+[08:01:33] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[08:01:33] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[08:01:33] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (007 Setup inside Visual Studio Code_en_zh.srt), skipping translation.
+[08:01:33] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:01:33] [udemy-downloader] [parse_new:2492] INFO:     > Processing 0 asset(s) for lecture...
+[08:01:39] [udemy-downloader] [_extract_mpd:997] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:01:44] [udemy-downloader] [_extract_mpd:1016] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:01:50] [udemy-downloader] [_extract_mpd:1029] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:01:51] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 8 of 86
+[08:01:51] [udemy-downloader] [process_lecture:2250] INFO:       > Lecture '008 Optional - Setup inside Intellij' has DRM, attempting to download. Selected quality: 1080
+[08:01:51] [udemy-downloader] [handle_segments:1760] INFO: > Downloading Lecture Tracks...
+[08:02:20] [udemy-downloader] [handle_segments:1854] INFO: > Lecture Tracks Downloaded
+[08:02:20] [udemy-downloader] [handle_segments:1861] INFO: KID for video file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:02:20] [udemy-downloader] [handle_segments:1869] INFO: KID for audio file is: 11121144f8c249b3af6d7157fbe6fc2b
+[08:02:20] [udemy-downloader] [handle_segments:1911] INFO: > Merging video and audio, this might take a minute...
+[08:02:21] [udemy-downloader] [handle_segments:1926] INFO: > Merging complete, renaming final file...
+[08:02:22] [udemy-downloader] [handle_segments:1928] INFO: > Cleaning up temporary files...
+[08:02:22] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[08:02:22] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '008 Optional - Setup inside Intellij_en.vtt'
+[08:02:28] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[08:02:28] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[08:02:28] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (008 Optional - Setup inside Intellij_en_zh.srt), skipping translation.
+[08:02:28] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:02:28] [udemy-downloader] [parse_new:2492] INFO:     > Processing 0 asset(s) for lecture...
+[08:02:34] [udemy-downloader] [_extract_mpd:997] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:02:39] [udemy-downloader] [_extract_mpd:1016] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:02:45] [udemy-downloader] [_extract_mpd:1029] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:02:46] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 9 of 86
+[08:02:46] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '009 Privacy and GitHub Copilot' is already downloaded, skipping...
+[08:02:46] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[08:02:46] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '009 Privacy and GitHub Copilot_en.vtt'
+[08:02:52] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[08:02:52] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[08:02:52] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (009 Privacy and GitHub Copilot_en_zh.srt), skipping translation.
+[08:02:52] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:02:52] [udemy-downloader] [parse_new:2492] INFO:     > Processing 1 asset(s) for lecture...
+[08:02:57] [udemy-downloader] [_extract_mpd:997] WARNING: MPD 403 detected; retrying no-auth-with-cookies (timeout=(30,240))
+[08:03:03] [udemy-downloader] [_extract_mpd:1016] WARNING: MPD retry no-auth-with-cookies returned 403. Response snippet: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
+[08:03:09] [udemy-downloader] [_extract_mpd:1029] INFO: MPD Cloudflare challenge bypassed via curl_cffi
+[08:03:10] [udemy-downloader] [parse_new:2461] INFO:   > Processing lecture 10 of 86
+[08:03:10] [udemy-downloader] [parse_new:2465] INFO:       > Lecture '010 GitHub Copilot Troubleshooting' is already downloaded, skipping...
+[08:03:10] [udemy-downloader] [parse_new:2484] INFO: Processing 19 caption(s)...
+[08:03:10] [udemy-downloader] [process_caption:2075] INFO:     >  Downloading caption: '010 GitHub Copilot Troubleshooting_en.vtt'
+[08:03:16] [udemy-downloader] [process_caption:2088] INFO:     > Converting caption to SRT format...
+[08:03:16] [udemy-downloader] [process_caption:2090] INFO:     > Caption conversion complete.
+[08:03:16] [udemy-downloader] [process_caption:2101] INFO:     > Dual-language subtitle already exists (010 GitHub Copilot Troubleshooting_en_zh.srt), skipping translation.
+[08:03:16] [udemy-downloader] [process_caption:2108] INFO:     > Removed redundant English subtitle after skipping translation.
+[08:03:16] [udemy-downloader] [parse_new:2492] INFO:     > Processing 1 asset(s) for lecture...
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 2 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 3 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 4 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 5 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 6 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 7 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 8 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 9 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 10 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [parse_new:2425] INFO: Skipping chapter 11 as it is not in the specified filter
+[08:03:16] [udemy-downloader] [cleanup_temp_dir:2570] INFO: > Temp 目录已清理：F:\Cursor\Advance-Udemy-Downloader\temp

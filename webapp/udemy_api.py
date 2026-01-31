@@ -1,4 +1,5 @@
 import logging
+import os
 import threading
 from typing import Dict, List
 
@@ -17,6 +18,16 @@ _lock = threading.Lock()
 SAMPLE_VIDEO_LIMIT = 5
 MAX_PAGE_FETCHES = 3
 
+INSPECTION_CURRICULUM_PARAMS = {
+    "fields[lecture]": "title,object_index,asset",
+    "fields[quiz]": "title,object_index,type",
+    "fields[practice]": "title,object_index",
+    "fields[chapter]": "title,object_index",
+    "fields[asset]": "asset_type,course_is_drmed,media_sources,stream_urls",
+    "caching_intent": True,
+    "page_size": "50",
+}
+
 
 class UdemyInspectionError(Exception):
     """Raised when the Udemy API inspection fails."""
@@ -25,6 +36,18 @@ class UdemyInspectionError(Exception):
 def _ensure_logger():
     if downloader_main.logger is None:
         downloader_main.logger = logger
+
+
+def _apply_proxy_settings() -> None:
+    no_proxy = os.getenv("NO_PROXY_MODE", "0").strip().lower() in ("1", "true", "yes")
+    if not no_proxy:
+        return
+    downloader_main.DISABLE_PROXY = True
+    for k in ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"):
+        try:
+            os.environ.pop(k, None)
+        except Exception:
+            pass
 
 
 def inspect_course(course_url: str, bearer_token: str) -> Dict[str, bool]:
@@ -41,6 +64,7 @@ def inspect_course(course_url: str, bearer_token: str) -> Dict[str, bool]:
     with _lock:
         try:
             _ensure_logger()
+            _apply_proxy_settings()
             udemy = downloader_main.Udemy(bearer_token)
             course_id, course_info = udemy._extract_course_info(course_url)
             if not course_id:
@@ -122,7 +146,7 @@ def inspect_course(course_url: str, bearer_token: str) -> Dict[str, bool]:
                         return {"is_drm": False}
                 return None
 
-            course_json = udemy.session._get(curriculum_url, downloader_main.CURRICULUM_ITEMS_PARAMS).json()
+            course_json = udemy.session._get(curriculum_url, INSPECTION_CURRICULUM_PARAMS).json()
             pages_fetched += 1
             results = course_json.get("results", [])
             next_url = course_json.get("next")
